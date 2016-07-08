@@ -1,0 +1,129 @@
+	\documentclass[fleqn, 12pt]{article}
+	\usepackage[latin1]{inputenc}
+	\usepackage[ngerman]{babel}
+	\usepackage[a4paper,text={155mm,220mm},centering,headsep=10mm,footskip=15mm]{geometry}
+	\usepackage{graphicx}
+	\usepackage{amssymb}
+	\usepackage{graphicx}
+	\usepackage{multirow}
+	\usepackage{multicol}
+	\usepackage{pst-plot}
+	\usepackage{float}
+	\usepackage{pdfpages}
+	\title{}
+	\date{}
+	\author{}
+	\usepackage{array}
+	\usepackage{amsmath}
+	\usepackage{fancyhdr}
+	\usepackage{enumitem} 
+	
+	% Listings
+	\usepackage{listings}
+	\renewcommand{\lstlistlistingname}{Liste der Quellcode Ausschnitte}
+	\renewcommand{\lstlistingname}{Quellcode Ausschnitt}
+		\definecolor{lsgreen}{rgb}{0,.5,0}
+		\definecolor{lsred}{rgb}{.7,0,0}
+		\definecolor{lsorange}{rgb}{.9,.5,0}
+		\definecolor{lsgray}{rgb}{.5,.5,.5}
+		\lstset{
+			frame=tb,
+			aboveskip=10mm,
+			belowskip=10mm,
+			showstringspaces=false,
+			columns=flexible,
+			captionpos=b,
+			basicstyle={\normalsize\ttfamily},
+			numbers=left,
+			numberstyle=\tiny\color{lsgray},
+			keywordstyle=\color{blue},
+			commentstyle=\color{lsorange},
+			stringstyle=\color{lsgreen},
+			breaklines=true,
+			breakatwhitespace=true,
+			rulecolor=\color{lsgray},
+			xleftmargin=7mm,
+			tabsize=3
+		}
+	
+	% Needed for proper display of links in bibliography
+	\usepackage{url}	
+	
+	% Hyperref
+	\usepackage[
+	pdfauthor={Laura Anger, Timo \dots, Lukas Kolhagen},
+	pdftitle={ABV Bewegungsanalyse},
+	pdftoolbar=true,	
+	colorlinks=true,
+	linkcolor=blue,
+	citecolor=blue,
+	urlcolor=blue,
+	linktocpage=true
+	]{hyperref}
+	\usepackage{bookmark}
+	\bookmarksetup{
+	numbered
+	}
+	\urlstyle{same}
+	
+	\pagestyle{fancy}
+	\fancyhf{}
+	\fancyhead[LO]{ABV}
+	\fancyhead[CO]{Bewegungsanalyse in einer Videosequenz}
+	\fancyhead[RO]{\thepage}
+	\renewcommand{\headrulewidth}{0.5pt}
+	\newcommand{\Absatzbox}[1]{\parbox[0pt][2em][c]{0cm}{}}
+	
+	% Itemize symbol
+	\renewcommand{\labelitemi}{$\triangleright$}
+	
+	% Colors
+	\definecolor{yellow}{rgb}{.95,.85,0}
+	\definecolor{green}{rgb}{0,.8,0}
+	\definecolor{blue}{rgb}{0,0,.8}
+	\definecolor{red}{rgb}{.8,0,0}
+	\definecolor{grey}{rgb}{.4,.4,.4}
+	\definecolor{orange}{rgb}{.9,.5,0}
+	
+	% Macro for typesetting C++
+	\newcommand{\CC}{C\nolinebreak\hspace{-.05em}\raisebox{.4ex}{\tiny\bf +}\nolinebreak\hspace{-.10em}\raisebox{.4ex}{\tiny\bf +}}
+\def\CC{{C\nolinebreak[4]\hspace{-.05em}\raisebox{.4ex}{\tiny\bf ++}}}
+
+\begin{document}
+\thispagestyle{empty}
+	%\sffamily
+			\begin{center}
+			\includegraphics[width=.35\textwidth]{logo_TH}\\[20ex]
+			{\Huge\textbf{Projektdokumentation}}\\[8ex]
+			\rule{.8\textwidth}{.2pt}
+			{\Large Bewegungsanalyse in einer Videosequenz\\[1ex] mit dem Ansatz des Papers
+			von Aach und Kunz}\\
+			\rule{.8\textwidth}{.2pt}\\[10ex]
+			von\\[2ex]
+			\begin{tabular}{ll}
+			Laura Anger &(Matrikelnr. XXXXXXXX)\\ 
+			Timo \dots &(Matrikelnr. XXXXXXXX)\\ 
+			Lukas Kolhagen &(Matrikelnr. 11084355)\\
+			\end{tabular}\\[10ex]
+			Durchgeführt im\\ \textbf{Master Medientechnologie}\\ im\\ 
+			\textbf{Sommersemester 2016}\\			
+			\end{center}
+			\vfill
+			\begin{flushleft}
+			{\bf Betreuer:}\\
+			Prof. Dr. Dietmar Kunz\\
+			Institut für Medien- und Phototechnik
+			\end{flushleft}
+	\newpage
+	\tableofcontents
+	\newpage
+	\section{Einleitung}
+	Im Paper \cite{aach1998bayesian} \dots
+	\section{Implementierung}
+	\section{Auswertung}	
+	\section{Zusammenfassung}
+	\newpage
+	\bibliographystyle{plain}
+	\bibliography{ABV_Bewegungsanalyse_LaTeX}
+\end{document}
+		
