@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=latex 2011.11.22)  8 JUL 2016 20:10
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=latex 2011.11.22)  25 JUL 2016 09:04
 entering extended mode
 **ABV_Bewegungsanalyse_LaTeX.tex
 (I:\LaTeX\ABV_Bewegungsanalyse_LaTeX\ABV_Bewegungsanalyse_LaTeX.tex
@@ -725,7 +725,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [3] (I:\LaTeX\ABV_Bewegungsanalyse_LaTeX\ABV_Bewegungsanalyse_LaTeX.bbl)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 128.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 140.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -734,19 +734,19 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [4]
-Package atveryend Info: Executing hook `AfterLastShipout' on input line 128.
+Package atveryend Info: Executing hook `AfterLastShipout' on input line 140.
 \BKM@file=\write4
  (I:\LaTeX\ABV_Bewegungsanalyse_LaTeX\ABV_Bewegungsanalyse_LaTeX.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 128.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 128.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 140.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 140.
  ) 
 Here is how much of TeX's memory you used:
- 11639 strings out of 494046
- 171631 string characters out of 3138707
- 306971 words of memory out of 3000000
- 14737 multiletter control sequences out of 15000+200000
- 10151 words of font info for 38 fonts, out of 3000000 for 9000
+ 11653 strings out of 494046
+ 171749 string characters out of 3138707
+ 309971 words of memory out of 3000000
+ 14751 multiletter control sequences out of 15000+200000
+ 10756 words of font info for 40 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
- 39i,11n,51p,279b,344s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 39i,11n,51p,282b,344s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on ABV_Bewegungsanalyse_LaTeX.dvi (4 pages, 8484 bytes).
+Output written on ABV_Bewegungsanalyse_LaTeX.dvi (4 pages, 15976 bytes).
