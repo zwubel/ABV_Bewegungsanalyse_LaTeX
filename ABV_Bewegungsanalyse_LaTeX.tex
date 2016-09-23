@@ -97,7 +97,7 @@
 			\includegraphics[width=.35\textwidth]{logo_TH}\\[20ex]
 			{\Huge\textbf{Projektdokumentation}}\\[8ex]
 			\rule{.8\textwidth}{.2pt}
-			{\Large Bewegungsanalyse in einer Videosequenz\\[1ex] mit dem Ansatz des Papers
+			{\Large Bewegungsanalyse einer Videosequenz\\[1ex] mit dem Ansatz des Papers
 			von Aach und Kunz}\\
 			\rule{.8\textwidth}{.2pt}\\[10ex]
 			von\\[2ex]
@@ -121,12 +121,23 @@
 	\section{Einleitung}\todo[inline]{Lukas}
 	Diese Ausarbeitung ist Teil der Abschlussprojekt-Dokumentation im Modul "`Weiterführende Themen der Bildverarbeitung"' im Master Medientechnologie an der Technischen Hochschule Köln.
 	
-	Das Projekt beschäftigte sich mit der Bewegungsanalyse einer Videosequenz mit dem Ansatz des Papers von Aach und Kunz\textsuperscript{\cite{aach1998bayesian}}. Es wurde bearbeitet von Laura Anger, Timo Breuer und Lukas Kolhagen.		
+	Das Projekt beschäftigte sich mit der Bewegungsanalyse einer Videosequenz mit dem Ansatz des Papers von Aach und Kunz\textsuperscript{\cite{aach1998bayesian}}. Es wurde bearbeitet von Laura Anger, Timo Breuer und Lukas Kolhagen.
 	\subsection{Ansatz im Paper von Aach und Kunz}
+	Die Grundlage für das vorliegende Projekt bildet das Paper "`Bayesian motion estimation for temporally recursive noise reduction in X-ray fluoroscopy"'. Dieses beschäftigt sich mit der Entwicklung einer robusten Methode zur Bewegungsschätzung für die speziellen Anforderungen der stark rauschenden Aufnahmen einer Röntgen-Fluoroskopie.\\
+	Der Ansatz beruht auf der Modellierung drei essenzieller Faktoren:
+	\begin{description}
+		\item [Datenterm:] Unterschied der Grauwerte zweier aufeinander folgender Bildern.
+		\item [Örtliche Kohärenz:] Außer an Randbereichen von Objekten, bewegen sich Nachbarschaften meist in die gleiche Richtung.
+		\item [Zeitliche Kohärenz:] Bewegungen verlaufen normalerweise kontinuierlich, sodass sich ein Bildblock zwischen zwei Bildern wahrscheinlich in dieselbe Richtung weiterbewegt oder die Richtung nur gering ändert.
+	\end{description}
+	Eine genaue Beschreibung dieser Faktoren erfolgt in \ref{sec:costFunc}.\\
+	
+	\subsection{Projektziel}
+	Die Zielsetzung für das Projekt "`Bewegungsanalyse einer Videosequenz"' war eine Übertragung des Ansatzes von Röntgenbildern auf normale Videosequenzen. Infolge dessen war eine Vernachlässigung der speziellen Anforderung des Bildrauschens möglich, da Röntgenbilder -- insbesondere als Teil einer Fluoroskopie -- zum Schutz des Patienten und des medizinischen Personals nur sehr geringe Röntgendosen enthalten dürfen und deshalb ein extrem schlechtes Signal-zu-Rauschverhältnis aufweisen. Diese Problematik besteht bei normalen Videosequenzen nicht, weshalb für die Untersuchung von vergleichsweise geringem und etwa gleich verteiltem Rauschen ausgegangen werden konnte.
 	\section{Verfahren}
 		\subsection{Bewegungsschätzung}\todo[inline]{Laura}
 		\subsection{Programmablauf}\todo[inline]{Lukas}
-		\subsection{Kostenfunktion}\todo[inline]{Alle}
+		\subsection{Kostenfunktion}\label{sec:costFunc}\todo[inline]{Alle}
 			\subsubsection{Datenterm}\todo[inline]{Lukas}
 			\subsubsection{Örtliche Kohärenz}\todo[inline]{Timo}
 			\subsubsection{Zeitliche Kohärenz}\todo[inline]{Lukas}
