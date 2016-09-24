@@ -11,6 +11,11 @@
 	\usepackage{float}
 	\usepackage{pdfpages}
 	\usepackage{todonotes}
+	\usepackage{pst-plot}
+	\usepackage{pstricks}
+	\usepackage{pstricks-add}
+	\usepackage{pst-node}
+	\usepackage{pst-grad,multido} 
 	\title{}
 	\date{}
 	\author{}
@@ -18,6 +23,7 @@
 	\usepackage{amsmath}
 	\usepackage{fancyhdr}
 	\usepackage{enumitem} 
+	\usepackage{blindtext}
 	
 	% Listings
 	\usepackage{listings}
@@ -133,10 +139,61 @@
 	Eine genaue Beschreibung dieser Faktoren erfolgt in \ref{sec:costFunc}.\\
 	
 	\subsection{Projektziel}
-	Die Zielsetzung für das Projekt "`Bewegungsanalyse einer Videosequenz"' war eine Übertragung des Ansatzes von Röntgenbildern auf normale Videosequenzen. Infolge dessen war eine Vernachlässigung der speziellen Anforderung des Bildrauschens möglich, da Röntgenbilder -- insbesondere als Teil einer Fluoroskopie -- zum Schutz des Patienten und des medizinischen Personals nur sehr geringe Röntgendosen enthalten dürfen und deshalb ein extrem schlechtes Signal-zu-Rauschverhältnis aufweisen. Diese Problematik besteht bei normalen Videosequenzen nicht, weshalb für die Untersuchung von vergleichsweise geringem und etwa gleich verteiltem Rauschen ausgegangen werden konnte.
+	Die Zielsetzung für das Projekt "`Bewegungsanalyse einer Videosequenz"' war eine Über\-tra\-gung des Ansatzes von Röntgenbildern auf normale Videosequenzen. Infolge dessen war eine Vernachlässigung der speziellen Anforderung des Bildrauschens möglich, da Röntgenbilder -- insbesondere als Teil einer Fluoroskopie -- zum Schutz des Patienten und des medizinischen Personals nur sehr geringe Röntgendosen enthalten dürfen und deshalb ein extrem schlechtes Signal-zu-Rauschverhältnis aufweisen. Diese Problematik besteht bei normalen Videosequenzen nicht, weshalb für die Untersuchung von vergleichsweise geringem und etwa gleich verteiltem Rauschen ausgegangen werden konnte.
 	\section{Verfahren}
 		\subsection{Bewegungsschätzung}\todo[inline]{Laura}
-		\subsection{Programmablauf}\todo[inline]{Lukas}
+		\newpage %Muss später entfernt werden
+		\subsection{Programmablauf}\todo[inline]{Lukas}		
+			\begin{figure}[h!]
+			\centering
+					\begin{psmatrix}[rowsep=0.3,colsep=0.4]
+						\rnode{run}{\psframebox[fillstyle=solid,fillcolor=black]{\footnotesize\color{white}public void run(ImageProcessor ip)}}\\
+						\rnode{readStack}{\psframebox[linearc=0.05,cornersize=absolute,fillstyle=solid,fillcolor=black!10]{\footnotesize Read data from stack}}\\
+						\rnode{initialize}{\psframebox[linearc=0.05,cornersize=absolute,fillstyle=solid,fillcolor=black!10]{\footnotesize Initialize first motion vector field with zero vectors}}\\
+						\rnode{forI}{\psframebox[linearc=0.05,cornersize=absolute,fillstyle=solid,fillcolor=black!10]{\footnotesize\texttt{$i=0$}}}\\
+						\dianode[fillstyle=solid,fillcolor=red!30]{condStackSize}{\footnotesize$i<$ \texttt{stack size}?}\\[3mm]
+						\dianode[fillstyle=solid,fillcolor=red!30]{frameNotZero}{\footnotesize$i\not=$ \texttt{0}?}\\[3mm]
+						\rnode{curFrame}{\psframebox[linearc=0.05,cornersize=absolute,fillstyle=solid,fillcolor=black!10]{\footnotesize Set current frame to i}}\\
+						\rnode{forJ}{\psframebox[linearc=0.05,cornersize=absolute,fillstyle=solid,fillcolor=black!10]{\footnotesize\texttt{$j=0$}}}\\
+						\dianode[fillstyle=solid,fillcolor=red!30]{condIter}{\footnotesize$j<$ \texttt{iterations}?}\\[3mm]
+						\rnode{Vn}{\psframebox[linearc=0.05,cornersize=absolute,fillstyle=solid,fillcolor=black!10]{\footnotesize Set current vector field as previous}}\\
+						\rnode{forK}{\psframebox[linearc=0.05,cornersize=absolute,fillstyle=solid,fillcolor=black!10]{\footnotesize\texttt{$k=0$}}}\\
+						\dianode[fillstyle=solid,fillcolor=red!30]{condNumBlocks}{\footnotesize$k<$ \texttt{number of blocks}?}\\[3mm]
+						\rnode{calcAlt}{\psframebox[linearc=0.05,cornersize=absolute,fillstyle=solid,fillcolor=black!10]{\footnotesize Calculate 14 alternatives for block k}}\\
+						\rnode{minimizeCost}{\psframebox[linearc=0.05,cornersize=absolute,fillstyle=solid,fillcolor=black!10]{\footnotesize Minimize cost function for alternatives}}\\
+						\rnode{addVec}{\psframebox[linearc=0.05,cornersize=absolute,fillstyle=solid,fillcolor=black!10]{\footnotesize Add vector with minimal cost to motion vector field}}\\
+						\rnode{updateProgress}{\psframebox[linearc=0.05,cornersize=absolute,fillstyle=solid,fillcolor=black!10]{\footnotesize Update plug-in progress}}\\
+						\rnode{genMVF}{\psframebox[linearc=0.05,cornersize=absolute,fillstyle=solid,fillcolor=black!10]{\footnotesize Generate motion vector field visualization for current frame}}\\
+						\rnode{addToOutStack}{\psframebox[linearc=0.05,cornersize=absolute,fillstyle=solid,fillcolor=black!10]{\footnotesize Add motion vector field to output stack}}\\
+						\rnode{outWindow}{\psframebox[linearc=0.05,cornersize=absolute,fillstyle=solid,fillcolor=black!10]{\footnotesize Generate and display output window}}\\
+					\end{psmatrix}
+					\psset{arrows=->,nodesep=0pt}
+					\ncline{run}{readStack}
+					\ncline{readStack}{initialize}
+					\ncline{initialize}{forI}
+					\ncline{forI}{condStackSize}
+					\ncline{condStackSize}{frameNotZero}\nbput{\footnotesize\color{green}True}
+					\ncangle[angle=0, linearc=.1]{frameNotZero}{genMVF}\nbput[npos=.15]{\footnotesize\color{red}False}
+					\ncline{frameNotZero}{curFrame}\nbput{\footnotesize\color{green}True}
+					\ncline{curFrame}{forJ}
+					\ncline{forJ}{condIter}					
+					\ncline{condIter}{Vn}\nbput{\footnotesize\color{green}True}
+					\ncline{Vn}{forK}
+					\ncline{forK}{condNumBlocks}
+					\ncline{condNumBlocks}{calcAlt}\nbput{\footnotesize\color{green}True}
+					\ncline{calcAlt}{minimizeCost}
+					\ncline{minimizeCost}{addVec}
+					\ncline{addVec}{updateProgress}
+					\ncangle[arm=3cm, angle=180, linearc=.1]{condIter}{updateProgress}\nbput[npos=.25]{\footnotesize\color{red}False}
+					\ncangle[arm=1.8cm, angle=0, linearc=.1]{condNumBlocks}{condIter}\nbput[npos=.25]{\footnotesize\color{red}False}
+					\ncline{updateProgress}{genMVF}
+					\ncline{genMVF}{addToOutStack}
+					\ncline{addToOutStack}{outWindow}
+					\ncangle[arm=2.8cm, angle=180, linearc=.1]{condStackSize}{outWindow}\nbput[npos=.2]{\footnotesize\color{red}False}
+			\caption{Programmablauf}
+			\label{fig:programmAblauf}
+		\end{figure}
+		
 		\subsection{Kostenfunktion}\label{sec:costFunc}\todo[inline]{Alle}
 			\subsubsection{Datenterm}\todo[inline]{Lukas}
 			\subsubsection{Örtliche Kohärenz}\todo[inline]{Timo}
