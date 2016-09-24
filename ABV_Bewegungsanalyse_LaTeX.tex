@@ -7,6 +7,7 @@
 	\usepackage{graphicx}
 	\usepackage{multirow}
 	\usepackage{multicol}
+	\usepackage{pst-plot}
 	\usepackage{float}
 	\usepackage{pdfpages}
 	\usepackage{todonotes}
@@ -24,7 +25,10 @@
 	\usepackage{fancyhdr}
 	\usepackage{enumitem} 
 	\parindent0pt
-	%\usepackage[format=plain, justification=RaggedRight, singlelinecheck=false]{caption}
+	\usepackage[format=plain,
+      justification=RaggedRight,
+      singlelinecheck=false]
+     {caption}
 	\usepackage{blindtext}
 	
 	% Listings
@@ -203,7 +207,8 @@
 			\subsubsection{Örtliche Kohärenz}\todo[inline]{Timo}
 			\subsubsection{Zeitliche Kohärenz}\todo[inline]{Lukas}
 \subsection{Visualisierung}\todo[inline]{Laura}
-		
+Um die Bewegungsvektorfelder darzustellen, wird sich mit Symbolen beholfen. Diese werden blockweise  über die Videosequenz gelegt. Aus Darstellungsgründen wird das Video dazu um Faktor 4 in beide Bildrichtungen hochskaliert. Da die einzelnen Bewegungsvektoren immer zwischen zwei Frames berechnet werden, wird genau ein Bewegungsvektorfeld weniger erzeugt, als das Eingangsmaterial Frames hat. \\
+Bei den bereits erwähnten Symbolen handelt es sich um Kreise und Pfeile. Ein Kreis wird immer dann genutzt, wenn für den entsprechenden Block keine oder nur eine kleine Bewegung durch das Verfahren ermittelt wurde. Die Pfeile zeigen immer in Richtung der ermittelten Verschiebung. Beide Symbole haben ihren Startpunkt im Mittelpunkt des jeweiligen Blocks.
 	\section{Auswertung}\todo[inline]{Laura \& Timo}
 
 \subsection{Testmaterial}\todo[inline]{Laura}
@@ -211,7 +216,7 @@ Das Verfahren wird an drei unterschiedlichen Bildsequenzen getestet, die im Folg
 
 \begin{minipage}{0.5\textwidth}
 \begin{figure}[H] 
-\includegraphics[bb=0 0 256 256, scale=0.77]{Testmaterial1.jpg}
+\includegraphics[scale=0.77]{Testmaterial1.jpg}
 \caption{Standbild Testmaterial 1}
 \end{figure}
 \end{minipage}
@@ -224,7 +229,7 @@ Bei den ersten und letzten 50 Frames wird ein Ausschnitt des Bildes um jeweils 1
 
 \begin{minipage}{0.5\textwidth}
 \begin{figure}[H] 
-\includegraphics[bb=0 0 256 256, scale=0.77]{Testmaterial2.jpg}
+\includegraphics[scale=0.77]{Testmaterial2.jpg}
 \caption{Standbild Testmaterial 2}
 \end{figure}
 \end{minipage}
@@ -237,7 +242,7 @@ Auf den 150 Frames, die diese Bildsequenz umfasst ist ein Blumenmotiv zu sehen, 
 
 \begin{minipage}{0.5\textwidth}
 \begin{figure}[H] 
-\includegraphics[bb=0 0 256 256, scale=0.77]{Testmaterial3.jpg}
+\includegraphics[scale=0.77]{Testmaterial3.jpg}
 \caption{Standbild Testmaterial 3}
 \end{figure}
 \end{minipage}
