@@ -15,13 +15,16 @@
 	\usepackage{pstricks-add}
 	\usepackage{pst-node}
 	\usepackage{pst-grad,multido} 
+	\usepackage{verbatim}
 	\title{}
 	\date{}
 	\author{}
 	\usepackage{array}
 	\usepackage{amsmath}
 	\usepackage{fancyhdr}
-	\usepackage{enumitem}	
+	\usepackage{enumitem} 
+	\parindent0pt
+	%\usepackage[format=plain, justification=RaggedRight, singlelinecheck=false]{caption}
 	\usepackage{blindtext}
 	
 	% Listings
@@ -142,7 +145,8 @@
 	\section{Verfahren}
 		\subsection{Bewegungsschätzung}\todo[inline]{Laura}
 		\newpage %Muss später entfernt werden
-		\subsection{Programmablauf}\todo[inline]{Lukas}
+		\subsection{Programmablauf}\todo[inline]{Lukas (Hab den gesamten Teil auskommentiert)}
+		\begin{comment}
 			\begin{figure}[h!]
 			\centering
 					\begin{psmatrix}[rowsep=0.3,colsep=0.4]
@@ -192,14 +196,57 @@
 			\caption{Programmablauf}
 			\label{fig:programmAblauf}
 		\end{figure}
+\end{comment}		
 		
 		\subsection{Kostenfunktion}\label{sec:costFunc}\todo[inline]{Alle}
 			\subsubsection{Datenterm}\todo[inline]{Lukas}
 			\subsubsection{Örtliche Kohärenz}\todo[inline]{Timo}
 			\subsubsection{Zeitliche Kohärenz}\todo[inline]{Lukas}
-		\subsection{Visualisierung}\todo[inline]{Laura}
+\subsection{Visualisierung}\todo[inline]{Laura}
+		
 	\section{Auswertung}\todo[inline]{Laura \& Timo}
-		\subsection{Testmaterial}\todo[inline]{Laura}
+
+\subsection{Testmaterial}\todo[inline]{Laura}
+Das Verfahren wird an drei unterschiedlichen Bildsequenzen getestet, die im Folgenden Testmaterial 1-3 genannt werden und alle eine Auflösung von 256x2656 Pixeln haben. Bei Testmaterial 1 und Testmaterial 2 wurde ein Bild um bekannte Werte in x- und y-Richtung verschoben. Anzumerken ist auch, dass beide Testmaterialien identisch verschoben wurden. Bei Testmaterial 3 kann die Bewegung der zu sehenden Objekte lediglich geschätzt werden. Alle Testmaterialien wurden für diese Dokumentation aufgenommen bzw. erstellt.\vspace{0.6cm}
+
+\begin{minipage}{0.5\textwidth}
+\begin{figure}[H] 
+\includegraphics[bb=0 0 256 256, scale=0.77]{Testmaterial1.jpg}
+\caption{Standbild Testmaterial 1}
+\end{figure}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+\textbf{Testmaterial 1}\\
+Diese Bildsequenz besteht aus 150 Frames und wurde aus einem Bild der Stadt Köln erzeugt.\\ 
+Bei den ersten und letzten 50 Frames wird ein Ausschnitt des Bildes um jeweils 10 Pixel nach links bzw. oben verschoben. In den mittleren 50 Frames  wird der Bildinhalt um 10 Pixel nach links und 10 Pixel nach unten verschoben. 
+\vspace{2.0cm}\\
+\end{minipage}\vspace{0.7cm}
+
+\begin{minipage}{0.5\textwidth}
+\begin{figure}[H] 
+\includegraphics[bb=0 0 256 256, scale=0.77]{Testmaterial2.jpg}
+\caption{Standbild Testmaterial 2}
+\end{figure}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+\textbf{Testmaterial 2}\\
+Auf den 150 Frames, die diese Bildsequenz umfasst ist ein Blumenmotiv zu sehen, welches jeweils über 50 Frames in verschiedene Richtungen verschoben wird. Auf den ersten Frames erfolgt eine Verschiebung um 10 Pixel nach links. Während die mittleren Frames um sowohl 10 Pixel nach links, als auch 10 Pixel nach oben verschoben wurden, wurde der Bildinhalt der verbleibenden Frames nur um 10 Pixel nach oben verschoben.
+\vspace{0.9cm}\\
+\end{minipage}\vspace{0.7cm}
+
+
+\begin{minipage}{0.5\textwidth}
+\begin{figure}[H] 
+\includegraphics[bb=0 0 256 256, scale=0.77]{Testmaterial3.jpg}
+\caption{Standbild Testmaterial 3}
+\end{figure}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+\textbf{Testmaterial 3}\\
+Bei Testmaterial 3 handelt es sich um eine reale Videosequenz, die in Köln Ehrenfeld aufgenommen wurde. Zu sehen sind ein Auto, dass sich von links nach rechts durch das Bild bewegt und eine Fahrradfahrerin, die das Bild genau entgegengesetzt durchfährt. Beide Objekte werden zeitweise durch eine Säule verdeckt. Die Kamera ist starr, weshalb für den restlichen Bildinhalt keine Bewegung zu erkennen ist. Insgesamt besteht die Testsequenz aus 118 Frames.
+\vspace{0.9cm}\\
+\end{minipage}
+
 		\subsection{Analyse der Kostenfunktion}\todo[inline]{Laura}
 		\subsection{Einschwingverhalten}
 			\subsubsection{Bewegungsvektorfelder}\todo[inline]{Timo}

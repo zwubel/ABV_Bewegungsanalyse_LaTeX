@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=latex 2011.11.22)  24 SEP 2016 13:42
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=latex 2011.11.22)  24 SEP 2016 14:20
 entering extended mode
 **ABV_Bewegungsanalyse_LaTeX.tex
 (I:\LaTeX\ABV_Bewegungsanalyse_LaTeX\ABV_Bewegungsanalyse_LaTeX.tex
@@ -717,11 +717,17 @@ Package: pst-grad 2004/07/15 package wrapper for pst-grad.tex (hv)
 `pst-grad' v1.06, 2006/11/27 (tvz,dg,hv))
 File: pst-grad.tex 2006/11/27 1.06 `pst-grad' (tvz)
 )
+(I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\latex\tools\verbatim.sty
+Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks37
+\verbatim@line=\toks38
+\verbatim@in@stream=\read2
+)
 (I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\latex\tools\array.sty
 Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
 \col@sep=\dimen215
 \extrarowheight=\dimen216
-\NC@list=\toks37
+\NC@list=\toks39
 \extratabsurround=\skip50
 \backup@length=\skip51
 )
@@ -735,7 +741,7 @@ Package: amstext 2000/06/29 v2.01
 
 (I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\latex\ams\math\amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0
-\@emptytoks=\toks38
+\@emptytoks=\toks40
 \ex@=\dimen217
 ))
 (I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\latex\ams\math\amsbsy.sty
@@ -765,21 +771,21 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
 \dotsspace@=\muskip10
 \c@parentequation=\count169
 \dspbrk@lvl=\count170
-\tag@help=\toks39
+\tag@help=\toks41
 \row@=\count171
 \column@=\count172
 \maxfields@=\count173
-\andhelp@=\toks40
+\andhelp@=\toks42
 \eqnshift@=\dimen220
 \alignsep@=\dimen221
 \tagshift@=\dimen222
 \tagwidth@=\dimen223
 \totwidth@=\dimen224
 \lineht@=\dimen225
-\@envbody=\toks41
+\@envbody=\toks43
 \multlinegap=\skip53
 \multlinetaggap=\skip54
-\mathdisplay@stack=\toks42
+\mathdisplay@stack=\toks44
 LaTeX Info: Redefining \[ on input line 2666.
 LaTeX Info: Redefining \] on input line 2667.
 )
@@ -798,7 +804,7 @@ LaTeX Info: Redefining \] on input line 2667.
 Package: enumitem 2011/09/28 v3.5.2 Customized lists
 \labelindent=\skip64
 \enit@outerparindent=\dimen226
-\enit@toks=\toks43
+\enit@toks=\toks45
 \enit@inbox=\box71
 \enitdp@description=\count174
 )
@@ -825,7 +831,7 @@ Package: xspace 2009/10/20 v1.13 Space after command names (DPC,MH)
 (I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\latex\listings\listings.sty
 \lst@mode=\count188
 \lst@gtempboxa=\box72
-\lst@token=\toks44
+\lst@token=\toks46
 \lst@length=\count189
 \lst@currlwidth=\dimen227
 \lst@column=\count190
@@ -967,10 +973,10 @@ File: hdvips.def 2011/08/19 v6.82h Hyperref driver for dvips
 
 (I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\latex\hyperref\pdfmark.def
 File: pdfmark.def 2011/08/19 v6.82h Hyperref definitions for pdfmark specials
-\pdf@docset=\toks45
+\pdf@docset=\toks47
 \pdf@box=\box74
-\pdf@toks=\toks46
-\pdf@defaulttoks=\toks47
+\pdf@toks=\toks48
+\pdf@defaulttoks=\toks49
 \Fld@listcount=\count204
 \c@bookmark@seq@number=\count205
 
@@ -991,20 +997,20 @@ File: bkm-dvips.def 2011/04/21 v1.21 bookmark driver for dvips (HO)
 \BKM@id=\count206
 ))
 (I:\LaTeX\ABV_Bewegungsanalyse_LaTeX\ABV_Bewegungsanalyse_LaTeX.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 98.
-LaTeX Font Info:    ... okay on input line 98.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 98.
-LaTeX Font Info:    ... okay on input line 98.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 98.
-LaTeX Font Info:    ... okay on input line 98.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 98.
-LaTeX Font Info:    ... okay on input line 98.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 98.
-LaTeX Font Info:    ... okay on input line 98.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 98.
-LaTeX Font Info:    ... okay on input line 98.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 98.
-LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 101.
+LaTeX Font Info:    ... okay on input line 101.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 101.
+LaTeX Font Info:    ... okay on input line 101.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 101.
+LaTeX Font Info:    ... okay on input line 101.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 101.
+LaTeX Font Info:    ... okay on input line 101.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 101.
+LaTeX Font Info:    ... okay on input line 101.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 101.
+LaTeX Font Info:    ... okay on input line 101.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 101.
+LaTeX Font Info:    ... okay on input line 101.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: dvips
@@ -1045,7 +1051,7 @@ LaTeX Font Info:    ... okay on input line 98.
 \AtBeginShipoutBox=\box75
 ABD: EveryShipout initializing macros
 \c@lstlisting=\count207
-Package hyperref Info: Link coloring ON on input line 98.
+Package hyperref Info: Link coloring ON on input line 101.
 
 (I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\latex\hyperref\nameref.sty
 Package: nameref 2010/04/30 v2.40 Cross-referencing by name of section
@@ -1056,17 +1062,17 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count208
 )
-LaTeX Info: Redefining \ref on input line 98.
-LaTeX Info: Redefining \pageref on input line 98.
-LaTeX Info: Redefining \nameref on input line 98.
+LaTeX Info: Redefining \ref on input line 101.
+LaTeX Info: Redefining \pageref on input line 101.
+LaTeX Info: Redefining \nameref on input line 101.
 File: logo_TH.eps Graphic file (type eps)
  <logo_TH.eps>
-LaTeX Font Info:    Try loading font information for U+msa on input line 109.
+LaTeX Font Info:    Try loading font information for U+msa on input line 112.
 
 (I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\latex\amsfonts\umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 109.
+LaTeX Font Info:    Try loading font information for U+msb on input line 112.
 
 (I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\latex\amsfonts\umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
@@ -1084,9 +1090,9 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 [2]
 Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
-ine 126.
+ine 129.
 
-Underfull \hbox (badness 10000) in paragraph at lines 138--139
+Underfull \hbox (badness 10000) in paragraph at lines 141--142
 
  []
 
@@ -1104,6 +1110,22 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [4]
+File: Testmaterial1.jpg Graphic file (type eps)
+ <Testmaterial1.jpg>
+Underfull \hbox (badness 2261) in paragraph at lines 219--223
+\OT1/cmr/m/n/12 In den mitt-le-ren 50 Fra-mes wird der
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 219--223
+
+ []
+
+
+Overfull \hbox (2.61107pt too wide) in paragraph at lines 212--224
+[]$[]$ $[]$ 
+ []
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
@@ -1111,6 +1133,43 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [5]
+File: Testmaterial2.jpg Graphic file (type eps)
+ <Testmaterial2.jpg>
+Underfull \hbox (badness 1028) in paragraph at lines 232--235
+\OT1/cmr/m/n/12 um-fasst ist ein Blu-men-mo-tiv zu se-hen,
+ []
+
+
+Underfull \hbox (badness 1603) in paragraph at lines 232--235
+\OT1/cmr/m/n/12 um 10 Pi-xel nach links. W[]ahrend die
+ []
+
+
+Underfull \hbox (badness 2626) in paragraph at lines 232--235
+\OT1/cmr/m/n/12 mitt-le-ren Fra-mes um so-wohl 10 Pi-xel
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 232--235
+
+ []
+
+
+Overfull \hbox (2.61107pt too wide) in paragraph at lines 225--236
+[]$[]$ $[]$ 
+ []
+
+File: Testmaterial3.jpg Graphic file (type eps)
+<Testmaterial3.jpg>
+Underfull \hbox (badness 10000) in paragraph at lines 245--248
+
+ []
+
+
+Overfull \hbox (2.61107pt too wide) in paragraph at lines 238--249
+[]$[]$ $[]$ 
+ []
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
@@ -1125,7 +1184,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [7] (I:\LaTeX\ABV_Bewegungsanalyse_LaTeX\ABV_Bewegungsanalyse_LaTeX.bbl)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 213.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 260.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1134,19 +1193,19 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [8]
-Package atveryend Info: Executing hook `AfterLastShipout' on input line 213.
+Package atveryend Info: Executing hook `AfterLastShipout' on input line 260.
 \BKM@file=\write5
  (I:\LaTeX\ABV_Bewegungsanalyse_LaTeX\ABV_Bewegungsanalyse_LaTeX.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 213.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 213.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 260.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 260.
  ) 
 Here is how much of TeX's memory you used:
- 20971 strings out of 494046
- 361714 string characters out of 3138707
- 552386 words of memory out of 3000000
- 23827 multiletter control sequences out of 15000+200000
- 12623 words of font info for 49 fonts, out of 3000000 for 9000
+ 20972 strings out of 494046
+ 361934 string characters out of 3138707
+ 522380 words of memory out of 3000000
+ 23825 multiletter control sequences out of 15000+200000
+ 10756 words of font info for 40 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
- 63i,12n,80p,729b,583s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 63i,11n,80p,729b,581s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on ABV_Bewegungsanalyse_LaTeX.dvi (8 pages, 98456 bytes).
+Output written on ABV_Bewegungsanalyse_LaTeX.dvi (8 pages, 54404 bytes).
