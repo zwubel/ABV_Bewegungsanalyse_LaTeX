@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=latex 2011.11.22)  24 SEP 2016 10:37
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=latex 2011.11.22)  24 SEP 2016 13:42
 entering extended mode
 **ABV_Bewegungsanalyse_LaTeX.tex
 (I:\LaTeX\ABV_Bewegungsanalyse_LaTeX\ABV_Bewegungsanalyse_LaTeX.tex
@@ -176,92 +176,45 @@ Package: multicol 2011/06/27 v1.7a multicolumn formatting (FMi)
 \colbreak@box=\box51
 \multicol@sort@counter=\count99
 )
-(I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\latex\pst-plot\pst-plot.sty
-Package: pst-plot 2011/06/05 v1.00 LaTeX wrapper for `pst-plot' (HV)
-
-(I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\latex\pstricks\pstricks.sty
-Package: pstricks 2011/04/23 v0.50 LaTeX wrapper for `PSTricks' (RN,HV)
-
-(I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\generic\oberdiek\ifluatex.sty
-Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
-Package ifluatex Info: LuaTeX not detected.
+(I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\latex\float\float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count100
+\float@exts=\toks19
+\float@box=\box52
+\@float@everytoks=\toks20
+\@floatcapt=\box53
 )
-(I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\generic\pstricks\pstricks.tex
-(I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\generic\xkeyval\pst-xkey.tex
-File: pst-xkey.tex 2005/11/25 v1.6 PSTricks specialization of xkeyval (HA)
+(I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\latex\pdfpages\pdfpages.sty
+Package: pdfpages 2012/08/31 v0.4t Insert pages of external PDF documents (AM)
 
-(I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\latex\xkeyval\xkeyval.sty
-Package: xkeyval 2008/08/13 v2.6a package option processing (HA)
-
-(I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\generic\xkeyval\xkeyval.tex
-\XKV@toks=\toks19
-\XKV@tempa@toks=\toks20
-\XKV@depth=\count100
-File: xkeyval.tex 2008/08/13 v2.6a key=value parser (HA)
-)))
-(I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\generic\pstricks\pst-fp.tex
-`pst-fp' v0.05, 2010/01/17 (hv)
-\pstFP@xs=\count101
-\pstFP@xia=\count102
-\pstFP@xib=\count103
-\pstFP@xfa=\count104
-\pstFP@xfb=\count105
-\pstFP@rega=\count106
-\pstFP@regb=\count107
-\pstFP@regs=\count108
-\pstFP@times=\count109
+(I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\latex\base\ifthen.sty
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 )
-\psLoopIndex=\count110
-
-`PSTricks' v2.21  <2011/06/07> (tvz)
-\pst@dima=\dimen124
-\pst@dimb=\dimen125
-\pst@dimc=\dimen126
-\pst@dimd=\dimen127
-\pst@dimg=\dimen128
-\pst@dimh=\dimen129
-\pst@dimm=\dimen130
-\pst@dimn=\dimen131
-\pst@dimo=\dimen132
-\pst@dimp=\dimen133
-\pst@hbox=\box52
-\pst@ibox=\box53
-\pst@boxg=\box54
-\pst@cnta=\count111
-\pst@cntb=\count112
-\pst@cntc=\count113
-\pst@cntd=\count114
-\pst@cntg=\count115
-\pst@cnth=\count116
-\pst@cntm=\count117
-\pst@cntn=\count118
-\pst@cnto=\count119
-\pst@cntp=\count120
-\@zero=\count121
-\pst@toks=\toks21
-(I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\generic\pstricks\pstricks.con)
-\psunit=\dimen134
-\psxunit=\dimen135
-\psyunit=\dimen136
-\pst@C@@rType=\count122
-\pslinewidth=\dimen137
-\psk@startLW=\dimen138
-\psk@endLW=\dimen139
-\pst@customdefs=\toks22
-\pslinearc=\dimen140
-\pst@symbolStep=\dimen141
-\pst@symbolWidth=\dimen142
-\everypsbox=\toks23
-\psframesep=\dimen143
-\pslabelsep=\dimen144
-\pst@shift=\dimen145
-\theoverlaybox=\box55
+(I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\latex\tools\calc.sty
+Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count101
+\calc@Bcount=\count102
+\calc@Adimen=\dimen124
+\calc@Bdimen=\dimen125
+\calc@Askip=\skip45
+\calc@Bskip=\skip46
+LaTeX Info: Redefining \setlength on input line 76.
+LaTeX Info: Redefining \addtolength on input line 77.
+\calc@Ccount=\count103
+\calc@Cskip=\skip47
 )
-File: pstricks.tex 2011/06/07 v2.21 `PSTricks' (tvz,hv)
+(I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\latex\eso-pic\eso-pic.sty
+Package: eso-pic 2010/10/06 v2.0c eso-pic (RN)
 
-(I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\generic\pstricks\pst-fp.tex)
-File: pst-fp.tex 2011/06/07 v2.21 `PST-fp' (hv)
+(I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\generic\oberdiek\atbegshi.sty
+Package: atbegshi 2011/01/30 v1.15 At begin shipout hook (HO)
 
+(I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\generic\oberdiek\infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/message (HO)
+)
+(I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\generic\oberdiek\ltxcmds.sty
+Package: ltxcmds 2011/04/18 v1.20 LaTeX kernel commands for general use (HO)
+))
 (I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\latex\xcolor\xcolor.sty
 Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
 
@@ -278,86 +231,6 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
 ))
-(I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\latex\xkeyval\pst-xkey.sty
-Package: pst-xkey 2005/11/25 v1.6 package wrapper for pst-xkey.tex (HA)
-)
-(I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\latex\multido\multido.sty
-Package: multido 2004/05/17 package wrapper for PSTricks `multido.tex', (HV/RN)
-
-
-(I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\generic\multido\multido.tex
- v1.42, 2010/05/14 <tvz>
-\multido@count=\count123
-\multidocount=\count124
-\multido@stuff=\toks24
-)
-File: multido.tex 2010/05/14 v1.42 `multido' (tvz,hv)
-)
-Package: pst-plot 2011/04/13 package wrapper for pst-plot.tex (hv)
-
-(I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\generic\pst-plot\pst-plot.tex
- v1.34, 2011/11/07 (tvz,hv)
-\pstRadUnit=\dimen146
-\pstRadUnitInv=\dimen147
-\pst@linecnt=\count125
-\psxlabelsep=\dimen148
-\psylabelsep=\dimen149
-\psk@subticksize=\dimen150
-\pst@xticksizeA=\dimen151
-\pst@xticksizeB=\dimen152
-\pst@xticksizeC=\dimen153
-\pst@yticksizeA=\dimen154
-\pst@yticksizeB=\dimen155
-\pst@yticksizeC=\dimen156
-\@digitcounter=\count126
-\psk@llx=\dimen157
-\psk@lly=\dimen158
-\psk@urx=\dimen159
-\psk@ury=\dimen160
-\pst@xunit=\dimen161
-\pst@yunit=\dimen162
-)
-File: pst-plot.tex 2011/11/07 1.34 `pst-plot' (tvz,hv)
-)
-(I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\latex\float\float.sty
-Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count127
-\float@exts=\toks25
-\float@box=\box56
-\@float@everytoks=\toks26
-\@floatcapt=\box57
-)
-(I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\latex\pdfpages\pdfpages.sty
-Package: pdfpages 2012/08/31 v0.4t Insert pages of external PDF documents (AM)
-
-(I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\latex\base\ifthen.sty
-Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
-)
-(I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\latex\tools\calc.sty
-Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count128
-\calc@Bcount=\count129
-\calc@Adimen=\dimen163
-\calc@Bdimen=\dimen164
-\calc@Askip=\skip45
-\calc@Bskip=\skip46
-LaTeX Info: Redefining \setlength on input line 76.
-LaTeX Info: Redefining \addtolength on input line 77.
-\calc@Ccount=\count130
-\calc@Cskip=\skip47
-)
-(I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\latex\eso-pic\eso-pic.sty
-Package: eso-pic 2010/10/06 v2.0c eso-pic (RN)
-
-(I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\generic\oberdiek\atbegshi.sty
-Package: atbegshi 2011/01/30 v1.15 At begin shipout hook (HO)
-
-(I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\generic\oberdiek\infwarerr.sty
-Package: infwarerr 2010/04/08 v1.3 Providing info/warning/message (HO)
-)
-(I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\generic\oberdiek\ltxcmds.sty
-Package: ltxcmds 2011/04/18 v1.20 LaTeX kernel commands for general use (HO)
-)))
 (I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\latex\pdfpages\pppdftex.def
 File: pppdftex.def 2012/08/31 v0.4t Pdfpages driver for pdfTeX (AM)
 
@@ -370,24 +243,33 @@ Package pdfpages Warning: I will use a dummy \includepdf command
 (pdfpages)                you are producing DVI output.
 
 ))
-\AM@pagebox=\box58
-\AM@toc@title=\toks27
-\c@AM@survey=\count131
-\AM@templatesizebox=\box59
+\AM@pagebox=\box54
+\AM@toc@title=\toks21
+\c@AM@survey=\count104
+\AM@templatesizebox=\box55
 ) (I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\latex\todonotes\todonotes.sty
 Package: todonotes 2012/07/25 .dtx Todonotes source and documentation.
 Package: todonotes 2012/07/25
 
+(I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\latex\xkeyval\xkeyval.sty
+Package: xkeyval 2008/08/13 v2.6a package option processing (HA)
+
+(I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\generic\xkeyval\xkeyval.tex
+\XKV@toks=\toks22
+\XKV@tempa@toks=\toks23
+\XKV@depth=\count105
+File: xkeyval.tex 2008/08/13 v2.6a key=value parser (HA)
+))
 (I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\latex\pgf\frontendlayer\tikz.sty
 (I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\latex\pgf\basiclayer\pgf.sty
 (I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\latex\pgf\utilities\pgfrcs.sty
 (I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\generic\pgf\utilities\pgfutil-comm
 on.tex
-\pgfutil@everybye=\toks28
+\pgfutil@everybye=\toks24
 )
 (I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\generic\pgf\utilities\pgfutil-late
 x.def
-\pgfutil@abb=\box60
+\pgfutil@abb=\box56
  (I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\latex\ms\everyshi.sty
 Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
 ))
@@ -405,27 +287,27 @@ Package: pgfsys 2010/06/30 v2.10 (rcs-revision 1.37)
 
 (I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\generic\pgf\utilities\pgfkeys.code
 .tex
-\pgfkeys@pathtoks=\toks29
-\pgfkeys@temptoks=\toks30
+\pgfkeys@pathtoks=\toks25
+\pgfkeys@temptoks=\toks26
 
 (I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\generic\pgf\utilities\pgfkeysfilte
 red.code.tex
-\pgfkeys@tmptoks=\toks31
+\pgfkeys@tmptoks=\toks27
 ))
-\pgf@x=\dimen165
-\pgf@y=\dimen166
-\pgf@xa=\dimen167
-\pgf@ya=\dimen168
-\pgf@xb=\dimen169
-\pgf@yb=\dimen170
-\pgf@xc=\dimen171
-\pgf@yc=\dimen172
+\pgf@x=\dimen126
+\pgf@y=\dimen127
+\pgf@xa=\dimen128
+\pgf@ya=\dimen129
+\pgf@xb=\dimen130
+\pgf@yb=\dimen131
+\pgf@xc=\dimen132
+\pgf@yc=\dimen133
 \w@pgf@writea=\write3
 \r@pgf@reada=\read1
-\c@pgf@counta=\count132
-\c@pgf@countb=\count133
-\c@pgf@countc=\count134
-\c@pgf@countd=\count135
+\c@pgf@counta=\count106
+\c@pgf@countb=\count107
+\c@pgf@countc=\count108
+\c@pgf@countd=\count109
 
 (I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\generic\pgf\systemlayer\pgf.cfg
 File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
@@ -439,13 +321,13 @@ File: pgfsys-dvips.def 2008/04/03  (rcs-revision 1.20)
 (I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\generic\pgf\systemlayer\pgfsys-com
 mon-postscript.def
 File: pgfsys-common-postscript.def 2008/10/01  (rcs-revision 1.22)
-\pgf@objectcount=\count136
+\pgf@objectcount=\count110
 )))
 (I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\generic\pgf\systemlayer\pgfsyssoft
 path.code.tex
 File: pgfsyssoftpath.code.tex 2008/07/18  (rcs-revision 1.7)
-\pgfsyssoftpath@smallbuffer@items=\count137
-\pgfsyssoftpath@bigbuffer@items=\count138
+\pgfsyssoftpath@smallbuffer@items=\count111
+\pgfsyssoftpath@bigbuffer@items=\count112
 )
 (I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\generic\pgf\systemlayer\pgfsysprot
 ocol.code.tex
@@ -462,12 +344,12 @@ tex
 tex)
 (I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\generic\pgf\math\pgfmathparser.cod
 e.tex
-\pgfmath@dimen=\dimen173
-\pgfmath@count=\count139
-\pgfmath@box=\box61
-\pgfmath@toks=\toks32
-\pgfmath@stack@operand=\toks33
-\pgfmath@stack@operation=\toks34
+\pgfmath@dimen=\dimen134
+\pgfmath@count=\count113
+\pgfmath@box=\box57
+\pgfmath@toks=\toks28
+\pgfmath@stack@operand=\toks29
+\pgfmath@stack@operation=\toks30
 )
 (I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\generic\pgf\math\pgfmathfunctions.
 code.tex
@@ -487,57 +369,57 @@ round.code.tex)
 misc.code.tex)))
 (I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\generic\pgf\math\pgfmathfloat.code
 .tex
-\c@pgfmathroundto@lastzeros=\count140
+\c@pgfmathroundto@lastzeros=\count114
 ))
 (I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\generic\pgf\basiclayer\pgfcorepoin
 ts.code.tex
 File: pgfcorepoints.code.tex 2010/04/09  (rcs-revision 1.20)
-\pgf@picminx=\dimen174
-\pgf@picmaxx=\dimen175
-\pgf@picminy=\dimen176
-\pgf@picmaxy=\dimen177
-\pgf@pathminx=\dimen178
-\pgf@pathmaxx=\dimen179
-\pgf@pathminy=\dimen180
-\pgf@pathmaxy=\dimen181
-\pgf@xx=\dimen182
-\pgf@xy=\dimen183
-\pgf@yx=\dimen184
-\pgf@yy=\dimen185
-\pgf@zx=\dimen186
-\pgf@zy=\dimen187
+\pgf@picminx=\dimen135
+\pgf@picmaxx=\dimen136
+\pgf@picminy=\dimen137
+\pgf@picmaxy=\dimen138
+\pgf@pathminx=\dimen139
+\pgf@pathmaxx=\dimen140
+\pgf@pathminy=\dimen141
+\pgf@pathmaxy=\dimen142
+\pgf@xx=\dimen143
+\pgf@xy=\dimen144
+\pgf@yx=\dimen145
+\pgf@yy=\dimen146
+\pgf@zx=\dimen147
+\pgf@zy=\dimen148
 )
 (I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\generic\pgf\basiclayer\pgfcorepath
 construct.code.tex
 File: pgfcorepathconstruct.code.tex 2010/08/03  (rcs-revision 1.24)
-\pgf@path@lastx=\dimen188
-\pgf@path@lasty=\dimen189
+\pgf@path@lastx=\dimen149
+\pgf@path@lasty=\dimen150
 )
 (I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\generic\pgf\basiclayer\pgfcorepath
 usage.code.tex
 File: pgfcorepathusage.code.tex 2008/04/22  (rcs-revision 1.12)
-\pgf@shorten@end@additional=\dimen190
-\pgf@shorten@start@additional=\dimen191
+\pgf@shorten@end@additional=\dimen151
+\pgf@shorten@start@additional=\dimen152
 )
 (I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\generic\pgf\basiclayer\pgfcorescop
 es.code.tex
 File: pgfcorescopes.code.tex 2010/09/08  (rcs-revision 1.34)
-\pgfpic=\box62
-\pgf@hbox=\box63
-\pgf@layerbox@main=\box64
-\pgf@picture@serial@count=\count141
+\pgfpic=\box58
+\pgf@hbox=\box59
+\pgf@layerbox@main=\box60
+\pgf@picture@serial@count=\count115
 )
 (I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\generic\pgf\basiclayer\pgfcoregrap
 hicstate.code.tex
 File: pgfcoregraphicstate.code.tex 2008/04/22  (rcs-revision 1.9)
-\pgflinewidth=\dimen192
+\pgflinewidth=\dimen153
 )
 (I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\generic\pgf\basiclayer\pgfcoretran
 sformations.code.tex
 File: pgfcoretransformations.code.tex 2009/06/10  (rcs-revision 1.11)
-\pgf@pt@x=\dimen193
-\pgf@pt@y=\dimen194
-\pgf@pt@temp=\dimen195
+\pgf@pt@x=\dimen154
+\pgf@pt@y=\dimen155
+\pgf@pt@temp=\dimen156
 )
 (I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\generic\pgf\basiclayer\pgfcorequic
 k.code.tex
@@ -558,8 +440,8 @@ File: pgfcorearrows.code.tex 2008/04/23  (rcs-revision 1.11)
 (I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\generic\pgf\basiclayer\pgfcoreshad
 e.code.tex
 File: pgfcoreshade.code.tex 2008/11/23  (rcs-revision 1.13)
-\pgf@max=\dimen196
-\pgf@sys@shading@range@num=\count142
+\pgf@max=\dimen157
+\pgf@sys@shading@range@num=\count116
 )
 (I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\generic\pgf\basiclayer\pgfcoreimag
 e.code.tex
@@ -568,7 +450,7 @@ File: pgfcoreimage.code.tex 2010/03/25  (rcs-revision 1.16)
 (I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\generic\pgf\basiclayer\pgfcoreexte
 rnal.code.tex
 File: pgfcoreexternal.code.tex 2010/09/01  (rcs-revision 1.17)
-\pgfexternal@startupbox=\box65
+\pgfexternal@startupbox=\box61
 ))
 (I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\generic\pgf\basiclayer\pgfcorelaye
 rs.code.tex
@@ -585,7 +467,7 @@ File: pgfcorepatterns.code.tex 2009/07/02  (rcs-revision 1.3)
 (I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\generic\pgf\modules\pgfmoduleshape
 s.code.tex
 File: pgfmoduleshapes.code.tex 2010/09/09  (rcs-revision 1.13)
-\pgfnodeparttextbox=\box66
+\pgfnodeparttextbox=\box62
 )
 (I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\generic\pgf\modules\pgfmoduleplot.
 code.tex
@@ -594,8 +476,8 @@ File: pgfmoduleplot.code.tex 2010/10/22  (rcs-revision 1.8)
 (I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\latex\pgf\compatibility\pgfcomp-ve
 rsion-0-65.sty
 Package: pgfcomp-version-0-65 2007/07/03 v2.10 (rcs-revision 1.7)
-\pgf@nodesepstart=\dimen197
-\pgf@nodesepend=\dimen198
+\pgf@nodesepstart=\dimen158
+\pgf@nodesepend=\dimen159
 )
 (I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\latex\pgf\compatibility\pgfcomp-ve
 rsion-1-18.sty
@@ -608,10 +490,10 @@ Package: pgfcomp-version-1-18 2007/07/23 v2.10 (rcs-revision 1.1)
 (I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\generic\pgf\utilities\pgffor.code.
 tex
 Package: pgffor 2010/03/23 v2.10 (rcs-revision 1.18)
-\pgffor@iter=\dimen199
-\pgffor@skip=\dimen200
-\pgffor@stack=\toks35
-\pgffor@toks=\toks36
+\pgffor@iter=\dimen160
+\pgffor@skip=\dimen161
+\pgffor@stack=\toks31
+\pgffor@toks=\toks32
 ))
 (I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\generic\pgf\frontendlayer\tikz\tik
 z.code.tex
@@ -620,30 +502,30 @@ Package: tikz 2010/10/13 v2.10 (rcs-revision 1.76)
 (I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\generic\pgf\libraries\pgflibrarypl
 othandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2010/05/31 v2.10 (rcs-revision 1.15)
-\pgf@plot@mark@count=\count143
-\pgfplotmarksize=\dimen201
+\pgf@plot@mark@count=\count117
+\pgfplotmarksize=\dimen162
 )
-\tikz@lastx=\dimen202
-\tikz@lasty=\dimen203
-\tikz@lastxsaved=\dimen204
-\tikz@lastysaved=\dimen205
-\tikzleveldistance=\dimen206
-\tikzsiblingdistance=\dimen207
-\tikz@figbox=\box67
-\tikz@tempbox=\box68
-\tikztreelevel=\count144
-\tikznumberofchildren=\count145
-\tikznumberofcurrentchild=\count146
-\tikz@fig@count=\count147
+\tikz@lastx=\dimen163
+\tikz@lasty=\dimen164
+\tikz@lastxsaved=\dimen165
+\tikz@lastysaved=\dimen166
+\tikzleveldistance=\dimen167
+\tikzsiblingdistance=\dimen168
+\tikz@figbox=\box63
+\tikz@tempbox=\box64
+\tikztreelevel=\count118
+\tikznumberofchildren=\count119
+\tikznumberofcurrentchild=\count120
+\tikz@fig@count=\count121
 
 (I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\generic\pgf\modules\pgfmodulematri
 x.code.tex
 File: pgfmodulematrix.code.tex 2010/08/24  (rcs-revision 1.4)
-\pgfmatrixcurrentrow=\count148
-\pgfmatrixcurrentcolumn=\count149
-\pgf@matrix@numberofcolumns=\count150
+\pgfmatrixcurrentrow=\count122
+\pgfmatrixcurrentcolumn=\count123
+\pgf@matrix@numberofcolumns=\count124
 )
-\tikz@expandcount=\count151
+\tikz@expandcount=\count125
 
 (I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\generic\pgf\frontendlayer\tikz\lib
 raries\tikzlibrarytopaths.code.tex
@@ -653,7 +535,125 @@ File: tikzlibrarytopaths.code.tex 2008/06/17 v2.10 (rcs-revision 1.2)
 raries\tikzlibrarypositioning.code.tex
 File: tikzlibrarypositioning.code.tex 2008/10/06 v2.10 (rcs-revision 1.7)
 )
-\c@@todonotes@numberoftodonotes=\count152
+\c@@todonotes@numberoftodonotes=\count126
+)
+(I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\latex\pst-plot\pst-plot.sty
+Package: pst-plot 2011/06/05 v1.00 LaTeX wrapper for `pst-plot' (HV)
+
+(I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\latex\pstricks\pstricks.sty
+Package: pstricks 2011/04/23 v0.50 LaTeX wrapper for `PSTricks' (RN,HV)
+
+(I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\generic\oberdiek\ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+(I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\generic\pstricks\pstricks.tex
+(I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\generic\xkeyval\pst-xkey.tex
+File: pst-xkey.tex 2005/11/25 v1.6 PSTricks specialization of xkeyval (HA)
+)
+(I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\generic\pstricks\pst-fp.tex
+`pst-fp' v0.05, 2010/01/17 (hv)
+\pstFP@xs=\count127
+\pstFP@xia=\count128
+\pstFP@xib=\count129
+\pstFP@xfa=\count130
+\pstFP@xfb=\count131
+\pstFP@rega=\count132
+\pstFP@regb=\count133
+\pstFP@regs=\count134
+\pstFP@times=\count135
+)
+\psLoopIndex=\count136
+
+`PSTricks' v2.21  <2011/06/07> (tvz)
+\pst@dima=\dimen169
+\pst@dimb=\dimen170
+\pst@dimc=\dimen171
+\pst@dimd=\dimen172
+\pst@dimg=\dimen173
+\pst@dimh=\dimen174
+\pst@dimm=\dimen175
+\pst@dimn=\dimen176
+\pst@dimo=\dimen177
+\pst@dimp=\dimen178
+\pst@hbox=\box65
+\pst@ibox=\box66
+\pst@boxg=\box67
+\pst@cnta=\count137
+\pst@cntb=\count138
+\pst@cntc=\count139
+\pst@cntd=\count140
+\pst@cntg=\count141
+\pst@cnth=\count142
+\pst@cntm=\count143
+\pst@cntn=\count144
+\pst@cnto=\count145
+\pst@cntp=\count146
+\@zero=\count147
+\pst@toks=\toks33
+(I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\generic\pstricks\pstricks.con)
+\psunit=\dimen179
+\psxunit=\dimen180
+\psyunit=\dimen181
+\pst@C@@rType=\count148
+\pslinewidth=\dimen182
+\psk@startLW=\dimen183
+\psk@endLW=\dimen184
+\pst@customdefs=\toks34
+\pslinearc=\dimen185
+\pst@symbolStep=\dimen186
+\pst@symbolWidth=\dimen187
+\everypsbox=\toks35
+\psframesep=\dimen188
+\pslabelsep=\dimen189
+\pst@shift=\dimen190
+\theoverlaybox=\box68
+)
+File: pstricks.tex 2011/06/07 v2.21 `PSTricks' (tvz,hv)
+
+(I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\generic\pstricks\pst-fp.tex)
+File: pst-fp.tex 2011/06/07 v2.21 `PST-fp' (hv)
+)
+(I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\latex\xkeyval\pst-xkey.sty
+Package: pst-xkey 2005/11/25 v1.6 package wrapper for pst-xkey.tex (HA)
+)
+(I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\latex\multido\multido.sty
+Package: multido 2004/05/17 package wrapper for PSTricks `multido.tex', (HV/RN)
+
+
+(I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\generic\multido\multido.tex
+ v1.42, 2010/05/14 <tvz>
+\multido@count=\count149
+\multidocount=\count150
+\multido@stuff=\toks36
+)
+File: multido.tex 2010/05/14 v1.42 `multido' (tvz,hv)
+)
+Package: pst-plot 2011/04/13 package wrapper for pst-plot.tex (hv)
+
+(I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\generic\pst-plot\pst-plot.tex
+ v1.34, 2011/11/07 (tvz,hv)
+\pstRadUnit=\dimen191
+\pstRadUnitInv=\dimen192
+\pst@linecnt=\count151
+\psxlabelsep=\dimen193
+\psylabelsep=\dimen194
+\psk@subticksize=\dimen195
+\pst@xticksizeA=\dimen196
+\pst@xticksizeB=\dimen197
+\pst@xticksizeC=\dimen198
+\pst@yticksizeA=\dimen199
+\pst@yticksizeB=\dimen200
+\pst@yticksizeC=\dimen201
+\@digitcounter=\count152
+\psk@llx=\dimen202
+\psk@lly=\dimen203
+\psk@urx=\dimen204
+\psk@ury=\dimen205
+\pst@xunit=\dimen206
+\pst@yunit=\dimen207
+)
+File: pst-plot.tex 2011/11/07 1.34 `pst-plot' (tvz,hv)
 )
 (I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\latex\pstricks-add\pstricks-add.st
 y (I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\latex\pst-node\pst-node.sty
@@ -991,20 +991,20 @@ File: bkm-dvips.def 2011/04/21 v1.21 bookmark driver for dvips (HO)
 \BKM@id=\count206
 ))
 (I:\LaTeX\ABV_Bewegungsanalyse_LaTeX\ABV_Bewegungsanalyse_LaTeX.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 99.
-LaTeX Font Info:    ... okay on input line 99.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 99.
-LaTeX Font Info:    ... okay on input line 99.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 99.
-LaTeX Font Info:    ... okay on input line 99.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 99.
-LaTeX Font Info:    ... okay on input line 99.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 99.
-LaTeX Font Info:    ... okay on input line 99.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 99.
-LaTeX Font Info:    ... okay on input line 99.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 99.
-LaTeX Font Info:    ... okay on input line 99.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: dvips
@@ -1045,7 +1045,7 @@ LaTeX Font Info:    ... okay on input line 99.
 \AtBeginShipoutBox=\box75
 ABD: EveryShipout initializing macros
 \c@lstlisting=\count207
-Package hyperref Info: Link coloring ON on input line 99.
+Package hyperref Info: Link coloring ON on input line 98.
 
 (I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\latex\hyperref\nameref.sty
 Package: nameref 2010/04/30 v2.40 Cross-referencing by name of section
@@ -1056,17 +1056,17 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count208
 )
-LaTeX Info: Redefining \ref on input line 99.
-LaTeX Info: Redefining \pageref on input line 99.
-LaTeX Info: Redefining \nameref on input line 99.
+LaTeX Info: Redefining \ref on input line 98.
+LaTeX Info: Redefining \pageref on input line 98.
+LaTeX Info: Redefining \nameref on input line 98.
 File: logo_TH.eps Graphic file (type eps)
  <logo_TH.eps>
-LaTeX Font Info:    Try loading font information for U+msa on input line 110.
+LaTeX Font Info:    Try loading font information for U+msa on input line 109.
 
 (I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\latex\amsfonts\umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 110.
+LaTeX Font Info:    Try loading font information for U+msb on input line 109.
 
 (I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\latex\amsfonts\umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
@@ -1084,9 +1084,9 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 [2]
 Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
-ine 127.
+ine 126.
 
-Underfull \hbox (badness 10000) in paragraph at lines 139--140
+Underfull \hbox (badness 10000) in paragraph at lines 138--139
 
  []
 
@@ -1125,7 +1125,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [7] (I:\LaTeX\ABV_Bewegungsanalyse_LaTeX\ABV_Bewegungsanalyse_LaTeX.bbl)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 214.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 213.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1134,16 +1134,16 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [8]
-Package atveryend Info: Executing hook `AfterLastShipout' on input line 214.
+Package atveryend Info: Executing hook `AfterLastShipout' on input line 213.
 \BKM@file=\write5
  (I:\LaTeX\ABV_Bewegungsanalyse_LaTeX\ABV_Bewegungsanalyse_LaTeX.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 214.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 214.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 213.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 213.
  ) 
 Here is how much of TeX's memory you used:
  20971 strings out of 494046
  361714 string characters out of 3138707
- 552338 words of memory out of 3000000
+ 552386 words of memory out of 3000000
  23827 multiletter control sequences out of 15000+200000
  12623 words of font info for 49 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
