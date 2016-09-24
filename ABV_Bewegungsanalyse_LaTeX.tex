@@ -16,6 +16,7 @@
 	\usepackage{pstricks-add}
 	\usepackage{pst-node}
 	\usepackage{pst-grad,multido} 
+	\usepackage{verbatim}
 	\title{}
 	\date{}
 	\author{}
@@ -23,16 +24,12 @@
 	\usepackage{amsmath}
 	\usepackage{fancyhdr}
 	\usepackage{enumitem} 
-<<<<<<< HEAD
 	\parindent0pt
 	\usepackage[format=plain,
       justification=RaggedRight,
       singlelinecheck=false]
      {caption}
-
-=======
 	\usepackage{blindtext}
->>>>>>> 26e7ec27df0b16a7c1304fe3c790aabf7fc79b8b
 	
 	% Listings
 	\usepackage{listings}
@@ -152,7 +149,8 @@
 	\section{Verfahren}
 		\subsection{Bewegungsschätzung}\todo[inline]{Laura}
 		\newpage %Muss später entfernt werden
-		\subsection{Programmablauf}\todo[inline]{Lukas}		
+		\subsection{Programmablauf}\todo[inline]{Lukas (Hab den gesamten Teil auskommentiert)}
+		\begin{comment}
 			\begin{figure}[h!]
 			\centering
 					\begin{psmatrix}[rowsep=0.3,colsep=0.4]
@@ -202,12 +200,14 @@
 			\caption{Programmablauf}
 			\label{fig:programmAblauf}
 		\end{figure}
+\end{comment}		
 		
 		\subsection{Kostenfunktion}\label{sec:costFunc}\todo[inline]{Alle}
 			\subsubsection{Datenterm}\todo[inline]{Lukas}
 			\subsubsection{Örtliche Kohärenz}\todo[inline]{Timo}
 			\subsubsection{Zeitliche Kohärenz}\todo[inline]{Lukas}
-		\subsection{Visualisierung}\todo[inline]{Laura}
+\subsection{Visualisierung}\todo[inline]{Laura}
+		
 	\section{Auswertung}\todo[inline]{Laura \& Timo}
 
 \subsection{Testmaterial}\todo[inline]{Laura}
@@ -222,7 +222,7 @@ Das Verfahren wird an drei unterschiedlichen Bildsequenzen getestet, die im Folg
 \begin{minipage}{0.5\textwidth}
 \textbf{Testmaterial 1}\\
 Diese Bildsequenz besteht aus 150 Frames und wurde aus einem Bild der Stadt Köln erzeugt.\\ 
-Bei den ersten und letzten 50 Frames wird ein Ausschnitt des Bildes um jeweils 10 Pixel nach rechts bzw. unten verschoben. In den mittleren 50 Frames  wird der Bildinhalt um 10 Pixel nach rechts und 10 Pixel nach unten verschoben. 
+Bei den ersten und letzten 50 Frames wird ein Ausschnitt des Bildes um jeweils 10 Pixel nach links bzw. oben verschoben. In den mittleren 50 Frames  wird der Bildinhalt um 10 Pixel nach links und 10 Pixel nach unten verschoben. 
 \vspace{2.0cm}\\
 \end{minipage}\vspace{0.7cm}
 
@@ -234,8 +234,8 @@ Bei den ersten und letzten 50 Frames wird ein Ausschnitt des Bildes um jeweils 1
 \end{minipage}
 \begin{minipage}{0.5\textwidth}
 \textbf{Testmaterial 2}\\
-Auf den 150 Frames, die diese Bildsequenz umfasst ist ein Blumenmotiv zu sehen, welches jeweils über 50 Frames in verschiedene Richtungen verschoben wird. Auf den ersten Frames erfolgt eine Verschiebung um 10 Pixel nach rechts. Während die mittleren Frames um sowohl 10 Pixel nach rechts, als auch 10 Pixel nach unten verschoben wurden, wurde der Bildinhalt der verbleibenden Frames nur um 10 Pixel nach unten verschoben.
-\vspace{1.0cm}\\
+Auf den 150 Frames, die diese Bildsequenz umfasst ist ein Blumenmotiv zu sehen, welches jeweils über 50 Frames in verschiedene Richtungen verschoben wird. Auf den ersten Frames erfolgt eine Verschiebung um 10 Pixel nach links. Während die mittleren Frames um sowohl 10 Pixel nach links, als auch 10 Pixel nach oben verschoben wurden, wurde der Bildinhalt der verbleibenden Frames nur um 10 Pixel nach oben verschoben.
+\vspace{0.9cm}\\
 \end{minipage}\vspace{0.7cm}
 
 
@@ -247,8 +247,8 @@ Auf den 150 Frames, die diese Bildsequenz umfasst ist ein Blumenmotiv zu sehen, 
 \end{minipage}
 \begin{minipage}{0.5\textwidth}
 \textbf{Testmaterial 3}\\
-Bei Testmaterial 3 handelt es sich um eine reale Videosequenz, die in Köln Ehrenfeld aufgenommen wurde. Zu sehen sind ein Auto, dass sich von links nach rechts durch das Bild bewegt und eine Fahrradfahrerin, die das Bild genau entgegengesetzt durchfährt. Beide Objekte werden zeitweise durch eine Säule verdeckt. Die Kamera ist starr, weshalb für den restlichen Bildinhalt keine Bewegung zu erkennen ist. 
-\vspace{1.1cm}\\
+Bei Testmaterial 3 handelt es sich um eine reale Videosequenz, die in Köln Ehrenfeld aufgenommen wurde. Zu sehen sind ein Auto, dass sich von links nach rechts durch das Bild bewegt und eine Fahrradfahrerin, die das Bild genau entgegengesetzt durchfährt. Beide Objekte werden zeitweise durch eine Säule verdeckt. Die Kamera ist starr, weshalb für den restlichen Bildinhalt keine Bewegung zu erkennen ist. Insgesamt besteht die Testsequenz aus 118 Frames.
+\vspace{0.9cm}\\
 \end{minipage}
 
 		\subsection{Analyse der Kostenfunktion}\todo[inline]{Laura}
