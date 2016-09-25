@@ -12,10 +12,11 @@
 \contentsline {subsection}{\numberline {2.4}Visualisierung}{6}{subsection.2.4}
 \contentsline {section}{\numberline {3}Auswertung}{6}{section.3}
 \contentsline {subsection}{\numberline {3.1}Testmaterial}{6}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}Analyse der Kostenfunktion}{8}{subsection.3.2}
-\contentsline {subsection}{\numberline {3.3}Einschwingverhalten}{8}{subsection.3.3}
-\contentsline {subsubsection}{\numberline {3.3.1}Bewegungsvektorfelder}{8}{subsubsection.3.3.1}
-\contentsline {subsubsection}{\numberline {3.3.2}Innerhalb eines Bildes}{8}{subsubsection.3.3.2}
-\contentsline {subsection}{\numberline {3.4}Parameter der Regularisierungsterme}{8}{subsection.3.4}
-\contentsline {section}{\numberline {4}Zusammenfassung}{9}{section.4}
-\contentsline {section}{\numberline {5}Arbeitsaufteilung der Dokumentation}{9}{section.5}
+\contentsline {subsection}{\numberline {3.2}Auswertung Testmaterial 1 und Testmaterial 2}{8}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Auswertung Testmaterial 3}{8}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}Einschwingverhalten}{9}{subsection.3.4}
+\contentsline {subsubsection}{\numberline {3.4.1}Bewegungsvektorfelder}{9}{subsubsection.3.4.1}
+\contentsline {subsubsection}{\numberline {3.4.2}Innerhalb eines Bildes}{9}{subsubsection.3.4.2}
+\contentsline {subsection}{\numberline {3.5}Parameter der Regularisierungsterme}{9}{subsection.3.5}
+\contentsline {section}{\numberline {4}Zusammenfassung}{10}{section.4}
+\contentsline {section}{\numberline {5}Arbeitsaufteilung der Dokumentation}{10}{section.5}
