@@ -4,18 +4,18 @@
 \contentsline {subsection}{\numberline {1.2}Projektziel}{3}{subsection.1.2}
 \contentsline {section}{\numberline {2}Verfahren}{4}{section.2}
 \contentsline {subsection}{\numberline {2.1}Bewegungssch\"atzung}{4}{subsection.2.1}
-\contentsline {subsection}{\numberline {2.2}Programmablauf}{5}{subsection.2.2}
-\contentsline {subsection}{\numberline {2.3}Kostenfunktion}{5}{subsection.2.3}
-\contentsline {subsubsection}{\numberline {2.3.1}Datenterm}{5}{subsubsection.2.3.1}
-\contentsline {subsubsection}{\numberline {2.3.2}\"Ortliche Koh\"arenz}{5}{subsubsection.2.3.2}
-\contentsline {subsubsection}{\numberline {2.3.3}Zeitliche Koh\"arenz}{5}{subsubsection.2.3.3}
-\contentsline {subsection}{\numberline {2.4}Visualisierung}{5}{subsection.2.4}
+\contentsline {subsection}{\numberline {2.2}Programmablauf}{6}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Kostenfunktion}{6}{subsection.2.3}
+\contentsline {subsubsection}{\numberline {2.3.1}Datenterm}{6}{subsubsection.2.3.1}
+\contentsline {subsubsection}{\numberline {2.3.2}\"Ortliche Koh\"arenz}{6}{subsubsection.2.3.2}
+\contentsline {subsubsection}{\numberline {2.3.3}Zeitliche Koh\"arenz}{6}{subsubsection.2.3.3}
+\contentsline {subsection}{\numberline {2.4}Visualisierung}{6}{subsection.2.4}
 \contentsline {section}{\numberline {3}Auswertung}{6}{section.3}
-\contentsline {subsection}{\numberline {3.1}Testmaterial}{6}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}Analyse der Kostenfunktion}{7}{subsection.3.2}
-\contentsline {subsection}{\numberline {3.3}Einschwingverhalten}{8}{subsection.3.3}
-\contentsline {subsubsection}{\numberline {3.3.1}Bewegungsvektorfelder}{8}{subsubsection.3.3.1}
-\contentsline {subsubsection}{\numberline {3.3.2}Innerhalb eines Bildes}{8}{subsubsection.3.3.2}
-\contentsline {subsection}{\numberline {3.4}Parameter der Regularisierungsterme}{8}{subsection.3.4}
-\contentsline {section}{\numberline {4}Zusammenfassung}{8}{section.4}
-\contentsline {section}{\numberline {5}Arbeitsaufteilung der Dokumentation}{8}{section.5}
+\contentsline {subsection}{\numberline {3.1}Testmaterial}{7}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Analyse der Kostenfunktion}{8}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Einschwingverhalten}{9}{subsection.3.3}
+\contentsline {subsubsection}{\numberline {3.3.1}Bewegungsvektorfelder}{9}{subsubsection.3.3.1}
+\contentsline {subsubsection}{\numberline {3.3.2}Innerhalb eines Bildes}{9}{subsubsection.3.3.2}
+\contentsline {subsection}{\numberline {3.4}Parameter der Regularisierungsterme}{9}{subsection.3.4}
+\contentsline {section}{\numberline {4}Zusammenfassung}{9}{section.4}
+\contentsline {section}{\numberline {5}Arbeitsaufteilung der Dokumentation}{9}{section.5}
