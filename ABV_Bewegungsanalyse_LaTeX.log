@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=latex 2011.11.22)  25 SEP 2016 14:14
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=latex 2011.11.22)  25 SEP 2016 14:24
 entering extended mode
 **ABV_Bewegungsanalyse_LaTeX.tex
 (I:\LaTeX\ABV_Bewegungsanalyse_LaTeX\ABV_Bewegungsanalyse_LaTeX.tex
@@ -1113,29 +1113,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 153--155
 
 File: beziehung-bild-bewegungsfeld.png Graphic file (type eps)
 <beziehung-bild-bewegungsfeld.png>
-
-LaTeX Warning: Command \^ invalid in math mode on input line 164.
-
-! Please use \mathaccent for accents in math mode.
-\add@accent ...@spacefactor \spacefactor }\accent 
-                                                  #1 #2\egroup \spacefactor ...
-l.164 Das geschätzte Bewegungsvektorfeld $\^{V}
-                                               _{n}$ ergibt sich nach den Au...
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-! You can't use `\spacefactor' in math mode.
-\add@accent ...}\accent #1 #2\egroup \spacefactor 
-                                                  \accent@spacefactor 
-l.164 Das geschätzte Bewegungsvektorfeld $\^{V}
-                                               _{n}$ ergibt sich nach den Au...
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-Missing character: There is no ç in font cmex10!
-
 Underfull \hbox (badness 10000) in paragraph at lines 169--170
 
  []
@@ -1148,22 +1125,12 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 [4]
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
 [5]
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 14.49998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[6]
 File: Testmaterial1.jpg Graphic file (type eps)
  <Testmaterial1.jpg>
 Underfull \hbox (badness 2261) in paragraph at lines 254--258
@@ -1186,7 +1153,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[7]
+[6]
 File: Testmaterial2.jpg Graphic file (type eps)
  <Testmaterial2.jpg>
 Underfull \hbox (badness 1028) in paragraph at lines 268--271
@@ -1230,6 +1197,13 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
+[7]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
 [8]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1237,14 +1211,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[9]
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 14.49998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[10] (I:\LaTeX\ABV_Bewegungsanalyse_LaTeX\ABV_Bewegungsanalyse_LaTeX.bbl)
+[9] (I:\LaTeX\ABV_Bewegungsanalyse_LaTeX\ABV_Bewegungsanalyse_LaTeX.bbl)
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 299.
 
 
@@ -1253,20 +1220,24 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[11]
+[10]
 Package atveryend Info: Executing hook `AfterLastShipout' on input line 299.
 \BKM@file=\write5
  (I:\LaTeX\ABV_Bewegungsanalyse_LaTeX\ABV_Bewegungsanalyse_LaTeX.aux)
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 299.
 Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 299.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
- 21048 strings out of 494046
- 362962 string characters out of 3138707
- 560712 words of memory out of 3000000
- 23892 multiletter control sequences out of 15000+200000
- 12792 words of font info for 50 fonts, out of 3000000 for 9000
+ 21013 strings out of 494046
+ 362568 string characters out of 3138707
+ 524320 words of memory out of 3000000
+ 23860 multiletter control sequences out of 15000+200000
+ 10925 words of font info for 41 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
- 63i,13n,80p,819b,581s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 63i,12n,80p,819b,581s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on ABV_Bewegungsanalyse_LaTeX.dvi (11 pages, 114156 bytes).
+Output written on ABV_Bewegungsanalyse_LaTeX.dvi (10 pages, 65512 bytes).

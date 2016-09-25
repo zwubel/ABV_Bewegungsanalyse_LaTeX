@@ -161,7 +161,7 @@ klar machen, wie das geschätzte Bewegungsvektorfeld überhaupt definiert ist.\\
 	\end{figure}
 
 In Abbildung \ref{fig:beziehung} sieht man drei Frames einer Bildsequenz. $Y_{n}$ steht hierbei für das $n$-te Bild dieser Sequenz und $y_{n}(k)$ ist der Grauwert des Pixels an der Stelle $k$. Das $k$ steht für ein Koordinatenpärchen ($k_{x},k_{y}$) und es gilt $k=1,\dots,N$, wobei $N$ die Anzahl der Pixel eines Frames ist. Der eingezeichnete Vektor $v_{n}(k)$ ist derjenige Vektor, der auf $k$ addiert wird, sodass sich die Position des entsprechenden Pixels im vorherigen Bild ergibt. All diese Bewegungsvektoren zusammengenommen ergeben das Bewegungsvektorfeld eines Frames, welches in der Abbildung mit $V_{n}$ bezeichnet wird. \\
-Das geschätzte Bewegungsvektorfeld $\^{V}_{n}$ ergibt sich nach den Ausführungen von Aach und Kunz zu: 
+Das geschätzte Bewegungsvektorfeld $\hat{V}_{n}$ ergibt sich nach den Ausführungen von Aach und Kunz zu: 
 	
 \begin{equation}
 	\hat{V}\textsubscript{n}=\arg\ \smash{\displaystyle\max_{V}} [p(Y_{n},  Y_{n-1},\vert V)\ \cdot \  p(\hat{V}_{n-1} \vert V)\ \cdot \  p(V)]
@@ -177,7 +177,7 @@ Da es sich um einen bayesschen Ansatz handelt, gilt es sich mit bedingten Wahrsc
 		Die äußere Schleife läuft über den Stack und sorgt somit dafür, dass die Berechnungen pro Block und Iteration jeweils für jedes Bild des Input-Stacks erfolgen.\\
 		Sobald ein Bild fertig bearbeitet ist, die äußere Schleife also einen Durchlauf absolviert hat, wird der Fortschrittsbalken im ImageJ-Fenster aktualisiert, damit der Benutzer eine Rückmeldung bekommt, wie weit die Berechnung fortgeschritten ist.\\
 		Zuletzt wird in der \texttt{run()}-Methode noch das Ausgabefenster, in welchem der Input-Stack inklusive der überlagerten Bewegungsvektorfelder dargestellt wird, generiert und dessen Methode zur Anzeige aufgerufen.
-		%\begin{comment}
+		\begin{comment}
 			\begin{figure}[h!]
 			\centering
 					\begin{psmatrix}[rowsep=0.3,colsep=0.4]
@@ -227,7 +227,7 @@ Da es sich um einen bayesschen Ansatz handelt, gilt es sich mit bedingten Wahrsc
 			\caption{Programmablauf}
 			\label{fig:programmAblauf}
 		\end{figure}
-%\end{comment}		
+\end{comment}		
 		
 		\subsection{Kostenfunktion}\label{sec:costFunc}\todo[inline]{Alle}
 			\subsubsection{Datenterm}\todo[inline]{Lukas}\label{ch:Datenterm}
