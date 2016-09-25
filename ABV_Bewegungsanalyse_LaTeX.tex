@@ -17,6 +17,7 @@
 	\usepackage{pst-node}
 	\usepackage{pst-grad,multido} 
 	\usepackage{verbatim}
+	\usepackage{fixltx2e}
 	\title{}
 	\date{}
 	\author{}
@@ -25,10 +26,7 @@
 	\usepackage{fancyhdr}
 	\usepackage{enumitem} 
 	\parindent0pt
-	\usepackage[format=plain,
-      justification=RaggedRight,
-      singlelinecheck=false]
-     {caption}
+	%\usepackage[format=plain, justification=RaggedRight, singlelinecheck=false]{caption}
 	\usepackage{blindtext}
 	
 	% Listings
@@ -157,7 +155,7 @@ klar machen, wie das geschätzte Bewegungsvektorfeld überhaupt definiert ist.\\
 
 \begin{figure}[H]
 		\centering
-		\includegraphics[scale=0.5]{beziehung-bild-bewegungsfeld.png}
+		\includegraphics[bb=0 0 256 256, scale=0.5]{beziehung-bild-bewegungsfeld.png}
 		\caption{Beziehung zwischen Bewegungsvektorfeld und Einzelbildern [1]}
 		\label{fig:beziehung}
 	\end{figure}
@@ -242,7 +240,7 @@ Da es sich um einen bayesschen Ansatz handelt, gilt es sich mit bedingten Wahrsc
 
 \begin{minipage}{0.5\textwidth}
 	\begin{figure}[H] 
-		\includegraphics[scale=0.77]{Testmaterial1.jpg}
+		\includegraphics[bb=0 0 256 256, scale=0.77]{Testmaterial1.jpg}
 			\label{fig:testmaterial1}
 			\caption{Standbild Testmaterial 1}
 	\end{figure}
@@ -256,7 +254,7 @@ Da es sich um einen bayesschen Ansatz handelt, gilt es sich mit bedingten Wahrsc
 
 \begin{minipage}{0.5\textwidth}
 	\begin{figure}[H] 
-		\includegraphics[scale=0.77]{Testmaterial2.jpg}
+		\includegraphics[bb=0 0 256 256, scale=0.77]{Testmaterial2.jpg}
 			\label{fig:testmaterial2}
 			\caption{Standbild Testmaterial 2}
 	\end{figure}
@@ -270,7 +268,7 @@ Da es sich um einen bayesschen Ansatz handelt, gilt es sich mit bedingten Wahrsc
 
 \begin{minipage}{0.5\textwidth}
 	\begin{figure}[H] 
-		\includegraphics[scale=0.77]{Testmaterial3.jpg}
+		\includegraphics[bb=0 0 256 256, scale=0.77]{Testmaterial3.jpg}
 			\label{fig:testmaterial3}
 			\caption{Standbild Testmaterial 3}
 	\end{figure}
