@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.3.16)  25 SEP 2016 18:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.3.16)  25 SEP 2016 19:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1579,10 +1579,6 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 335.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 335.
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 336.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 336.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1591,14 +1587,18 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 337.
+(babel)             in language  on input line 336.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 337.
+(babel)             in language  on input line 336.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 337.
+(babel)             in language  on input line 336.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 337.
+(babel)             in language  on input line 336.
 [10 <./frame43.png> <./frame47.png>]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 336.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 336.
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 337.
 Package babel Info: Redefining ngerman shorthand "~
@@ -1646,10 +1646,10 @@ LaTeX Warning: There were undefined references.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 341.
  ) 
 Here is how much of TeX's memory you used:
- 24735 strings out of 493089
- 441538 string characters out of 6134842
- 609323 words of memory out of 5000000
- 27657 multiletter control sequences out of 15000+600000
+ 24737 strings out of 493089
+ 441585 string characters out of 6134842
+ 609425 words of memory out of 5000000
+ 27659 multiletter control sequences out of 15000+600000
  10925 words of font info for 41 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  61i,12n,92p,818b,611s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1664,10 +1664,10 @@ l/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local
 /texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/t
 exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/te
 xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on ABV_Bewegungsanalyse_LaTeX.pdf (12 pages, 1437721 bytes).
+Output written on ABV_Bewegungsanalyse_LaTeX.pdf (12 pages, 1438214 bytes).
 PDF statistics:
- 278 PDF objects out of 1000 (max. 8388607)
- 238 compressed objects within 3 object streams
+ 279 PDF objects out of 1000 (max. 8388607)
+ 239 compressed objects within 3 object streams
  59 named destinations out of 1000 (max. 500000)
  213 words of extra memory for PDF output out of 10000 (max. 10000000)
 
