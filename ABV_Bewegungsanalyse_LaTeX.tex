@@ -167,14 +167,10 @@ Das geschätzte Bewegungsvektorfeld \^{V}\textsubscript{n} ergibt sich nach den A
 	
 \begin{equation}
 	\hat{V}\textsubscript{n}=arg\ \smash{\displaystyle\max_{V}} [p(Y\textsubscript{n},  Y\textsubscript{n-1},\vert V)\ \cdot \  p(\hat{V}\textsubscript{n-1} \vert V)\ \cdot \  p(V)]
+	\label{eq:bayes}
 \end{equation}\\
-
 	
-	
-Da es sich um einen bayesschen Ansatz handelt, gilt es sich mit bedingten Wahrscheinlichkeiten auseinander zu setzen. Diese ergeben sich, 
-	
-	- verbessert sich 
-	- Überleitung Kostenfunktion 
+Da es sich um einen bayesschen Ansatz handelt, gilt es sich mit bedingten Wahrscheinlichkeiten auseinander zu setzen. Der erste Faktor der Formel \ref{eq:bayes} ist im Originalansatz zur Modellierung des Rauschens gedacht. Es ist davon auszugehen, dass Röntgenbilder weit aus mehr verrauscht sind, als reale Bildsequenzen auf die das vorliegende Verfahren angewandt werden soll. Deshalb liegt es nahe, dass Rauschen weitgehend zu vernachlässigen und durch einen reinen Datenterm zu ersetzen. Mehr Details dazu kann man in Kapitel \ref{ch:Datenterm} nachlesen. Bei den beiden anderen Faktoren handelt es sich zum einen um die örtliche und zum anderen um die zeitliche Kohärenz. Beide werden in den Kapiteln \ref{ch:oertlich} bzw. \ref{ch:zeitlich} näher beschrieben.
 
 		\newpage %Muss später entfernt werden
 		\subsection{Programmablauf}\todo[inline]{Lukas (Hab den gesamten Teil auskommentiert)}
@@ -231,9 +227,9 @@ Da es sich um einen bayesschen Ansatz handelt, gilt es sich mit bedingten Wahrsc
 \end{comment}		
 		
 		\subsection{Kostenfunktion}\label{sec:costFunc}\todo[inline]{Alle}
-			\subsubsection{Datenterm}\todo[inline]{Lukas}
-			\subsubsection{Örtliche Kohärenz}\todo[inline]{Timo}
-			\subsubsection{Zeitliche Kohärenz}\todo[inline]{Lukas}
+			\subsubsection{Datenterm}\todo[inline]{Lukas}\label{ch:Datenterm}
+			\subsubsection{Örtliche Kohärenz}\todo[inline]{Timo}\label{ch:oertlich}
+			\subsubsection{Zeitliche Kohärenz}\todo[inline]{Lukas}\label{ch:zeitlich}
 \subsection{Visualisierung}\todo[inline]{Laura}
 	Um die Bewegungsvektorfelder darzustellen, wird sich mit Symbolen beholfen. Diese werden 				blockweise  über die Videosequenz gelegt. Aus Darstellungsgründen wird das Video dazu um Faktor 	4 in beide Bildrichtungen hochskaliert. Da die einzelnen Bewegungsvektoren immer zwischen zwei 		Frames berechnet werden, wird genau ein Bewegungsvektorfeld weniger erzeugt, als das 					Eingangsmaterial Frames hat. \\
 	Bei den bereits erwähnten Symbolen handelt es sich um Kreise und Pfeile. Ein Kreis wird immer 		dann genutzt, wenn für den entsprechenden Block keine oder nur eine kleine Bewegung durch das 		Verfahren ermittelt wurde. Die Pfeile zeigen immer in Richtung der ermittelten Verschiebung. 			Beide Symbole haben ihren Startpunkt im Mittelpunkt des jeweiligen Blocks.
