@@ -160,19 +160,24 @@ klar machen, wie das geschätzte Bewegungsvektorfeld überhaupt definiert ist.\\
 		\label{fig:beziehung}
 	\end{figure}
 
-In Abbildung \ref{fig:beziehung} sieht man drei Frames einer Bildsequenz. Y\textsubscript{n} steht hierbei für das n-te Bild dieser Sequenz und y\textsubscript{n}(k) ist der Grauwert des Pixels an der Stelle k. Das k steht für ein Koordinatenpärchen (k\textsubscript{x},k\textsubscript{y}) und es gilt k=1,...,N, wobei N die Anzahl der Pixel eines Frames ist. Der eingezeichnete Vektor v\textsubscript{n}(k) ist derjenige Vektor, der auf k addiert wird, sodass sich die Position des entsprechenden Pixels im vorherigen Bild ergibt. All diese Bewegungsvektoren zusammengenommen ergeben das Bewegungsvektorfeld eines Frames, welches in der Abbildung mit V\textsubscript{n} bezeichnet wird. \\
-Das geschätzte Bewegungsvektorfeld \^{V}\textsubscript{n} ergibt sich nach den Ausführungen von Aach und Kunz zu: 
+In Abbildung \ref{fig:beziehung} sieht man drei Frames einer Bildsequenz. $Y_{n}$ steht hierbei für das $n$-te Bild dieser Sequenz und $y_{n}(k)$ ist der Grauwert des Pixels an der Stelle $k$. Das $k$ steht für ein Koordinatenpärchen ($k_{x},k_{y}$) und es gilt $k=1,\dots,N$, wobei $N$ die Anzahl der Pixel eines Frames ist. Der eingezeichnete Vektor $v_{n}(k)$ ist derjenige Vektor, der auf $k$ addiert wird, sodass sich die Position des entsprechenden Pixels im vorherigen Bild ergibt. All diese Bewegungsvektoren zusammengenommen ergeben das Bewegungsvektorfeld eines Frames, welches in der Abbildung mit $V_{n}$ bezeichnet wird. \\
+Das geschätzte Bewegungsvektorfeld $\^{V}_{n}$ ergibt sich nach den Ausführungen von Aach und Kunz zu: 
 	
 \begin{equation}
-	\hat{V}\textsubscript{n}=arg\ \smash{\displaystyle\max_{V}} [p(Y\textsubscript{n},  Y\textsubscript{n-1},\vert V)\ \cdot \  p(\hat{V}\textsubscript{n-1} \vert V)\ \cdot \  p(V)]
+	\hat{V}\textsubscript{n}=\arg\ \smash{\displaystyle\max_{V}} [p(Y_{n},  Y_{n-1},\vert V)\ \cdot \  p(\hat{V}_{n-1} \vert V)\ \cdot \  p(V)]
 	\label{eq:bayes}
 \end{equation}\\
 	
 Da es sich um einen bayesschen Ansatz handelt, gilt es sich mit bedingten Wahrscheinlichkeiten auseinander zu setzen. Der erste Faktor der Formel \ref{eq:bayes} ist im Originalansatz zur Modellierung des Rauschens gedacht. Es ist davon auszugehen, dass Röntgenbilder weit aus mehr verrauscht sind, als reale Bildsequenzen auf die das vorliegende Verfahren angewandt werden soll. Deshalb liegt es nahe, dass Rauschen weitgehend zu vernachlässigen und durch einen reinen Datenterm zu ersetzen. Mehr Details dazu kann man in Kapitel \ref{ch:Datenterm} nachlesen. Bei den beiden anderen Faktoren handelt es sich zum einen um die örtliche und zum anderen um die zeitliche Kohärenz. Beide werden in den Kapiteln \ref{ch:oertlich} bzw. \ref{ch:zeitlich} näher beschrieben.
-
-		\newpage %Muss später entfernt werden
-		\subsection{Programmablauf}\todo[inline]{Lukas (Hab den gesamten Teil auskommentiert)}
-		\begin{comment}
+		
+		\subsection{Programmablauf}
+		Der Programmablauf des ImageJ-Plug-Ins in Form der \texttt{run()}-Methode, die aufgrund des implementierten \texttt{PlugInFilter}-Interfaces überschrieben werden muss, ist in Abbildung~\ref{fig:programmAblauf} dargestellt.\\
+		Grob betrachtet, werden in der \texttt{run()}-Methode drei \texttt{for}-Schleifen geschachtelt ausgeführt. Die innerste Schleife läuft über jeden Block des Bildes und bestimmt für diesen den Bewegungsvektor mit den geringsten Kosten aus den 14 berechneten Alternativen. Die Blockgröße ist variabel und kann z.\,B. $8\times8$ betragen.\\
+		Die nächst äußere Schleife ist für die Iterationen zuständig. In den Iterationen wird innerhalb eines Bildes des Input-Stacks das Bewegungsvektorfeld mehrfach berechnet und jeweils das zuletzt berechnete Ergebnis als Grundlage für die nächste Berechnung verwendet. Dies ist erforderlich, um die Abweichung der Bewegungsvektoren pro Frame so gering wie möglich zu halten. Gleichzeitig hängt die Wahl der Anzahl der Iterationen natürlich davon ab, welche Performanz die Berechnung erreichen soll, also wie schnell ein Ergebnis benötigt wird.\\
+		Die äußere Schleife läuft über den Stack und sorgt somit dafür, dass die Berechnungen pro Block und Iteration jeweils für jedes Bild des Input-Stacks erfolgen.\\
+		Sobald ein Bild fertig bearbeitet ist, die äußere Schleife also einen Durchlauf absolviert hat, wird der Fortschrittsbalken im ImageJ-Fenster aktualisiert, damit der Benutzer eine Rückmeldung bekommt, wie weit die Berechnung fortgeschritten ist.\\
+		Zuletzt wird in der \texttt{run()}-Methode noch das Ausgabefenster, in welchem der Input-Stack inklusive der überlagerten Bewegungsvektorfelder dargestellt wird, generiert und dessen Methode zur Anzeige aufgerufen.
+		%\begin{comment}
 			\begin{figure}[h!]
 			\centering
 					\begin{psmatrix}[rowsep=0.3,colsep=0.4]
@@ -222,7 +227,7 @@ Da es sich um einen bayesschen Ansatz handelt, gilt es sich mit bedingten Wahrsc
 			\caption{Programmablauf}
 			\label{fig:programmAblauf}
 		\end{figure}
-\end{comment}		
+%\end{comment}		
 		
 		\subsection{Kostenfunktion}\label{sec:costFunc}\todo[inline]{Alle}
 			\subsubsection{Datenterm}\todo[inline]{Lukas}\label{ch:Datenterm}
