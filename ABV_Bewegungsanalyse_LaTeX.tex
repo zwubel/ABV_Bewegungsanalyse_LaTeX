@@ -295,24 +295,24 @@ Die Bewegung im vorliegenden Testmaterial kann lediglich optisch ausgewertet wer
 \end{itemize}
 
 Abbildung \ref{fig:frame43} und Abbildung \ref{fig:frame47} zeigen jeweils ein Standbild aus dem Bewegungsvektorfeld, welches sich unter dem Namen \textit{testmaterial3-bewegungsvektorfeld.tiff} auf der beiliegenden Daten-CD befindet.\\
-Es ist deutlich zu erkennen, dass die Bereiche in denen keine Bewegung stattfindet weitgehend richtig detektiert wurden. Und auch die Bewegung des Autos und der Radfahrerin scheinen weitgehend richtig erkannt zu werden. Auffällig ist, dass besonders in  
+Es ist deutlich zu erkennen, dass die Bereiche in denen keine Bewegung stattfindet weitgehend richtig detektiert wurden. Und auch die Bewegung des Autos und der Radfahrerin werden trotz der Verdeckung durch die Säule weitgehend erkannt. Auffällig ist, dass besonders die Blöcke, die hinter dem Auto liegen und deren Bildinhalt sich nicht mehr bewegt falsch berechnet sind. Das ist besonders gut in Abbildung \ref{fig:frame47} zu sehen und lässt sich auf das Einschwingverhalten zurückführen. Dieses wird in Kapitel \ref{ch:Einschwingverhalten} erklärt und ausgewertet.
 
 \begin{minipage}{0.5\textwidth}
 	\begin{figure}[H] 
-		\includegraphics[scale=0.43]{frame43.png}
-		\label{fig:frame43}
+		\includegraphics[scale=0.42]{frame43.png}
 		\caption{Bewegungsvektorfeld Testmaterial 3. Frame 43.}
+		\label{fig:frame43}
 	\end{figure}
 \end{minipage}
 \begin{minipage}{0.5\textwidth}
 	\begin{figure}[H] 
-		\includegraphics[scale=0.43]{frame47.png}
-		\label{fig:frame47}
+		\includegraphics[scale=0.42]{frame47.png}
 		\caption{Bewegungsvektorfeld Testmaterial 3. Frame 47.}
+		\label{fig:frame47}
 	\end{figure}
 \end{minipage}
 
-\subsection{Einschwingverhalten}
+\subsection{Einschwingverhalten} \label{ch:Einschwingverhalten}
 Als Ausgangspunkt werden alle Bewegungsvektorfelder zu Beginn des Algorithmus auf den Nullvektor gesetzt. Das Verfahren muss sich also zunächst Einschwingen. Dabei wird im Folgenden zwischen dem interframe und dem intraframe Einschwingen unterschieden.	
 
 \subsubsection{Bewegungsvektorfelder}\todo[inline]{Timo}

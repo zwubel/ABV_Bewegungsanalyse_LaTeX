@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.3.16)  25 SEP 2016 15:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.3.16)  25 SEP 2016 16:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1459,31 +1459,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 289--292
 
  []
 
-<frame43.png, id=126, 518.93875pt x 517.935pt>
-File: frame43.png Graphic file (type png)
- <use frame43.png>
-Package pdftex.def Info: frame43.png used on input line 302.
-(pdftex.def)             Requested size: 223.13931pt x 222.7077pt.
-
-Overfull \hbox (2.63046pt too wide) in paragraph at lines 302--304
-[][]
- []
-
-<frame47.png, id=127, 515.9275pt x 516.93124pt>
-File: frame47.png Graphic file (type png)
- <use frame47.png>
-Package pdftex.def Info: frame47.png used on input line 309.
-(pdftex.def)             Requested size: 221.8445pt x 222.2761pt.
-
-Overfull \hbox (1.33565pt too wide) in paragraph at lines 309--311
-[][]
- []
-
-
-Overfull \hbox (2.61107pt too wide) in paragraph at lines 300--314
-[]$[]$ $[]$ 
- []
-
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
@@ -1491,35 +1466,50 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 315.
+(babel)             in language  on input line 299.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 315.
+(babel)             in language  on input line 299.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 315.
+(babel)             in language  on input line 299.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 315.
-[8 <./Testmaterial3.jpg>]
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 315.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 315.
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 318.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 318.
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 320.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 320.
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 322.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 322.
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 323.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 323.
+(babel)             in language  on input line 299.
+[8 <./Testmaterial3.jpg>] <frame43.png, id=138, 518.93875pt x 517.935pt>
+File: frame43.png Graphic file (type png)
 
+<use frame43.png>
+Package pdftex.def Info: frame43.png used on input line 302.
+(pdftex.def)             Requested size: 217.95279pt x 217.5312pt.
+ <frame47.png, id=139, 515.9275pt x 516.93124pt>
+File: frame47.png Graphic file (type png)
+
+<use frame47.png>
+Package pdftex.def Info: frame47.png used on input line 309.
+(pdftex.def)             Requested size: 216.68806pt x 217.10963pt.
+
+Overfull \hbox (2.61107pt too wide) in paragraph at lines 300--314
+[]$[]$ $[]$ 
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 315.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 315.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 318.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 318.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 320.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 320.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 322.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 322.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 323.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 323.
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
@@ -1582,10 +1572,10 @@ LaTeX Warning: There were undefined references.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 328.
  ) 
 Here is how much of TeX's memory you used:
- 23656 strings out of 493089
- 421390 string characters out of 6134842
- 592148 words of memory out of 5000000
- 26591 multiletter control sequences out of 15000+600000
+ 23657 strings out of 493089
+ 421414 string characters out of 6134842
+ 592228 words of memory out of 5000000
+ 26592 multiletter control sequences out of 15000+600000
  10925 words of font info for 41 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  61i,12n,80p,818b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1600,10 +1590,10 @@ l/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local
 /texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/t
 exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/te
 xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on ABV_Bewegungsanalyse_LaTeX.pdf (11 pages, 470611 bytes).
+Output written on ABV_Bewegungsanalyse_LaTeX.pdf (11 pages, 470829 bytes).
 PDF statistics:
- 273 PDF objects out of 1000 (max. 8388607)
- 235 compressed objects within 3 object streams
+ 275 PDF objects out of 1000 (max. 8388607)
+ 237 compressed objects within 3 object streams
  59 named destinations out of 1000 (max. 500000)
  216 words of extra memory for PDF output out of 10000 (max. 10000000)
 
