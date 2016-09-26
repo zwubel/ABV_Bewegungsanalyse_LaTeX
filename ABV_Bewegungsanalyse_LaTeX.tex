@@ -115,7 +115,7 @@
 			von\\[2ex]
 			\begin{tabular}{ll}
 			Laura Anger &(Matrikelnr. 11086356)\\ 
-			Timo Breuer &(Matrikelnr. XXXXXXXX)\\ 
+			Timo Breuer &(Matrikelnr. 11089822)\\ 
 			Lukas Kolhagen &(Matrikelnr. 11084355)\\
 			\end{tabular}\\[10ex]
 			Durchgeführt im\\ \textbf{Master Medientechnologie}\\ im\\ 
@@ -234,6 +234,30 @@ Da es sich um einen bayesschen Ansatz handelt, gilt es sich mit bedingten Wahrsc
 		\subsection{Kostenfunktion}\label{sec:costFunc}\todo[inline]{Alle}
 			\subsubsection{Datenterm}\todo[inline]{Lukas}\label{ch:Datenterm}
 			\subsubsection{Örtliche Kohärenz}\todo[inline]{Timo}\label{ch:oertlich}
+
+Die örtliche Kohärenz trägt als gewichteter Regularisierungsterm zur Kostenfunktion bei.
+Bei der Bestimmung der örtlichen Kohärenz wird von der Annahme ausgegangen, dass benachbarte Regionen in Bildfolgen ähnliche Bewegungsrichtungen aufweisen.
+Hierzu werden neben dem neuen möglichen Bewegungsvektor der untersuchten Bildposition die Bewegungsvektoren der jeweiligen 8ter-Nachbarschaft betrachtet.
+Über die Differenzen des Bewegungsvektor und der benachbarten Bewegungsvektoren ergibt sich eine a-priori-Wahrscheinlichkeitsdichte.
+Ziel ist daher die Minimierung des Exponenten der Wahrscheinlichkeitsdichte:
+
+\begin{equation}
+E_L(\vec{k},V) = \sum_{\vec{l} \epsilon N(\vec{k})} g_{\vec{l}} \Vert \vec{v}(\vec{k}) - \vec{v}(\vec{l}) \Vert_2^{\nu}
+\end{equation}
+
+
+Der Faktor $g_{\vec{l}}$ gewichtet die normierte Differenz abhängig von der Position des betrachteten benachbarten Bewegungsvektor.
+Über den Parameter $\nu$ kann die verallgemeinerte Normalverteilung angepasst werden. 
+Die Normalverteilung ($\nu=2$) glättet das Bewegungsvektorfeld zu stark.
+Für $\nu=1.3$ ergibt sich eine praktikable Parametrisierung.\textsuperscript{\cite{aach1998bayesian}} \\
+
+Die Implementierung berechnet demnach die Summe bestehend aus den gewichteten normierten und mit dem Parameter $\nu$ potenzierten Differenzen.
+Hierzu wird neben dem Index der aktuell untersuchten Bildposition/-region der Listenindex des neuen möglichen Bewegungsvektors benötigt.
+Mit Hilfe des Index der untersuchten Bildposition können dann die benötigten Positionen der Nachbarregionen bestimmt werden. 
+Zu beachten ist hierbei, dass für Randbereiche weniger Nachbarregionen untersucht werden bzw. nicht vorhanden sind.
+Nachdem die Differenzen gemäß dem euklidischen Abstand normiert sind, werden diese mit dem Parameter $\nu$ potenziert.
+Das Ergebnis wird für horizontale und vertikale Nachbarregionen mit dem Faktor $g_l=1$ und für diagonale Nachbarregionen mit dem Faktor $g_l=0.5$ gewichtet. Anschließend werden die gewichteten Ergebnisse aufsummiert und zurück gegeben.			
+			
 			\subsubsection{Zeitliche Kohärenz}\todo[inline]{Lukas}\label{ch:zeitlich}
 \subsection{Visualisierung}\todo[inline]{Laura}
 	Um die Bewegungsvektorfelder darzustellen, wird sich mit Symbolen beholfen. Diese werden 				blockweise  über die Videosequenz gelegt. Aus Darstellungsgründen wird das Video dazu um Faktor 	4 in beide Bildrichtungen hoch skaliert. Da die einzelnen Bewegungsvektoren immer zwischen zwei 		Frames berechnet werden, wird genau ein Bewegungsvektorfeld weniger erzeugt, als das 					Eingangsmaterial Frames hat. \\
@@ -329,7 +353,24 @@ Alle erzeugten Bewegungsvektorfelder können auf der beiliegenden Daten-CD einges
 \subsection{Einschwingverhalten} \label{ch:Einschwingverhalten}
 Als Ausgangspunkt werden alle Bewegungsvektorfelder zu Beginn des Algorithmus auf den Nullvektor gesetzt. Das Verfahren muss sich also zunächst Einschwingen. Dabei wird im Folgenden zwischen dem interframe und dem intraframe Einschwingen unterschieden.	
 
-\subsubsection{Bewegungsvektorfelder}\todo[inline]{Timo}
+\subsubsection{Bewegungsvektorfelder}\label{sec:bvf}\todo[inline]{Timo}
+
+Im Folgenden wird das Konvergenzverhalten des Verfahrens über die Bilderfolgen  untersucht.
+Zur Auswertung wird das \textit{Testmaterial 1} und das \textit{Testmaterial 2} benutzt.
+Die Parametereinstellungen werden wie folgt festgelegt:
+
+\begin{itemize} 
+\item[$\bullet$] 10 Iterationen
+\item[$\bullet$] $\nu$ = 1.3
+\item[$\bullet$] $\lambda$ = 0.001 und $\lambda$\textsubscript{T} = 0.001
+\item[$\bullet$] Bewegungsvektor $\left(\begin{array}{c} x\\y \end{array} \right) = \left(\begin{array}{c} 10\\0 \end{array} \right)$
+\end{itemize}
+
+Um das Konvergenzverhalten des Verfahrens zu untersuchen wird die Abweichung des geschätzten Bewegungsvektorfeldes zum realen (und bekannten) Bewegungsvektorfeld über die Bildfolge bestimmt.
+Zum Bemessen der Abweichung wird der relative Fehler der einzelnen Vektoren ermittelt, aufsummiert und anschließend durch die Gesamtanzahl der Bewegungsvektoren gemittelt.
+Abbildung \ref{fig:fig:einschwingFrame} veranschaulicht das Konvergenzverhalten der zwei Bildfolgen.
+Spätestens nach der siebten Bildfolge konvergiert das Verfahren.
+Neben den Einstellungen für $\nu$,$\lambda$ und $\lambda_t$ wird das Konvergenzverhalten durch den Bildinhalt des Testmaterials beeinflusst.
 
 \begin{comment}
 \begin{figure}[H]
@@ -400,6 +441,17 @@ Wie in Kapitel \ref{ch:programmAblauf} beschrieben wird die Bewegungsdetektion i
 
 
 		\subsection{Parameter der Regularisierungsterme}\todo[inline]{Timo}
+		
+Der folgende Abschnitt untersucht die geeignete Parametrisierung der Gewichtungen $\lambda$ und $\lambda_t$ der zwei Regularisierungsterme.
+Wie in {\cite{aach1998bayesian}} beschrieben, ist es möglich über die zwei Faktoren die Varianz der verallgemeinerten Normalverteilung zu modifizieren.
+Eine geeignete Parametrisierung kann demnach das Konvergenzverhalten des Verfahrens positiv beeinflussen. \\
+
+Die Untersuchungen werden auf Basis des \textit{Testmaterial 1}durchgeführt.
+Es gilt $\nu=1.3$. Der Bewegungsvektor ist $\left(\begin{array}{c} x\\y \end{array} \right) = \left(\begin{array}{c} 10\\0 \end{array} \right)$.
+In Tabelle \ref{fig:einschwingRegula} wird das Einschwingen der ersten 10 Bewegungsvektorfelder unter Variation von $\lambda$ und $\lambda_t$ betrachtet.
+Zur Bestimmung der Abweichung des geschätzten Bewegungsvektorfeldes wird wie in \ref{sec:bvf} verfahren. \\
+		
+		
 		\begin{comment}
 			\begin{figure}[H]
 				\psset{xunit=1cm,yunit=.5mm}
@@ -564,6 +616,13 @@ Wie in Kapitel \ref{ch:programmAblauf} beschrieben wird die Bewegungsdetektion i
 		\caption{Werte zu Abbildung~\ref{fig:einschwingRegula}.}
 		\label{tab:einschwingRegulaWerte}
 		\end{table}
+
+Sowohl für $\lambda$ als auch für $\lambda_t$ werden dieselben Größen eingestellt.
+Nach spätestens 10 Bildfolgen konvergiert das Verfahren für jede der betrachteten Parametrisierungen.
+Für die Werte $0.001$ und $0.01$ konvergiert das Verfahren bereits nach sieben Bildfolgen vollständig. Zu beachten ist hierbei, dass für $\lambda=0.001$ und $\lambda_t=0.001$ die Abweichung des geschätzten Bewegungsvektorfeldes bereits nach der sechsten Bildfolge am geringsten ist (ca. 7.5\%).
+Wie Tabelle \ref{tab:einschwingRegulaWerte} zu entnehmen ist, nimmt für größere Werte das Konvergenzverhalten ab.
+Die Wahl von $\lambda=0.001$ und $\lambda_t=0.001$ liefert das Optimum für die betrachteten Einstellungen.
+
 
 	\section{Zusammenfassung}\todo[inline]{Lukas}
 	\section{Arbeitsaufteilung der Dokumentation}

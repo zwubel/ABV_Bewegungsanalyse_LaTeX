@@ -10,12 +10,12 @@
 \contentsline {subsubsection}{\numberline {2.3.2}\"Ortliche Koh\"arenz}{6}{subsubsection.2.3.2}
 \contentsline {subsubsection}{\numberline {2.3.3}Zeitliche Koh\"arenz}{6}{subsubsection.2.3.3}
 \contentsline {subsection}{\numberline {2.4}Visualisierung}{6}{subsection.2.4}
-\contentsline {section}{\numberline {3}Auswertung}{6}{section.3}
-\contentsline {subsection}{\numberline {3.1}Testmaterial}{6}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}Auswertung der Testmaterialien}{8}{subsection.3.2}
-\contentsline {subsection}{\numberline {3.3}Einschwingverhalten}{10}{subsection.3.3}
-\contentsline {subsubsection}{\numberline {3.3.1}Bewegungsvektorfelder}{10}{subsubsection.3.3.1}
-\contentsline {subsubsection}{\numberline {3.3.2}Innerhalb eines Bildes}{10}{subsubsection.3.3.2}
-\contentsline {subsection}{\numberline {3.4}Parameter der Regularisierungsterme}{11}{subsection.3.4}
-\contentsline {section}{\numberline {4}Zusammenfassung}{11}{section.4}
-\contentsline {section}{\numberline {5}Arbeitsaufteilung der Dokumentation}{11}{section.5}
+\contentsline {section}{\numberline {3}Auswertung}{7}{section.3}
+\contentsline {subsection}{\numberline {3.1}Testmaterial}{7}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Auswertung der Testmaterialien}{9}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Einschwingverhalten}{11}{subsection.3.3}
+\contentsline {subsubsection}{\numberline {3.3.1}Bewegungsvektorfelder}{11}{subsubsection.3.3.1}
+\contentsline {subsubsection}{\numberline {3.3.2}Innerhalb eines Bildes}{12}{subsubsection.3.3.2}
+\contentsline {subsection}{\numberline {3.4}Parameter der Regularisierungsterme}{12}{subsection.3.4}
+\contentsline {section}{\numberline {4}Zusammenfassung}{13}{section.4}
+\contentsline {section}{\numberline {5}Arbeitsaufteilung der Dokumentation}{13}{section.5}
