@@ -2,6 +2,7 @@
 	\usepackage[latin1]{inputenc}
 	\usepackage[ngerman]{babel}
 	\usepackage[a4paper,text={155mm,220mm},centering,headsep=10mm,footskip=15mm]{geometry}
+	\usepackage{etex}
 	\usepackage{graphicx}
 	\usepackage{amssymb}
 	\usepackage{graphicx}
@@ -17,6 +18,7 @@
 	\usepackage{pst-node}
 	\usepackage{pst-grad,multido} 
 	\usepackage{verbatim}
+	\usepackage[labelfont=bf, format=plain, indention=1cm]{caption}
 	\usepackage{fixltx2e}
 	\title{}
 	\date{}
@@ -329,12 +331,240 @@ Als Ausgangspunkt werden alle Bewegungsvektorfelder zu Beginn des Algorithmus au
 
 \subsubsection{Bewegungsvektorfelder}\todo[inline]{Timo}
 
+\begin{comment}
+\begin{figure}[H]
+\psset{xunit=1cm,yunit=.5mm}
+							\begin{pspicture}(-0.5,-20)(12,130)
+							\psaxes[Ox=1,Dx=1,Dy=20,xsubticks=4,ysubticks=2,yAxis=false]{->}(1,0)(10.5,100)
+							\psaxes[Ox=1,Dx=1,Dy=20,xsubticks=4,ysubticks=2,xAxis=false]{-}(1,0)(10.5,100)
+							\rput[l](-0.5,115){Abweichung [\%]}
+							\rput[l](11,0){Bild des Testmaterials}
+							\rput[l](9,80){Testmaterial 1 (Stadt)}							
+							\psline[linecolor=red,linewidth=1pt]{-}(8,80)(8.75,80)
+							\psline[linestyle=none,linewidth=0.125pt]{*-*}(8,80)(8.75,80)
+							\rput[l](9,68){Testmaterial 2 (Blume)}
+							\psline[linecolor=blue,linewidth=1pt]{-}(8,68)(8.75,68)
+							\psline[linestyle=none,linewidth=0.125pt]{*-*}(8,68)(8.75,68)
+							\listplot[linecolor=red,linewidth=1pt]{
+								1	100
+								2	83.5
+								3	75
+								4	67.9
+								5	61.8
+								6	7.5
+								7	0
+								8	0
+								9	0
+								10	0}
+							\listplot[linewidth=.025pt,plotstyle=dots]{
+								1	100
+								2	83.5
+								3	75
+								4	67.9
+								5	61.8
+								6	7.5
+								7	0
+								8	0
+								9	0
+								10	0}
+							\listplot[linecolor=blue,linewidth=1pt]{
+								1	100
+								2	77.5
+								3	60.3
+								4	45.1
+								5	1.6
+								6	0
+								7	0
+								8	0
+								9	0
+								10	0}
+							\listplot[linewidth=.025pt,plotstyle=dots]{
+								1	100
+								2	77.5
+								3	60.3
+								4	45.1
+								5	1.6
+								6	0
+								7	0
+								8	0
+								9	0
+								10	0}
+							\end{pspicture}
+					\label{fig:einschwingFrame}
+					\caption{Einschwingverhalten der Bewegungsvektorfelder über die ersten 10 Bilder von Testmaterial 1 und 2.}
+				\end{figure}
+		\end{comment}						
 \subsubsection{Innerhalb eines Bildes}\todo[inline]{Laura}
 Wie in Kapitel \ref{ch:programmAblauf} beschrieben wird die Bewegungsdetektion in jedem Frame über mehrere Iterationen hinweg ermittelt. Mit anderen Worten: $V_{n}$ wird in jeder Iteration neu gesetzt und man kann davon sprechen. Im Folgenden wird die Veränderung der Vektoren nach jeder Iteration betrachtet. Dabei werden die Parameter wie in Kapitel \ref{AuswertungTestmaterialien} gewählt.
 
 
 
 		\subsection{Parameter der Regularisierungsterme}\todo[inline]{Timo}
+		\begin{comment}
+			\begin{figure}[H]
+				\psset{xunit=1cm,yunit=.5mm}
+					\begin{pspicture}(-0.5,-20)(12,130)
+					\psaxes[Ox=1,Dx=1,Dy=20,xsubticks=4,ysubticks=2,yAxis=false]{->}(1,0)(10.5,100)
+					\psaxes[Ox=1,Dx=1,Dy=20,xsubticks=4,ysubticks=2,xAxis=false]{-}(1,0)(10.5,100)
+					\rput[l](-0.5,115){Abweichung [\%]}
+					\rput[l](11,0){Bild des Testmaterials}
+					\rput[l](9,92){$\lambda, \lambda_t=0.0$}
+					\psline[linecolor=red,linewidth=1pt]{-}(8,92)(8.75,92)
+					\psline[linestyle=none,linewidth=0.125pt]{*-*}(8,92)(8.75,92)
+					\rput[l](9,80){$\lambda, \lambda_t=0.001$}
+					\psline[linecolor=blue,linewidth=1pt]{-}(8,80)(8.75,80)
+					\psline[linestyle=none,linewidth=0.125pt]{*-*}(8,80)(8.75,80)
+					\rput[l](9,68){$\lambda, \lambda_t=0.01$}
+					\psline[linecolor=green,linewidth=1pt]{-}(8,68)(8.75,68)
+					\psline[linestyle=none,linewidth=0.125pt]{*-*}(8,68)(8.75,68)
+					\rput[l](9,56){$\lambda, \lambda_t=0.1$}
+					\psline[linecolor=orange,linewidth=1pt]{-}(8,56)(8.75,56)
+					\psline[linestyle=none,linewidth=0.125pt]{*-*}(8,56)(8.75,56)
+					\rput[l](9,44){$\lambda, \lambda_t=1.0$}
+					\psline[linecolor=yellow,linewidth=1pt]{-}(8,44)(8.75,44)
+					\psline[linestyle=none,linewidth=0.125pt]{*-*}(8,44)(8.75,44)
+					% \lambda = 0
+					\listplot[linecolor=red,linewidth=1pt]{
+						1	100
+						2	83.4
+						3	74.5
+						4	67.1
+						5	60.4
+						6	17.6
+						7	0.7
+						8	0
+						9	0
+						10	0}
+					\listplot[linewidth=.025pt,plotstyle=dots]{
+						1	100
+						2	83.4
+						3	74.5
+						4	67.1
+						5	60.4
+						6	17.6
+						7	0.7
+						8	0
+						9	0
+						10	0}
+					% \lambda = 0.001
+					\listplot[linecolor=blue,linewidth=1pt]{
+						1	100
+						2	83.5
+						3	75
+						4	67.9
+						5	61.8
+						6	7.5
+						7	0
+						8	0
+						9	0
+						10	0}
+					\listplot[linewidth=.025pt,plotstyle=dots]{
+						1	100
+						2	83.5
+						3	75
+						4	67.9
+						5	61.8
+						6	7.5
+						7	0
+						8	0
+						9	0
+						10	0}
+					% \lambda = 0.01
+					\listplot[linecolor=green,linewidth=1pt]{
+						1	100
+						2	83.5
+						3	75.1
+						4	67.9
+						5	61.6
+						6	8.9
+						7	0
+						8	0
+						9	0
+						10	0}
+					\listplot[linewidth=.025pt,plotstyle=dots]{
+						1	100
+						2	83.5
+						3	75.1
+						4	67.9
+						5	61.6
+						6	8.9
+						7	0
+						8	0
+						9	0
+						10	0}
+					% \lambda = 0.1
+					\listplot[linecolor=orange,linewidth=1pt]{
+						1	100
+						2	83.6
+						3	75.6
+						4	68.8
+						5	62.1
+						6	40.4
+						7	0.9
+						8	0
+						9	0
+						10	0}
+					\listplot[linewidth=.025pt,plotstyle=dots]{
+						1	100
+						2	83.6
+						3	75.6
+						4	68.8
+						5	62.1
+						6	40.4
+						7	0.9
+						8	0
+						9	0
+						10	0}
+					% \lambda = 1
+					\listplot[linecolor=yellow,linewidth=1pt]{
+						1	100
+						2	84.2
+						3	76.4
+						4	70.6
+						5	65.7
+						6	57.7
+						7	34.5
+						8	5.3
+						9	1.6
+						10	0}
+					\listplot[linewidth=.025pt,plotstyle=dots]{
+						1	100
+						2	84.2
+						3	76.4
+						4	70.6
+						5	65.7
+						6	57.7
+						7	34.5
+						8	5.3
+						9	1.6
+						10	0}								
+			\end{pspicture}					
+			\caption{Einschwingverhalten der Bewegungsvektorfelder in Abhängigkeit der Regularisierungsparameter $\lambda$ und $\lambda_t$.}
+			\label{fig:einschwingRegula}
+		\end{figure}
+	\end{comment}			
+	
+		\begin{table}[H]
+		\centering
+		\begin{tabular}{r|r|r|r|r|r}
+			\multirow{2}{*}{Bild} &\multicolumn{5}{c}{Abweichung für $\lambda, \lambda_t=\dots$}			\\					
+														& 0.0 			& 0.001 		& 0.01 			& 0.1 			& 1.0				\\
+			\hline
+			1 										& 100.0\,\%	& 100.0\,\%	& 100.0\,\%	& 100.0\,\%	& 100.0\,\%	\\   
+			2 										& 83.4\,\%	& 83.5\,\%	& 83.5\,\%	& 83.6\,\%	& 84.2\,\%	\\   
+			3 										& 74.5\,\%	& 75.0\,\%	& 75.1\,\%	& 75.6\,\%	& 76.4\,\%	\\   
+			4 										& 67.1\,\%	& 67.9\,\%	& 67.9\,\%	& 68.8\,\%	& 70.6\,\%	\\   
+			5 										& 60.4\,\%	& 61.8\,\%	& 61.6\,\%	& 62.1\,\%	& 65.7\,\%	\\   
+			6 										& 17.6\,\%	& 7.5\,\%		& 8.9\,\%		& 40.4\,\%	& 57.7\,\%	\\   
+			7 										& 0.7\,\%		& 0.0\,\%		& 0.0\,\%		& 0.9\,\%		& 34.5\,\%	\\   
+			8 										& 0.0\,\%		& 0.0\,\%		& 0.0\,\%		& 0.0\,\%		& 5.3\,\%		\\   
+			9 										& 0.0\,\%		& 0.0\,\%		& 0.0\,\%		& 0.0\,\%		& 1.6\,\%		\\   
+			10 										& 0.0\,\%		& 0.0\,\%		& 0.0\,\%		& 0.0\,\%		& 0.0\,\%		\\   
+		\end{tabular}				
+		\caption{Werte zu Abbildung~\ref{fig:einschwingRegula}.}
+		\label{tab:einschwingRegulaWerte}
+		\end{table}
+
 	\section{Zusammenfassung}\todo[inline]{Lukas}
 	\section{Arbeitsaufteilung der Dokumentation}
 	\newpage
