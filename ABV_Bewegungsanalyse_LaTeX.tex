@@ -18,7 +18,7 @@
 	\usepackage{pst-node}
 	\usepackage{pst-grad,multido} 
 	\usepackage{verbatim}
-	\usepackage[labelfont=bf, format=plain, indention=1cm]{caption}
+	\usepackage[font=small, labelfont=bf, format=plain, indention=1cm]{caption}
 	\usepackage{fixltx2e}
 	\title{}
 	\date{}
@@ -28,7 +28,7 @@
 	\usepackage{fancyhdr}
 	\usepackage{enumitem} 
 	\parindent0pt
-	\usepackage[format=plain, justification=RaggedRight, singlelinecheck=false]{caption}
+	%\usepackage[format=plain, justification=RaggedRight, singlelinecheck=false]{caption}
 	\usepackage{blindtext}
 	
 	% Listings
@@ -148,7 +148,7 @@
 	Die Zielsetzung für das Projekt "`Bewegungsanalyse einer Videosequenz"' war eine Über\-tra\-gung des Ansatzes von Röntgenbildern auf normale Videosequenzen. Infolge dessen war eine Vernachlässigung der speziellen Anforderung des Bildrauschens möglich, da Röntgenbilder -- insbesondere als Teil einer Fluoroskopie -- zum Schutz des Patienten und des medizinischen Personals nur sehr geringe Röntgendosen enthalten dürfen und deshalb ein extrem schlechtes Signal-zu-Rauschverhältnis aufweisen. Diese Problematik besteht bei normalen Videosequenzen nicht, weshalb für die Untersuchung von vergleichsweise geringem und etwa gleich verteiltem Rauschen ausgegangen werden konnte.
 	
 \section{Verfahren}\todo[inline]{Laura}
-	In {\cite{aach1998bayesian}} wird das Verfahren, was dieser Ausarbeitung zu Grunde liegt beschrieben. Der dort 				aufgeführte Algorithmus wurde speziell für Röntgenaufnahmen entwickelt, um Arzt und 					Patienten im Rahmen von Behandlungen, welche Röntgenstrahlung verwenden vor gesundheitlichen 			Konsequenzen zu schützen. Es handelt sich bei dem Ansatz um ein Block-Matching Verfahren, 			welche 	dem Satz von Bayes folgen.
+	In \cite{aach1998bayesian} wird das Verfahren, was dieser Ausarbeitung zu Grunde liegt beschrieben. Der dort 				aufgeführte Algorithmus wurde speziell für Röntgenaufnahmen entwickelt, um Arzt und 					Patienten im Rahmen von Behandlungen, welche Röntgenstrahlung verwenden vor gesundheitlichen 			Konsequenzen zu schützen. Es handelt sich bei dem Ansatz um ein Block-Matching Verfahren, 			welche 	dem Satz von Bayes folgen.
 	\\Im vorliegenden Fall soll das Verfahren allerdings auf gewöhnlichen Bildsequenzen angewandt 		werden. Im Folgenden wird das zu grundeliegende Verfahren erläutert und auf eventuelle 				Änderungen im Algorithmus eingegangen. 
 	
 \subsection{Bewegungsschätzung}\todo[inline]{Laura}
@@ -158,7 +158,7 @@ klar machen, wie das geschätzte Bewegungsvektorfeld überhaupt definiert ist.\\
 \begin{figure}[H]
 		\centering
 		\includegraphics[bb=0 0 256 256, scale=0.5]{beziehung-bild-bewegungsfeld.png}
-		\caption{Beziehung zwischen Bewegungsvektorfeld und Einzelbildern [1]}
+		\caption{Beziehung zwischen Bewegungsvektorfeld und Einzelbildern \cite{aach1998bayesian}.}
 		\label{fig:beziehung}
 	\end{figure}
 
@@ -179,7 +179,7 @@ Da es sich um einen bayesschen Ansatz handelt, gilt es sich mit bedingten Wahrsc
 		Die äußere Schleife läuft über den Stack und sorgt somit dafür, dass die Berechnungen pro Block und Iteration jeweils für jedes Bild des Input-Stacks erfolgen.\\
 		Sobald ein Bild fertig bearbeitet ist, die äußere Schleife also einen Durchlauf absolviert hat, wird der Fortschrittsbalken im ImageJ-Fenster aktualisiert, damit der Benutzer eine Rückmeldung bekommt, wie weit die Berechnung fortgeschritten ist.\\
 		Zuletzt wird in der \texttt{run()}-Methode noch das Ausgabefenster, in welchem der Input-Stack inklusive der überlagerten Bewegungsvektorfelder dargestellt wird, generiert und dessen Methode zur Anzeige aufgerufen.
-		\begin{comment}
+		%\begin{comment}
 			\begin{figure}[h!]
 			\centering
 					\begin{psmatrix}[rowsep=0.3,colsep=0.4]
@@ -229,10 +229,25 @@ Da es sich um einen bayesschen Ansatz handelt, gilt es sich mit bedingten Wahrsc
 			\caption{Programmablauf}
 			\label{fig:programmAblauf}
 		\end{figure}
-\end{comment}		
+%\end{comment}		
 		
 		\subsection{Kostenfunktion}\label{sec:costFunc}\todo[inline]{Alle}
 			\subsubsection{Datenterm}\todo[inline]{Lukas}\label{ch:Datenterm}
+			Der Datenterm als Teil der zu minimierenden Kostenfunktion hat die Aufgabe, die Veränderung der Grauwerte beim Vergleich zweier Bilder zu quantifizieren. Da angenommen wird, dass diese gemessenen Veränderungen nur durch Bewegung und Rauschen verursacht wird, lässt sich das Rauschen selbst modellieren, indem vor dem Vergleich der Bilder die tatsächliche Bewegung herausgerechnet, also eins der Bilder entsprechend des zuvor ermittelten Bewegungsvektors verschoben wird.
+			
+			Der zu minimierende Ausdruck für die Modellierung des Rauschens für ganze Bilder lautet:
+			\begin{equation}
+				p(Y_n,Y_{n-1}|V)=c'\cdot e^{-\displaystyle\sum\limits_{\vec{k}}{\frac{\left[d\left(\vec{k},\vec{v}\left(\vec{k}\right)\right)\right]^2}{4\cdot\sigma^2\left(\vec{k}\right)}}}
+				\label{eq:noise}
+			\end{equation}
+			
+			Da ebenfalls angenommen wird, dass die Bewegung über das ganze Bild nicht konstant ist, wird das Bild in Blöcke unterteilt. Des weiteren führt die Übertragung des eigentlichen Problems von Röntgenbildern auf normale Bildsequenzen zu der Erkenntnis, dass die Poisson-Verteilung des Rauschens bei Röntgenbildern aufgrund der niedrigen Anzahl von Röntgenquanten, bei normalen Bildern in eine Normalverteilung übergeht. Aus diesem Grund kann der Term unter dem Bruchstrich im Exponenten von Gleichung~\ref{eq:noise} vernachlässigt werden. Da der verbleibende Ausdruck von Gleichung~\ref{eq:noise} minimal wird, wenn der Exponent der Exponentialfunktion minimal wird, genügt für das Minimierungsproblem
+			\begin{equation}
+				d\left(\vec{k},\vec{v}\left(\vec{k}\right)\right)=y_n\left(\vec{k}\right)-y_{n-1}\left(\vec{k}+\vec{v}\left(\vec{k}\right)\right)
+			\end{equation}
+			wobei $y_n\left(\vec{k}\right)$ der aktuelle Block und $y_{n-1}\left(\vec{k}+\vec{v}\left(\vec{k}\right)\right)$ der zu vergleichende Block des vorherigen Bildes, verschoben um $\vec{v}\left(\vec{k}\right)$ ist.\\
+			
+			Um etwaige Probleme am Rand des Bildes zu verhindern, wurde eine Randbehandlung implementiert, welche verhindert, dass Blockadressen im vorherigen $y_{n-1}$-Bild außerhalb der Bildgrenzen liegen.
 			\subsubsection{Örtliche Kohärenz}\todo[inline]{Timo}\label{ch:oertlich}
 
 Die örtliche Kohärenz trägt als gewichteter Regularisierungsterm zur Kostenfunktion bei.
@@ -244,7 +259,6 @@ Ziel ist daher die Minimierung des Exponenten der Wahrscheinlichkeitsdichte:
 \begin{equation}
 E_L(\vec{k},V) = \sum_{\vec{l} \epsilon N(\vec{k})} g_{\vec{l}} \Vert \vec{v}(\vec{k}) - \vec{v}(\vec{l}) \Vert_2^{\nu}
 \end{equation}
-
 
 Der Faktor $g_{\vec{l}}$ gewichtet die normierte Differenz abhängig von der Position des betrachteten benachbarten Bewegungsvektor.
 Über den Parameter $\nu$ kann die verallgemeinerte Normalverteilung angepasst werden. 
@@ -271,7 +285,7 @@ Das Ergebnis wird für horizontale und vertikale Nachbarregionen mit dem Faktor $
 
 \begin{minipage}{0.5\textwidth}
 	\begin{figure}[H] 
-		\includegraphics[bb=0 0 256 256, scale=0.77]{Testmaterial1.jpg}
+		\includegraphics[bb=0 0 256 256, width=.95\linewidth]{Testmaterial1.jpg}
 			\label{fig:testmaterial1}
 			\caption{Standbild Testmaterial 1.}
 	\end{figure}
@@ -285,7 +299,7 @@ Das Ergebnis wird für horizontale und vertikale Nachbarregionen mit dem Faktor $
 
 \begin{minipage}{0.5\textwidth}
 	\begin{figure}[H] 
-		\includegraphics[bb=0 0 256 256, scale=0.77]{Testmaterial2.jpg}
+		\includegraphics[bb=0 0 256 256, width=.95\linewidth]{Testmaterial2.jpg}
 			\label{fig:testmaterial2}
 			\caption{Standbild Testmaterial 2.}
 	\end{figure}
@@ -299,7 +313,7 @@ Das Ergebnis wird für horizontale und vertikale Nachbarregionen mit dem Faktor $
 
 \begin{minipage}{0.5\textwidth}
 	\begin{figure}[H] 
-		\includegraphics[bb=0 0 256 256, scale=0.77]{Testmaterial3.jpg}
+		\includegraphics[bb=0 0 256 256, width=.95\linewidth]{Testmaterial3.jpg}
 			\label{fig:testmaterial3}
 			\caption{Standbild Testmaterial 3.}
 	\end{figure}
@@ -324,7 +338,7 @@ Schaut man sich die so ermittelten Abweichungen für ein Frame an, wo in den vorh
 
 \begin{figure}[H] 
 		\centering
-		\includegraphics[scale=1.0]{testmaterial12.jpg} 
+		\includegraphics[bb=0 0 1540 1024, width=\textwidth]{testmaterial12.jpg} 
 			\caption{Bewegungsvektorfelder v.l.n.r. Frame 10, Frame 60 und Frame 110.\newline Oben Testmarial 1 und unten Testmaterial 2.}
 			\label{fig:testmaterial12}
 	\end{figure}
@@ -335,14 +349,14 @@ Es ist deutlich zu erkennen, dass die Bereiche in denen keine Bewegung stattfind
 
 \begin{minipage}{0.5\textwidth}
 	\begin{figure}[H] 
-		\includegraphics[scale=0.4]{frame43.png}
+		\includegraphics[bb=0 0 517 516, width=0.9\textwidth]{frame43.png}
 			\caption{Bewegungsvektorfeld \newline Testmaterial 3. Frame 43.}
 		\label{fig:frame43}
 	\end{figure}
 \end{minipage}
 \begin{minipage}{0.5\textwidth}
 	\begin{figure}[H] 
-		\includegraphics[scale=0.4]{frame47.png}
+		\includegraphics[bb=0 0 514 515, width=0.9\textwidth]{frame47.png}
 			\caption{Bewegungsvektorfeld \newline Testmaterial 3. Frame 47.}
 		\label{fig:frame47}
 	\end{figure}
@@ -372,7 +386,7 @@ Abbildung \ref{fig:fig:einschwingFrame} veranschaulicht das Konvergenzverhalten 
 Spätestens nach der siebten Bildfolge konvergiert das Verfahren.
 Neben den Einstellungen für $\nu$,$\lambda$ und $\lambda_t$ wird das Konvergenzverhalten durch den Bildinhalt des Testmaterials beeinflusst.
 
-\begin{comment}
+%\begin{comment}
 \begin{figure}[H]
 \psset{xunit=1cm,yunit=.5mm}
 							\begin{pspicture}(-0.5,-20)(12,130)
@@ -434,7 +448,7 @@ Neben den Einstellungen für $\nu$,$\lambda$ und $\lambda_t$ wird das Konvergenzv
 					\label{fig:einschwingFrame}
 					\caption{Einschwingverhalten der Bewegungsvektorfelder über die ersten 10 Bilder von Testmaterial 1 und 2.}
 				\end{figure}
-		\end{comment}						
+		%\end{comment}						
 \subsubsection{Innerhalb eines Bildes}\todo[inline]{Laura}
 Wie in Kapitel \ref{ch:programmAblauf} beschrieben wird die Bewegungsdetektion in jedem Frame über mehrere Iterationen hinweg ermittelt. Mit anderen Worten: $V_{n}$ wird in jeder Iteration neu gesetzt und man kann davon sprechen. Im Folgenden wird die Veränderung der Vektoren nach jeder Iteration betrachtet. Dabei werden die Parameter wie in Kapitel \ref{AuswertungTestmaterialien} gewählt.
 
@@ -446,13 +460,13 @@ Der folgende Abschnitt untersucht die geeignete Parametrisierung der Gewichtunge
 Wie in {\cite{aach1998bayesian}} beschrieben, ist es möglich über die zwei Faktoren die Varianz der verallgemeinerten Normalverteilung zu modifizieren.
 Eine geeignete Parametrisierung kann demnach das Konvergenzverhalten des Verfahrens positiv beeinflussen. \\
 
-Die Untersuchungen werden auf Basis des \textit{Testmaterial 1}durchgeführt.
+Die Untersuchungen werden auf Basis von \textit{Testmaterial 1} durchgeführt.
 Es gilt $\nu=1.3$. Der Bewegungsvektor ist $\left(\begin{array}{c} x\\y \end{array} \right) = \left(\begin{array}{c} 10\\0 \end{array} \right)$.
 In Tabelle \ref{fig:einschwingRegula} wird das Einschwingen der ersten 10 Bewegungsvektorfelder unter Variation von $\lambda$ und $\lambda_t$ betrachtet.
 Zur Bestimmung der Abweichung des geschätzten Bewegungsvektorfeldes wird wie in \ref{sec:bvf} verfahren. \\
 		
 		
-		\begin{comment}
+		%\begin{comment}
 			\begin{figure}[H]
 				\psset{xunit=1cm,yunit=.5mm}
 					\begin{pspicture}(-0.5,-20)(12,130)
@@ -594,7 +608,7 @@ Zur Bestimmung der Abweichung des geschätzten Bewegungsvektorfeldes wird wie in 
 			\caption{Einschwingverhalten der Bewegungsvektorfelder in Abhängigkeit der Regularisierungsparameter $\lambda$ und $\lambda_t$.}
 			\label{fig:einschwingRegula}
 		\end{figure}
-	\end{comment}			
+	%\end{comment}			
 	
 		\begin{table}[H]
 		\centering
@@ -619,13 +633,13 @@ Zur Bestimmung der Abweichung des geschätzten Bewegungsvektorfeldes wird wie in 
 
 Sowohl für $\lambda$ als auch für $\lambda_t$ werden dieselben Größen eingestellt.
 Nach spätestens 10 Bildfolgen konvergiert das Verfahren für jede der betrachteten Parametrisierungen.
-Für die Werte $0.001$ und $0.01$ konvergiert das Verfahren bereits nach sieben Bildfolgen vollständig. Zu beachten ist hierbei, dass für $\lambda=0.001$ und $\lambda_t=0.001$ die Abweichung des geschätzten Bewegungsvektorfeldes bereits nach der sechsten Bildfolge am geringsten ist (ca. 7.5\%).
+Für die Werte $0.001$ und $0.01$ konvergiert das Verfahren bereits nach sieben Bildfolgen vollständig. Zu beachten ist hierbei, dass für $\lambda=0.001$ und $\lambda_t=0.001$ die Abweichung des geschätzten Bewegungsvektorfeldes bereits nach der sechsten Bildfolge am geringsten ist (ca. 7.5\,\%).
 Wie Tabelle \ref{tab:einschwingRegulaWerte} zu entnehmen ist, nimmt für größere Werte das Konvergenzverhalten ab.
 Die Wahl von $\lambda=0.001$ und $\lambda_t=0.001$ liefert das Optimum für die betrachteten Einstellungen.
 
 
 	\section{Zusammenfassung}\todo[inline]{Lukas}
-	\section{Arbeitsaufteilung der Dokumentation}
+	\section{Arbeitsaufteilung}
 	\newpage
 	\bibliographystyle{plain}
 	\bibliography{ABV_Bewegungsanalyse_LaTeX}
