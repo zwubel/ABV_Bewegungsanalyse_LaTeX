@@ -142,7 +142,7 @@
 		\item [Örtliche Kohärenz:] Außer an Randbereichen von Objekten, bewegen sich Nachbarschaften meist in die gleiche Richtung.
 		\item [Zeitliche Kohärenz:] Bewegungen verlaufen normalerweise kontinuierlich, sodass sich ein Bildblock zwischen zwei Bildern wahrscheinlich in dieselbe Richtung weiterbewegt oder die Richtung nur gering ändert.
 	\end{description}
-	Eine genaue Beschreibung dieser Faktoren erfolgt in \ref{sec:costFunc}.\\
+	Eine genaue Beschreibung dieser Faktoren erfolgt in \ref{ch:Datenterm}, \ref{ch:oertlich} und \ref{ch:zeitlich}.\\
 	
 	\subsection{Projektziel}
 	Die Zielsetzung für das Projekt "`Bewegungsanalyse einer Videosequenz"' war eine Über\-tra\-gung des Ansatzes von Röntgenbildern auf normale Videosequenzen. Infolge dessen war eine Vernachlässigung der speziellen Anforderung des Bildrauschens möglich, da Röntgenbilder -- insbesondere als Teil einer Fluoroskopie -- zum Schutz des Patienten und des medizinischen Personals nur sehr geringe Röntgendosen enthalten dürfen und deshalb ein extrem schlechtes Signal-zu-Rauschverhältnis aufweisen. Diese Problematik besteht bei normalen Videosequenzen nicht, weshalb für die Untersuchung von vergleichsweise geringem und etwa gleich verteiltem Rauschen ausgegangen werden konnte.
@@ -166,7 +166,7 @@ In Abbildung \ref{fig:beziehung} sieht man drei Frames einer Bildsequenz. $Y_{n}
 Das geschätzte Bewegungsvektorfeld $\hat{V}_{n}$ ergibt sich nach den Ausführungen von Aach und Kunz zu: 
 	
 \begin{equation}
-	\hat{V}_{n}=\arg\ \smash{\displaystyle\max_{V}} \left[p(Y_{n},  Y_{n-1},\vert V)\cdot p(\hat{V}_{n-1} \vert V)\cdot p(V)\right]
+	\hat{V}_{n}=\arg\ \smash{\displaystyle\max_{V}} \left[p\left(Y_{n},  Y_{n-1},\vert V\right)\cdot p\left(\hat{V}_{n-1} \vert V\right)\cdot p(V)\right]
 	\label{eq:bayes}
 \end{equation}\\
 	
@@ -257,7 +257,7 @@ Hierzu werden neben dem neuen möglichen Bewegungsvektor der untersuchten Bildpos
 Ziel ist daher die Minimierung des Exponenten der Wahrscheinlichkeitsdichte:
 
 \begin{equation}
-E_L(\vec{k},V) = \sum_{\vec{l} \epsilon N(\vec{k})} g_{\vec{l}} \Vert \vec{v}(\vec{k}) - \vec{v}(\vec{l}) \Vert_2^{\nu}
+E_L\left(\vec{k},V\right) = \sum_{\vec{l} \epsilon N(\vec{k})} g_{\vec{l}} \left|\left| \vec{v}\left(\vec{k}\right) - \vec{v}\left(\vec{l}\,\right) \right|\right|_2^{\nu}
 \end{equation}
 
 Der Faktor $g_{\vec{l}}$ gewichtet die normierte Differenz abhängig von der Position des betrachteten benachbarten Bewegungsvektor.
@@ -273,6 +273,13 @@ Nachdem die Differenzen gemäß dem euklidischen Abstand normiert sind, werden die
 Das Ergebnis wird für horizontale und vertikale Nachbarregionen mit dem Faktor $g_l=1$ und für diagonale Nachbarregionen mit dem Faktor $g_l=0.5$ gewichtet. Anschließend werden die gewichteten Ergebnisse aufsummiert und zurück gegeben.			
 			
 			\subsubsection{Zeitliche Kohärenz}\todo[inline]{Lukas}\label{ch:zeitlich}
+			Da Bewegungen normalerweise gleichmäßig ablaufen -- wenn sie nicht gerade beginnen oder enden -- basiert die zeitliche Kohärenz darauf, dass die Bewegung (z.\,B. im aktuellen Block) der Bewegung im gleichen Block des vorherigen Bildes ähnlich ist. Für die Berechnung der Kosten folgt als Minimierungsterm aus
+			\begin{equation}
+				p\left(\hat{V}_{n-1}|V\right)=c\cdot e^{\displaystyle-\lambda_T\sum\limits_{\vec{k}}\left|\left|\hat{\vec{V}}_{n-1}\left(\vec{k}\right)-\vec{v}\left(\vec{k}\right)\right|\right|^\nu_2}
+			\label{eq:}
+			\end{equation}
+			
+			dass wieder nur der Exponent der Exponentialfunktion ausgewertet werden muss, da der gesamte Ausdruck minimal wird, wenn der Exponent minimal wird.
 			
 \subsection{Visualisierung}\todo[inline]{Laura}
 	Um die Bewegungsvektorfelder darzustellen, wird sich mit Symbolen beholfen. Diese werden 				blockweise  über die Videosequenz gelegt. Aus Darstellungsgründen wird das Video dazu um Faktor 	4 in beide Bildrichtungen hoch skaliert. Da die einzelnen Bewegungsvektoren immer zwischen zwei 		Frames berechnet werden, wird genau ein Bewegungsvektorfeld weniger erzeugt, als das 					Eingangsmaterial Frames hat. \\
@@ -340,7 +347,7 @@ Schaut man sich die so ermittelten Abweichungen für ein Frame an, wo in den vorh
 \begin{figure}[H] 
 		\centering
 		\includegraphics[bb=0 0 1540 1024, width=\textwidth]{testmaterial12.jpg} 
-			\caption{Bewegungsvektorfelder v.l.n.r. Frame 10, Frame 60 und Frame 110.\newline Oben Testmarial 1 und unten Testmaterial 2.}
+			\caption{Bewegungsvektorfelder (v.\,l.\,n.\,r.): Frame 10, Frame 60 und Frame 110.\newline Oben Testmarial 1 und unten Testmaterial 2.}
 			\label{fig:testmaterial12}
 	\end{figure}
 
@@ -383,73 +390,74 @@ Die Parametereinstellungen werden wie folgt festgelegt:
 
 Um das Konvergenzverhalten des Verfahrens zu untersuchen wird die Abweichung des geschätzten Bewegungsvektorfeldes zum realen (und bekannten) Bewegungsvektorfeld über die Bildfolge bestimmt.
 Zum Bemessen der Abweichung wird der relative Fehler der einzelnen Vektoren ermittelt, aufsummiert und anschließend durch die Gesamtanzahl der Bewegungsvektoren gemittelt.
-Abbildung \ref{fig:fig:einschwingFrame} veranschaulicht das Konvergenzverhalten der zwei Bildfolgen.
+Abbildung~\ref{fig:einschwingFrame} veranschaulicht das Konvergenzverhalten der zwei Bildfolgen.
 Spätestens nach der siebten Bildfolge konvergiert das Verfahren.
-Neben den Einstellungen für $\nu$,$\lambda$ und $\lambda_t$ wird das Konvergenzverhalten durch den Bildinhalt des Testmaterials beeinflusst.
+Neben den Einstellungen für $\nu$,$\lambda$ und $\lambda_T$ wird das Konvergenzverhalten durch den Bildinhalt des Testmaterials beeinflusst.
 
-\begin{comment}
-\begin{figure}[H]
-\psset{xunit=1cm,yunit=.5mm}
-							\begin{pspicture}(-0.5,-20)(12,130)
-							\psaxes[Ox=1,Dx=1,Dy=20,xsubticks=4,ysubticks=2,yAxis=false]{->}(1,0)(10.5,100)
-							\psaxes[Ox=1,Dx=1,Dy=20,xsubticks=4,ysubticks=2,xAxis=false]{-}(1,0)(10.5,100)
-							\rput[l](-0.5,115){Abweichung [\%]}
-							\rput[l](11,0){Bild des Testmaterials}
-							\rput[l](9,80){Testmaterial 1 (Stadt)}							
-							\psline[linecolor=red,linewidth=1pt]{-}(8,80)(8.75,80)
-							\psline[linestyle=none,linewidth=0.125pt]{*-*}(8,80)(8.75,80)
-							\rput[l](9,68){Testmaterial 2 (Blume)}
-							\psline[linecolor=blue,linewidth=1pt]{-}(8,68)(8.75,68)
-							\psline[linestyle=none,linewidth=0.125pt]{*-*}(8,68)(8.75,68)
-							\listplot[linecolor=red,linewidth=1pt]{
-								1	100
-								2	83.5
-								3	75
-								4	67.9
-								5	61.8
-								6	7.5
-								7	0
-								8	0
-								9	0
-								10	0}
-							\listplot[linewidth=.025pt,plotstyle=dots]{
-								1	100
-								2	83.5
-								3	75
-								4	67.9
-								5	61.8
-								6	7.5
-								7	0
-								8	0
-								9	0
-								10	0}
-							\listplot[linecolor=blue,linewidth=1pt]{
-								1	100
-								2	77.5
-								3	60.3
-								4	45.1
-								5	1.6
-								6	0
-								7	0
-								8	0
-								9	0
-								10	0}
-							\listplot[linewidth=.025pt,plotstyle=dots]{
-								1	100
-								2	77.5
-								3	60.3
-								4	45.1
-								5	1.6
-								6	0
-								7	0
-								8	0
-								9	0
-								10	0}
-							\end{pspicture}
-					\label{fig:einschwingFrame}
-					\caption{Einschwingverhalten der Bewegungsvektorfelder über die ersten 10 Bilder von Testmaterial 1 und 2.}
-				\end{figure}
-		\end{comment}						
+		\begin{comment}
+			\begin{figure}[H]
+				\psset{xunit=1cm,yunit=.5mm}
+					\begin{pspicture}(-0.5,-20)(12,130)
+					\psaxes[Ox=1,Dx=1,Dy=20,xsubticks=4,ysubticks=2,yAxis=false]{->}(1,0)(10.5,100)
+					\psaxes[Ox=1,Dx=1,Dy=20,xsubticks=4,ysubticks=2,xAxis=false]{-}(1,0)(10.5,100)
+					\rput[l](-0.5,115){Abweichung [\%]}
+					\rput[l](11,0){Bild des Testmaterials}
+					\rput[l](9,80){Testmaterial 1 (Stadt)}							
+					\psline[linecolor=red,linewidth=1pt]{-}(8,80)(8.75,80)
+					\psline[linestyle=none,linewidth=0.125pt]{*-*}(8,80)(8.75,80)
+					\rput[l](9,68){Testmaterial 2 (Blume)}
+					\psline[linecolor=blue,linewidth=1pt]{-}(8,68)(8.75,68)
+					\psline[linestyle=none,linewidth=0.125pt]{*-*}(8,68)(8.75,68)
+					\listplot[linecolor=red,linewidth=1pt]{
+						1	100
+						2	83.5
+						3	75
+						4	67.9
+						5	61.8
+						6	7.5
+						7	0
+						8	0
+						9	0
+						10	0}
+					\listplot[linewidth=.025pt,plotstyle=dots]{
+						1	100
+						2	83.5
+						3	75
+						4	67.9
+						5	61.8
+						6	7.5
+						7	0
+						8	0
+						9	0
+						10	0}
+					\listplot[linecolor=blue,linewidth=1pt]{
+						1	100
+						2	77.5
+						3	60.3
+						4	45.1
+						5	1.6
+						6	0
+						7	0
+						8	0
+						9	0
+						10	0}
+					\listplot[linewidth=.025pt,plotstyle=dots]{
+						1	100
+						2	77.5
+						3	60.3
+						4	45.1
+						5	1.6
+						6	0
+						7	0
+						8	0
+						9	0
+						10	0}
+					\end{pspicture}			
+				\caption{Einschwingverhalten der Bewegungsvektorfelder über die ersten 10 Bilder von Testmaterial 1 und 2.}
+				\label{fig:einschwingFrame}
+			\end{figure}
+		\end{comment}
+		
 \subsubsection{Innerhalb eines Bildes}\todo[inline]{Laura}
 Wie in Kapitel \ref{ch:programmAblauf} beschrieben wird die Bewegungsdetektion in jedem Frame über mehrere Iterationen hinweg ermittelt. Mit anderen Worten: $V_{n}$ wird in jeder Iteration neu gesetzt und man kann davon sprechen. Im Folgenden wird die Veränderung der Vektoren nach jeder Iteration betrachtet. Dabei werden die Parameter wie in Kapitel \ref{AuswertungTestmaterialien} gewählt.
 
@@ -457,13 +465,13 @@ Wie in Kapitel \ref{ch:programmAblauf} beschrieben wird die Bewegungsdetektion i
 
 		\subsection{Parameter der Regularisierungsterme}\todo[inline]{Timo}
 		
-Der folgende Abschnitt untersucht die geeignete Parametrisierung der Gewichtungen $\lambda$ und $\lambda_t$ der zwei Regularisierungsterme.
+Der folgende Abschnitt untersucht die geeignete Parametrisierung der Gewichtungen $\lambda$ und $\lambda_T$ der zwei Regularisierungsterme.
 Wie in {\cite{aach1998bayesian}} beschrieben, ist es möglich über die zwei Faktoren die Varianz der verallgemeinerten Normalverteilung zu modifizieren.
 Eine geeignete Parametrisierung kann demnach das Konvergenzverhalten des Verfahrens positiv beeinflussen. \\
 
 Die Untersuchungen werden auf Basis von \textit{Testmaterial 1} durchgeführt.
 Es gilt $\nu=1.3$. Der Bewegungsvektor ist $\left(\begin{array}{c} x\\y \end{array} \right) = \left(\begin{array}{c} 10\\0 \end{array} \right)$.
-In Tabelle \ref{fig:einschwingRegula} wird das Einschwingen der ersten 10 Bewegungsvektorfelder unter Variation von $\lambda$ und $\lambda_t$ betrachtet.
+In Tabelle \ref{fig:einschwingRegula} wird das Einschwingen der ersten 10 Bewegungsvektorfelder unter Variation von $\lambda$ und $\lambda_T$ betrachtet.
 Zur Bestimmung der Abweichung des geschätzten Bewegungsvektorfeldes wird wie in \ref{sec:bvf} verfahren. \\
 		
 		
@@ -475,19 +483,19 @@ Zur Bestimmung der Abweichung des geschätzten Bewegungsvektorfeldes wird wie in 
 					\psaxes[Ox=1,Dx=1,Dy=20,xsubticks=4,ysubticks=2,xAxis=false]{-}(1,0)(10.5,100)
 					\rput[l](-0.5,115){Abweichung [\%]}
 					\rput[l](11,0){Bild des Testmaterials}
-					\rput[l](9,92){$\lambda, \lambda_t=0.0$}
+					\rput[l](9,92){$\lambda, \lambda_T=0.0$}
 					\psline[linecolor=red,linewidth=1pt]{-}(8,92)(8.75,92)
 					\psline[linestyle=none,linewidth=0.125pt]{*-*}(8,92)(8.75,92)
-					\rput[l](9,80){$\lambda, \lambda_t=0.001$}
+					\rput[l](9,80){$\lambda, \lambda_T=0.001$}
 					\psline[linecolor=blue,linewidth=1pt]{-}(8,80)(8.75,80)
 					\psline[linestyle=none,linewidth=0.125pt]{*-*}(8,80)(8.75,80)
-					\rput[l](9,68){$\lambda, \lambda_t=0.01$}
+					\rput[l](9,68){$\lambda, \lambda_T=0.01$}
 					\psline[linecolor=green,linewidth=1pt]{-}(8,68)(8.75,68)
 					\psline[linestyle=none,linewidth=0.125pt]{*-*}(8,68)(8.75,68)
-					\rput[l](9,56){$\lambda, \lambda_t=0.1$}
+					\rput[l](9,56){$\lambda, \lambda_T=0.1$}
 					\psline[linecolor=orange,linewidth=1pt]{-}(8,56)(8.75,56)
 					\psline[linestyle=none,linewidth=0.125pt]{*-*}(8,56)(8.75,56)
-					\rput[l](9,44){$\lambda, \lambda_t=1.0$}
+					\rput[l](9,44){$\lambda, \lambda_T=1.0$}
 					\psline[linecolor=yellow,linewidth=1pt]{-}(8,44)(8.75,44)
 					\psline[linestyle=none,linewidth=0.125pt]{*-*}(8,44)(8.75,44)
 					% \lambda = 0
@@ -606,7 +614,7 @@ Zur Bestimmung der Abweichung des geschätzten Bewegungsvektorfeldes wird wie in 
 						9	1.6
 						10	0}								
 			\end{pspicture}					
-			\caption{Einschwingverhalten der Bewegungsvektorfelder in Abhängigkeit der Regularisierungsparameter $\lambda$ und $\lambda_t$.}
+			\caption{Einschwingverhalten der Bewegungsvektorfelder in Abhängigkeit der Regularisierungsparameter $\lambda$ und $\lambda_T$.}
 			\label{fig:einschwingRegula}
 		\end{figure}
 	\end{comment}			
@@ -614,29 +622,29 @@ Zur Bestimmung der Abweichung des geschätzten Bewegungsvektorfeldes wird wie in 
 		\begin{table}[H]
 		\centering
 		\begin{tabular}{r|r|r|r|r|r}
-			\multirow{2}{*}{Bild} &\multicolumn{5}{c}{Abweichung für $\lambda, \lambda_t=\dots$}			\\					
-														& 0.0 			& 0.001 		& 0.01 			& 0.1 			& 1.0				\\
+			\multirow{2}{*}{Bild} &\multicolumn{5}{c}{Abweichung für $\lambda, \lambda_T=\dots$}	\\
+														& 0.0 			& 0.001 		& 0.01 			& 0.1 			& 1.0						\\
 			\hline
-			1 										& 100.0\,\%	& 100.0\,\%	& 100.0\,\%	& 100.0\,\%	& 100.0\,\%	\\   
-			2 										& 83.4\,\%	& 83.5\,\%	& 83.5\,\%	& 83.6\,\%	& 84.2\,\%	\\   
-			3 										& 74.5\,\%	& 75.0\,\%	& 75.1\,\%	& 75.6\,\%	& 76.4\,\%	\\   
-			4 										& 67.1\,\%	& 67.9\,\%	& 67.9\,\%	& 68.8\,\%	& 70.6\,\%	\\   
-			5 										& 60.4\,\%	& 61.8\,\%	& 61.6\,\%	& 62.1\,\%	& 65.7\,\%	\\   
-			6 										& 17.6\,\%	& 7.5\,\%		& 8.9\,\%		& 40.4\,\%	& 57.7\,\%	\\   
-			7 										& 0.7\,\%		& 0.0\,\%		& 0.0\,\%		& 0.9\,\%		& 34.5\,\%	\\   
-			8 										& 0.0\,\%		& 0.0\,\%		& 0.0\,\%		& 0.0\,\%		& 5.3\,\%		\\   
-			9 										& 0.0\,\%		& 0.0\,\%		& 0.0\,\%		& 0.0\,\%		& 1.6\,\%		\\   
-			10 										& 0.0\,\%		& 0.0\,\%		& 0.0\,\%		& 0.0\,\%		& 0.0\,\%		\\   
+			1 										& 100.0\,\%	& 100.0\,\%	& 100.0\,\%	& 100.0\,\%	& 100.0\,\%			\\
+			2 										& 83.4\,\%	& 83.5\,\%	& 83.5\,\%	& 83.6\,\%	& 84.2\,\%			\\
+			3 										& 74.5\,\%	& 75.0\,\%	& 75.1\,\%	& 75.6\,\%	& 76.4\,\%			\\
+			4 										& 67.1\,\%	& 67.9\,\%	& 67.9\,\%	& 68.8\,\%	& 70.6\,\%			\\
+			5 										& 60.4\,\%	& 61.8\,\%	& 61.6\,\%	& 62.1\,\%	& 65.7\,\%			\\
+			6 										& 17.6\,\%	& 7.5\,\%		& 8.9\,\%		& 40.4\,\%	& 57.7\,\%			\\
+			7 										& 0.7\,\%		& 0.0\,\%		& 0.0\,\%		& 0.9\,\%		& 34.5\,\%			\\
+			8 										& 0.0\,\%		& 0.0\,\%		& 0.0\,\%		& 0.0\,\%		& 5.3\,\%				\\
+			9 										& 0.0\,\%		& 0.0\,\%		& 0.0\,\%		& 0.0\,\%		& 1.6\,\%				\\
+			10 										& 0.0\,\%		& 0.0\,\%		& 0.0\,\%		& 0.0\,\%		& 0.0\,\%				\\
 		\end{tabular}				
 		\caption{Werte zu Abbildung~\ref{fig:einschwingRegula}.}
 		\label{tab:einschwingRegulaWerte}
 		\end{table}
 
-Sowohl für $\lambda$ als auch für $\lambda_t$ werden dieselben Größen eingestellt.
+Sowohl für $\lambda$ als auch für $\lambda_T$ werden dieselben Größen eingestellt.
 Nach spätestens 10 Bildfolgen konvergiert das Verfahren für jede der betrachteten Parametrisierungen.
-Für die Werte $0.001$ und $0.01$ konvergiert das Verfahren bereits nach sieben Bildfolgen vollständig. Zu beachten ist hierbei, dass für $\lambda=0.001$ und $\lambda_t=0.001$ die Abweichung des geschätzten Bewegungsvektorfeldes bereits nach der sechsten Bildfolge am geringsten ist (ca. 7.5\,\%).
+Für die Werte $0.001$ und $0.01$ konvergiert das Verfahren bereits nach sieben Bildfolgen vollständig. Zu beachten ist hierbei, dass für $\lambda=0.001$ und $\lambda_T=0.001$ die Abweichung des geschätzten Bewegungsvektorfeldes bereits nach der sechsten Bildfolge am geringsten ist (ca. 7.5\,\%).
 Wie Tabelle \ref{tab:einschwingRegulaWerte} zu entnehmen ist, nimmt für größere Werte das Konvergenzverhalten ab.
-Die Wahl von $\lambda=0.001$ und $\lambda_t=0.001$ liefert das Optimum für die betrachteten Einstellungen.
+Die Wahl von $\lambda=0.001$ und $\lambda_T=0.001$ liefert das Optimum für die betrachteten Einstellungen.
 
 
 	\section{Zusammenfassung}\todo[inline]{Lukas}
