@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=latex 2011.11.22)  28 SEP 2016 14:48
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=latex 2011.11.22)  28 SEP 2016 16:04
 entering extended mode
 **ABV_Bewegungsanalyse_LaTeX.tex
 (I:\LaTeX\ABV_Bewegungsanalyse_LaTeX\ABV_Bewegungsanalyse_LaTeX.tex
@@ -1148,6 +1148,28 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [4]
+Underfull \hbox (badness 10000) in paragraph at lines 188--190
+
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 204--208
+
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[6]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -1157,29 +1179,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[5]
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 14.49998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[6]
-Underfull \hbox (badness 10000) in paragraph at lines 247--249
-
- []
-
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 14.49998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 263--267
-
- []
-
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
@@ -1203,15 +1203,8 @@ Overfull \hbox (2.61107pt too wide) in paragraph at lines 294--307
 []$[]$ $[]$ 
  []
 
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 14.49998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[9]
 File: Testmaterial2.jpg Graphic file (type eps)
- <Testmaterial2.jpg>
+<Testmaterial2.jpg>
 Underfull \hbox (badness 1028) in paragraph at lines 316--319
 \OT1/cmr/m/n/12 um-fasst ist ein Blu-men-mo-tiv zu se-hen,
  []
@@ -1236,8 +1229,15 @@ Overfull \hbox (2.61107pt too wide) in paragraph at lines 308--320
 []$[]$ $[]$ 
  []
 
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[9]
 File: Testmaterial3.jpg Graphic file (type eps)
-<Testmaterial3.jpg>
+ <Testmaterial3.jpg>
 Underfull \hbox (badness 10000) in paragraph at lines 330--333
 
  []
@@ -1260,6 +1260,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 343--346
 
 File: testmaterial12.jpg Graphic file (type eps)
 <testmaterial12.jpg>
+Underfull \hbox (badness 10000) in paragraph at lines 354--357
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 354--357
+
+ []
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
@@ -1267,17 +1276,8 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [11]
-Underfull \hbox (badness 10000) in paragraph at lines 354--357
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 354--357
-
- []
-
 File: frame43.png Graphic file (type eps)
-<frame43.png>
+ <frame43.png>
 File: frame47.png Graphic file (type eps)
  <frame47.png>
 Overfull \hbox (2.61107pt too wide) in paragraph at lines 358--372
@@ -1298,13 +1298,6 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [13]
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 14.49998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[14]
 Underfull \hbox (badness 10000) in paragraph at lines 668--671
 
  []
@@ -1315,7 +1308,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[15]
+[14]
 Underfull \hbox (badness 10000) in paragraph at lines 672--676
 
  []
@@ -1326,14 +1319,14 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[16]
+[15]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[17] (I:\LaTeX\ABV_Bewegungsanalyse_LaTeX\ABV_Bewegungsanalyse_LaTeX.bbl)
+[16] (I:\LaTeX\ABV_Bewegungsanalyse_LaTeX\ABV_Bewegungsanalyse_LaTeX.bbl)
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 855.
 
 
@@ -1342,7 +1335,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[18]
+[17]
 Package atveryend Info: Executing hook `AfterLastShipout' on input line 855.
 \BKM@file=\write5
  (I:\LaTeX\ABV_Bewegungsanalyse_LaTeX\ABV_Bewegungsanalyse_LaTeX.aux)
@@ -1350,12 +1343,12 @@ Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 855.
 Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 855.
  ) 
 Here is how much of TeX's memory you used:
- 22090 strings out of 494046
- 381748 string characters out of 3138707
- 613902 words of memory out of 3000000
- 24920 multiletter control sequences out of 15000+200000
+ 22082 strings out of 494046
+ 381532 string characters out of 3138707
+ 611184 words of memory out of 3000000
+ 24912 multiletter control sequences out of 15000+200000
  14648 words of font info for 57 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
- 63i,13n,92p,819b,581s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 63i,13n,92p,822b,581s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on ABV_Bewegungsanalyse_LaTeX.dvi (18 pages, 314460 bytes).
+Output written on ABV_Bewegungsanalyse_LaTeX.dvi (17 pages, 303108 bytes).
