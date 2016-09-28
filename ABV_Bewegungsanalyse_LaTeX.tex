@@ -8,7 +8,7 @@
 	\usepackage{graphicx}
 	\usepackage{multirow}
 	\usepackage{multicol}
-	\usepackage{pst-plot}
+	\usepackage{xcolor}	
 	\usepackage{float}
 	\usepackage{pdfpages}
 	\usepackage{todonotes}
@@ -179,7 +179,7 @@ Da es sich um einen bayesschen Ansatz handelt, gilt es sich mit bedingten Wahrsc
 		Die äußere Schleife läuft über den Stack und sorgt somit dafür, dass die Berechnungen pro Block und Iteration jeweils für jedes Bild des Input-Stacks erfolgen.\\
 		Sobald ein Bild fertig bearbeitet ist, die äußere Schleife also einen Durchlauf absolviert hat, wird der Fortschrittsbalken im ImageJ-Fenster aktualisiert, damit der Benutzer eine Rückmeldung bekommt, wie weit die Berechnung fortgeschritten ist.\\
 		Zuletzt wird in der \texttt{run()}-Methode noch das Ausgabefenster, in welchem der Input-Stack inklusive der überlagerten Bewegungsvektorfelder dargestellt wird, generiert und dessen Methode zur Anzeige aufgerufen.
-		\begin{comment}
+		%\begin{comment}
 			\begin{figure}[h!]
 			\centering
 					\begin{psmatrix}[rowsep=0.3,colsep=0.4]
@@ -229,7 +229,7 @@ Da es sich um einen bayesschen Ansatz handelt, gilt es sich mit bedingten Wahrsc
 			\caption{Programmablauf}
 			\label{fig:programmAblauf}
 		\end{figure}
-\end{comment}		
+%\end{comment}		
 		
 		\subsection{Kostenfunktion}\label{sec:costFunc}\todo[inline]{Alle}
 			\subsubsection{Datenterm}\todo[inline]{Lukas}\label{ch:Datenterm}
@@ -394,7 +394,7 @@ Abbildung~\ref{fig:einschwingFrame} veranschaulicht das Konvergenzverhalten der 
 Spätestens nach der siebten Bildfolge konvergiert das Verfahren.
 Neben den Einstellungen für $\nu$,$\lambda$ und $\lambda_T$ wird das Konvergenzverhalten durch den Bildinhalt des Testmaterials beeinflusst.
 
-		\begin{comment}
+		%\begin{comment}
 			\begin{figure}[H]
 				\psset{xunit=1cm,yunit=.5mm}
 					\begin{pspicture}(-0.5,-20)(12,130)
@@ -456,12 +456,212 @@ Neben den Einstellungen für $\nu$,$\lambda$ und $\lambda_T$ wird das Konvergenzv
 				\caption{Einschwingverhalten der Bewegungsvektorfelder über die ersten 10 Bilder von Testmaterial 1 und 2.}
 				\label{fig:einschwingFrame}
 			\end{figure}
-		\end{comment}
+		%\end{comment}
 		
-\subsubsection{Innerhalb eines Bildes}\todo[inline]{Laura}
+		\subsubsection{Innerhalb eines Bildes}\todo[inline]{Laura}
 Wie in Kapitel \ref{ch:programmAblauf} beschrieben wird die Bewegungsdetektion in jedem Frame über mehrere Iterationen hinweg ermittelt. Mit anderen Worten: $V_{n}$ wird in jeder Iteration neu gesetzt und man kann davon sprechen. Im Folgenden wird die Veränderung der Vektoren nach jeder Iteration betrachtet. Dabei werden die Parameter wie in Kapitel \ref{AuswertungTestmaterialien} gewählt.
 
-
+		%\begin{comment}
+			\begin{figure}[H]
+				\psset{xunit=1cm,yunit=.5mm}
+					\begin{pspicture}(-0.5,-20)(12,130)
+					\psaxes[Ox=1,Dx=1,Dy=20,xsubticks=4,ysubticks=2,yAxis=false]{-}(1,0)(5,100)
+					\psaxes[Ox=1,Dx=1,Dy=20,xsubticks=4,ysubticks=2,xAxis=false]{-}(1,0)(5,100)
+					\rput[l](-0.5,115){Abweichung [\%]}
+					\rput[l](5.5,0){Iteration}
+					\rput[l](8,92){Bild 1}
+					\psline[linecolor=red,linewidth=1pt]{-}(7,92)(7.75,92)
+					\psline[linestyle=none,linewidth=0.125pt]{*-*}(7,92)(7.75,92)
+					\rput[l](8,80){Bild 2}
+					\psline[linecolor=blue,linewidth=1pt]{-}(7,80)(7.75,80)
+					\psline[linestyle=none,linewidth=0.125pt]{*-*}(7,80)(7.75,80)
+					\rput[l](8,68){Bild 3}
+					\psline[linecolor=green,linewidth=1pt]{-}(7,68)(7.75,68)
+					\psline[linestyle=none,linewidth=0.125pt]{*-*}(7,68)(7.75,68)
+					\rput[l](8,56){Bild 4}
+					\psline[linecolor=orange,linewidth=1pt]{-}(7,56)(7.75,56)
+					\psline[linestyle=none,linewidth=0.125pt]{*-*}(7,56)(7.75,56)
+					\rput[l](8,44){Bild 5}
+					\psline[linecolor=yellow,linewidth=1pt]{-}(7,44)(7.75,44)
+					\psline[linestyle=none,linewidth=0.125pt]{*-*}(7,44)(7.75,44)
+					\rput[l](8,32){Bild 6}
+					\psline[linecolor=cyan,linewidth=1pt]{-}(7,32)(7.75,32)
+					\psline[linestyle=none,linewidth=0.125pt]{*-*}(7,32)(7.75,32)
+					% frame 1
+					\listplot[linecolor=red,linewidth=1pt]{
+						1	95.2885842
+						2	91.2961733
+						3	88.4551491
+						4	85.6458496
+						5	83.5249551}
+					\listplot[linewidth=.025pt,plotstyle=dots]{
+						1	95.2885842
+						2	91.2961733
+						3	88.4551491
+						4	85.6458496
+						5	83.5249551}
+					% frame 2
+					\listplot[linecolor=blue,linewidth=1pt]{
+						1	81.4226184
+						2	79.5418027
+						3	77.8162246
+						4	76.2804576
+						5	75.0459657}
+					\listplot[linewidth=.025pt,plotstyle=dots]{
+						1	81.4226184
+						2	79.5418027
+						3	77.8162246
+						4	76.2804576
+						5	75.0459657}
+					% frame 3
+					\listplot[linecolor=green,linewidth=1pt]{
+						1	72.3237662
+						2	71.1472612
+						3	69.720132
+						4	68.7000229
+						5	67.8523882}
+					\listplot[linewidth=.025pt,plotstyle=dots]{
+						1	72.3237662
+						2	71.1472612
+						3	69.720132
+						4	68.7000229
+						5	67.8523882}
+					% frame 4
+					\listplot[linecolor=orange,linewidth=1pt]{
+						1	64.298924
+						2	63.7272028
+						3	63.0797129
+						4	62.4292025
+						5	61.7874485}
+					\listplot[linewidth=.025pt,plotstyle=dots]{
+						1	64.298924
+						2	63.7272028
+						3	63.0797129
+						4	62.4292025
+						5	61.7874485}
+					% frame 5
+					\listplot[linecolor=yellow,linewidth=1pt]{
+						1	50.3405223
+						2	47.6418829
+						3	21.9161035
+						4	10.9143968
+						5	07.4779145}
+					\listplot[linewidth=.025pt,plotstyle=dots]{
+						1	50.3405223
+						2	47.6418829
+						3	21.9161035
+						4	10.9143968
+						5	07.4779145}
+					% frame 6
+					\listplot[linecolor=cyan,linewidth=1pt]{
+						1	02.2438394
+						2	01.1901277
+						3	00.558221
+						4	00.1330726
+						5	0.0}
+					\listplot[linewidth=.025pt,plotstyle=dots]{
+						1	0.022438394
+						2	0.011901277
+						3	0.00558221
+						4	0.001330726
+						5	0.0}
+			\end{pspicture}					
+			\caption{Einschwingverhalten der Bewegungsvektorfelder in Abhängigkeit der Iterationen innerhalb eines Bildes bei fünf Iterationen.}
+			\label{fig:einschwingIter5}
+		\end{figure}
+	%\end{comment}		
+	
+			%\begin{comment}
+			\begin{figure}[H]
+				\psset{xunit=1cm,yunit=.5mm}
+					\begin{pspicture}(-0.5,-20)(12,130)
+					\psaxes[Ox=1,Dx=1,Dy=20,xsubticks=4,ysubticks=2,yAxis=false]{-}(1,0)(10,100)
+					\psaxes[Ox=1,Dx=1,Dy=20,xsubticks=4,ysubticks=2,xAxis=false]{-}(1,0)(10,100)
+					\rput[l](-0.5,115){Abweichung [\%]}
+					\rput[l](10.5,0){Iteration}
+					\rput[l](9,44){Bild 1}
+					\psline[linecolor=red,linewidth=1pt]{-}(8,44)(8.75,44)
+					\psline[linestyle=none,linewidth=0.125pt]{*-*}(8,44)(8.75,44)
+					\rput[l](9,32){Bild 2}
+					\psline[linecolor=blue,linewidth=1pt]{-}(8,32)(8.75,32)
+					\psline[linestyle=none,linewidth=0.125pt]{*-*}(8,32)(8.75,32)
+					\rput[l](9,20){Bild 3}
+					\psline[linecolor=green,linewidth=1pt]{-}(8,20)(8.75,20)
+					\psline[linestyle=none,linewidth=0.125pt]{*-*}(8,20)(8.75,20)					
+					% frame 1
+					\listplot[linecolor=red,linewidth=1pt]{
+						1	95.2885842
+						2	91.2961733
+						3	88.4551491
+						4	85.6458496
+						5	83.5249551
+						6	81.287162
+						7	79.6640612
+						8	77.930831
+						9	76.4122635
+						10	75.2230274}
+					\listplot[linewidth=.025pt,plotstyle=dots]{
+						1	95.2885842
+						2	91.2961733
+						3	88.4551491
+						4	85.6458496
+						5	83.5249551
+						6	81.287162
+						7	79.6640612
+						8	77.930831
+						9	76.4122635
+						10	75.2230274}
+					% frame 2
+					\listplot[linecolor=blue,linewidth=1pt]{
+						1	72.2582365
+						2	70.3882259
+						3	69.0534415
+						4	68.0520747
+						5	66.6586773
+						6	66.0073828
+						7	65.6195556
+						8	65.1202407
+						9	64.691025
+						10	64.4321682}
+					\listplot[linewidth=.025pt,plotstyle=dots]{
+						1	72.2582365
+						2	70.3882259
+						3	69.0534415
+						4	68.0520747
+						5	66.6586773
+						6	66.0073828
+						7	65.6195556
+						8	65.1202407
+						9	64.691025
+						10	64.4321682}
+					% frame 3
+					\listplot[linecolor=green,linewidth=1pt]{
+						1	39.3824754
+						2	33.4164411
+						3	28.4391573 %2.99362E+15
+						4	23.4618736
+						5	17.9897871
+						6	13.7384903
+						7	7.6007315 %4.40499E+15
+						8	01.4629727
+						9	00.4225138
+						10	00.385155}
+					\listplot[linewidth=.025pt,plotstyle=dots]{
+						1	39.3824754
+						2	33.4164411
+						3	28.4391573 %2.99362E+15
+						4	23.4618736
+						5	17.9897871
+						6	13.7384903
+						7	7.6007315 %4.40499E+15
+						8	01.4629727
+						9	00.4225138
+						10	00.385155}					
+			\end{pspicture}					
+			\caption{Einschwingverhalten der Bewegungsvektorfelder in Abhängigkeit der Iterationen innerhalb eines Bildes bei zehn Iterationen.}
+			\label{fig:einschwingIter10}
+		\end{figure}
+	%\end{comment}		
 
 		\subsection{Parameter der Regularisierungsterme}\todo[inline]{Timo}
 		
@@ -475,7 +675,7 @@ In Tabelle \ref{fig:einschwingRegula} wird das Einschwingen der ersten 10 Bewegu
 Zur Bestimmung der Abweichung des geschätzten Bewegungsvektorfeldes wird wie in \ref{sec:bvf} verfahren. \\
 		
 		
-		\begin{comment}
+		%\begin{comment}
 			\begin{figure}[H]
 				\psset{xunit=1cm,yunit=.5mm}
 					\begin{pspicture}(-0.5,-20)(12,130)
@@ -617,7 +817,7 @@ Zur Bestimmung der Abweichung des geschätzten Bewegungsvektorfeldes wird wie in 
 			\caption{Einschwingverhalten der Bewegungsvektorfelder in Abhängigkeit der Regularisierungsparameter $\lambda$ und $\lambda_T$.}
 			\label{fig:einschwingRegula}
 		\end{figure}
-	\end{comment}			
+	%\end{comment}			
 	
 		\begin{table}[H]
 		\centering
