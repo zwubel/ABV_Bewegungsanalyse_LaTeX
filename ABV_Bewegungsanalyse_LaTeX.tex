@@ -130,7 +130,7 @@
 	\newpage
 	\tableofcontents
 	\newpage
-	\section{Einleitung}\todo[inline]{Lukas}
+	\section{Einleitung}
 	Diese Ausarbeitung ist Teil der Abschlussprojekt-Dokumentation im Modul "`Weiterführende Themen der Bildverarbeitung"' im Master Medientechnologie an der Technischen Hochschule Köln.
 	
 	Das Projekt beschäftigte sich mit der Bewegungsanalyse einer Videosequenz mit dem Ansatz des Papers von Aach und Kunz\textsuperscript{\cite{aach1998bayesian}}. Es wurde bearbeitet von Laura Anger, Timo Breuer und Lukas Kolhagen.
@@ -286,7 +286,7 @@ Das Ergebnis wird für horizontale und vertikale Nachbarregionen mit dem Faktor $
 	Bei den bereits erwähnten Symbolen handelt es sich um Kreise und Pfeile. Ein Kreis wird immer 		dann genutzt, wenn für den entsprechenden Block keine oder nur eine kleine Bewegung durch das 		Verfahren ermittelt wurde. Die Pfeile zeigen immer in Richtung der ermittelten Verschiebung. 			Beide Symbole haben ihren Startpunkt im Mittelpunkt des jeweiligen Blocks.\\
 	Die Randbereiche der einzelnen Bewegungsvektorfelder werden bei der Visualisierung ausgespart, 
 	da hier durch den Algorithmus begründete Fehlberechnungen auftreten.
-	\section{Auswertung}\todo[inline]{Laura \& Timo}
+	\section{Auswertung}
 
 \subsection{Testmaterial}\label{sec:testmaterialien}
 	Das Verfahren wird anhand von drei unterschiedlichen Bildsequenzen getestet, die im Folgenden 		Testmaterial 1-3 genannt werden und alle eine Auflösung von 256x2656 Pixeln haben. Bei 				Testmaterial 1 und Testmaterial 2 wurde ein Bild um bekannte Werte in x- und y-Richtung 				verschoben. Anzumerken ist auch, dass beide Testmaterialien identisch verschoben wurden. Bei 			Testmaterial 3 kann die Bewegung der zu sehenden Objekte lediglich geschätzt werden. Alle 			Testmaterialien wurden für diese Dokumentation aufgenommen bzw. erstellt.\vspace{0.6cm}
@@ -332,7 +332,7 @@ Das Ergebnis wird für horizontale und vertikale Nachbarregionen mit dem Faktor $
 	\vspace{0.4cm}\\
 \end{minipage}
 
-\subsection{Auswertung der Testmaterialien}\todo[inline]{Laura} \label{AuswertungTestmaterialien}
+\subsection{Auswertung der Testmaterialien}\label{AuswertungTestmaterialien}
 Im Folgenden wird das Verfahren anhand der in Kapitel \ref{sec:testmaterialien} aufgeführten Testmaterialien ausgewertet. Dabei wurden für alle Materialien die gleichen Einstellungsparameter gewählt:
 \begin{itemize} 
 \item[$\bullet$] 5 Iterationen
@@ -847,7 +847,13 @@ Wie Tabelle \ref{tab:einschwingRegulaWerte} zu entnehmen ist, nimmt für größere 
 Die Wahl von $\lambda=0.001$ und $\lambda_T=0.001$ liefert das Optimum für die betrachteten Einstellungen.
 
 
-	\section{Zusammenfassung}\todo[inline]{Lukas}
+	\section{Zusammenfassung}
+		Das Projekt, den Ansatz von Aach und Kunz\textsuperscript{\cite{aach1998bayesian}} auf normale Bildsequenzen zu übertragen und so eine robuste Methode zur Bewegungsschätzung von Realvideo-Sequenzen zu erhalten, konnte erfolgreich abgeschlossen werden.\\ 
+		Es wurde die Algorithmik an die geänderten Daten angepasst und in diesem Zuge das spezielle Rauschmodell für Röntgenaufnahmen vernachlässigt.\\
+		Für die Auswertung wurden drei verschiedene Testmaterialien erstellt, von denen zwei lediglich Standbilder enthalten, welche über den Bildausschnitt über die Zeit verschoben werden, sodass die tatsächliche Bewegung im Bild bekannt ist und als Grundwahrheit angenommen werden kann. Die verbleibende Testsequenz wurde ausgewählt, da diese Bewegungen von Realobjekten in verschiedenen Bewegungen, eine statische Kameraposition und zeitweise Verdeckungen der beiden Bewegungen bot. Die Auswertung anhand des Testmaterials hat gezeigt, dass die Bewegungsschätzung hinreichend gut für die verwendeten Testmaterialien funktioniert.\\ Des Weiteren belegt die Auswertung der Einschwingverhalten über die Iterationen pro Bild, dass -- ähnlich wie im Paper von Aach und Kunz\textsuperscript{\cite{aach1998bayesian}} -- eine signifikante Verbesserung der Ergebnisse über fünf bis zehn Iterationen erreicht werden kann.\\ Es stellt sich auch heraus, dass es zu Beginn einer Bildsequenz einige Bilder dauert, bis sich der Fehler der Bewegungsschätzung auf ein akzeptables Niveau gesunken ist.\\
+		
+		Insgesamt bewegen sich die Ergebnisse der Untersuchung in einem erwartbaren Bereich, da bei einer Anpassung des Verfahrens von Röntgen- auf normale Bildsequenzen keine starken Abweichungen eintreten sollten.
+	
 	\section{Arbeitsaufteilung}\todo[inline]{Alle}
 	\newpage
 	\bibliographystyle{plain}
