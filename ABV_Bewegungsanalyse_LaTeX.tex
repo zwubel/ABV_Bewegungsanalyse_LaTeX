@@ -11,13 +11,9 @@
 	\usepackage{xcolor}	
 	\usepackage{float}
 	\usepackage{pdfpages}
-	\usepackage{todonotes}
 	\usepackage{pst-plot}
 	\usepackage{pstricks}
-	\usepackage{pstricks-add}
-	\usepackage{pst-node}
-	\usepackage{pst-grad,multido} 
-	\usepackage{verbatim}
+	\usepackage{pst-node}	
 	\usepackage[font=small, labelfont=bf, format=plain, indention=1cm]{caption}
 	\usepackage{fixltx2e}
 	\title{}
@@ -160,7 +156,7 @@ klar machen, wie das geschätzte Bewegungsvektorfeld überhaupt definiert ist.\\
 		\label{fig:beziehung}
 	\end{figure}
 
-In Abbildung \ref{fig:beziehung} sieht man drei Frames einer Bildsequenz. $Y_{n}$ steht hierbei für das $n$-te Bild dieser Sequenz und $y_{n}(k)$ ist der Grauwert des Pixels an der Stelle $k$. Das $k$ steht für ein Koordinatenpärchen ($k_{x},k_{y}$) und es gilt $k=1,\dots,N$, wobei $N$ die Anzahl der Pixel eines Frames ist. Der eingezeichnete Vektor $v_{n}(k)$ ist derjenige Vektor, der auf $k$ addiert wird, sodass sich die Position des entsprechenden Pixels im vorherigen Bild ergibt. All diese Bewegungsvektoren zusammengenommen ergeben das Bewegungsvektorfeld eines Frames, welches in der Abbildung mit $V_{n}$ bezeichnet wird. \\
+In Abbildung \ref{fig:beziehung} sieht man drei Bilder einer Bildsequenz. $Y_{n}$ steht hierbei für das $n$-te Bild dieser Sequenz und $y_{n}(k)$ ist der Grauwert des Pixels an der Stelle $k$. Das $k$ steht für ein Koordinatenpärchen ($k_{x},k_{y}$) und es gilt $k=1,\dots,N$, wobei $N$ die Anzahl der Pixel eines Bildes ist. Der eingezeichnete Vektor $v_{n}(k)$ ist derjenige Vektor, der auf $k$ addiert wird, sodass sich die Position des entsprechenden Pixels im vorherigen Bild ergibt. All diese Bewegungsvektoren zusammengenommen ergeben das Bewegungsvektorfeld eines Bildes, welches in der Abbildung mit $V_{n}$ bezeichnet wird. \\
 Das geschätzte Bewegungsvektorfeld $\hat{V}_{n}$ ergibt sich nach den Ausführungen von Aach und Kunz zu: 
 	
 \begin{equation}
@@ -225,7 +221,7 @@ Das Ergebnis wird für horizontale und vertikale Nachbarregionen mit dem Faktor $
 			\subsection{Programmablauf} \label{sec:programmAblauf}
 		Der Programmablauf des ImageJ-Plug-Ins in Form der \texttt{run()}-Methode, die aufgrund des implementierten \texttt{PlugInFilter}-Interfaces überschrieben werden muss, ist in Abbildung~\ref{fig:programmAblauf} dargestellt.\\
 		Grob betrachtet, werden in der \texttt{run()}-Methode drei \texttt{for}-Schleifen geschachtelt ausgeführt. Die innerste Schleife läuft über jeden Block des Bildes und bestimmt für diesen den Bewegungsvektor mit den geringsten Kosten aus den 14 berechneten Alternativen. Die Blockgröße ist variabel und kann z.\,B. $8\times8$ betragen.\\
-		Die nächst äußere Schleife ist für die Iterationen zuständig. In den Iterationen wird innerhalb eines Bildes des Input-Stacks das Bewegungsvektorfeld mehrfach berechnet und jeweils das zuletzt berechnete Ergebnis als Grundlage für die nächste Berechnung verwendet. Dies ist erforderlich, um die Abweichung der Bewegungsvektoren pro Frame so gering wie möglich zu halten. Gleichzeitig hängt die Wahl der Anzahl der Iterationen natürlich davon ab, welche Performanz die Berechnung erreichen soll, also wie schnell ein Ergebnis benötigt wird.\\
+		Die nächst äußere Schleife ist für die Iterationen zuständig. In den Iterationen wird innerhalb eines Bildes des Input-Stacks das Bewegungsvektorfeld mehrfach berechnet und jeweils das zuletzt berechnete Ergebnis als Grundlage für die nächste Berechnung verwendet. Dies ist erforderlich, um die Abweichung der Bewegungsvektoren pro Bild so gering wie möglich zu halten. Gleichzeitig hängt die Wahl der Anzahl der Iterationen natürlich davon ab, welche Performanz die Berechnung erreichen soll, also wie schnell ein Ergebnis benötigt wird.\\
 		Die äußere Schleife läuft über den Stack und sorgt somit dafür, dass die Berechnungen pro Block und Iteration jeweils für jedes Bild des Input-Stacks erfolgen.\\
 		Sobald ein Bild fertig bearbeitet ist, die äußere Schleife also einen Durchlauf absolviert hat, wird der Fortschrittsbalken im ImageJ-Fenster aktualisiert, damit der Benutzer eine Rückmeldung bekommt, wie weit die Berechnung fortgeschritten ist.\\
 		Zuletzt wird in der \texttt{run()}-Methode noch das Ausgabefenster, in welchem der Input-Stack inklusive der überlagerten Bewegungsvektorfelder dargestellt wird, generiert und dessen Methode zur Anzeige aufgerufen.
@@ -282,7 +278,7 @@ Das Ergebnis wird für horizontale und vertikale Nachbarregionen mit dem Faktor $
 %\end{comment}		
 			
 \subsection{Visualisierung}\label{sec:vis}
-	Um die Bewegungsvektorfelder $V_{n}$ darzustellen, wird sich mit Symbolen beholfen. Diese werden 				blockweise  über die Videosequenz gelegt. Aus Darstellungsgründen wird das Video dazu um Faktor 	4 in beide Bildrichtungen hoch skaliert. Da die einzelnen Bewegungsvektoren immer zwischen zwei 		Frames berechnet werden, wird genau ein Bewegungsvektorfeld weniger erzeugt, als das 					Eingangsmaterial Frames hat. \\
+	Um die Bewegungsvektorfelder $V_{n}$ darzustellen, wird sich mit Symbolen beholfen. Diese werden 				blockweise  über die Videosequenz gelegt. Aus Darstellungsgründen wird das Video dazu um Faktor 	4 in beide Bildrichtungen hoch skaliert. Da die einzelnen Bewegungsvektoren immer zwischen zwei Bildern berechnet werden, wird genau ein Bewegungsvektorfeld weniger erzeugt, als das 					Eingangsmaterial Bilder hat. \\
 	Bei den bereits erwähnten Symbolen handelt es sich um Kreise und Pfeile. Ein Kreis wird immer 		dann genutzt, wenn für den entsprechenden Block keine oder nur eine kleine Bewegung durch das 		Verfahren ermittelt wurde. Die Pfeile zeigen immer in Richtung der ermittelten Verschiebung. 			Beide Symbole haben ihren Startpunkt im Mittelpunkt des jeweiligen Blocks.\\
 	Die Randbereiche der einzelnen Bewegungsvektorfelder werden bei der Visualisierung ausgespart, 
 	da hier durch den Algorithmus begründete Fehlberechnungen auftreten können.
@@ -300,8 +296,8 @@ Das Ergebnis wird für horizontale und vertikale Nachbarregionen mit dem Faktor $
 \end{minipage}
 \begin{minipage}{0.5\textwidth}
 	\textbf{Testmaterial 1}\\
-	Diese Bildsequenz besteht aus 150 Frames und wurde aus einem Bild der Stadt Köln erzeugt.\\ 
-	Bei den ersten und letzten 50 Frames wird ein Ausschnitt des Bildes um jeweils 10 Pixel 				nach links bzw. oben verschoben. In den mittleren 50 Frames  wird der Bildinhalt um 10 				Pixel nach links und 10 Pixel nach unten verschoben. 
+	Diese Bildsequenz besteht aus 150 Bildern und wurde aus einem Standbild der Stadt Köln erzeugt.\\ 
+	Bei den ersten und letzten 50 Bildern wird ein Ausschnitt des Standbildes um jeweils 10 Pixel 				nach links bzw. oben verschoben. In den mittleren 50 Bildern  wird der Bildinhalt um 10 				Pixel nach links und 10 Pixel nach unten verschoben. 
 	\vspace{2.0cm}\\
 \end{minipage}\\
 
@@ -314,7 +310,7 @@ Das Ergebnis wird für horizontale und vertikale Nachbarregionen mit dem Faktor $
 \end{minipage}
 \begin{minipage}{0.5\textwidth}
 	\textbf{Testmaterial 2}\\
-	Auf den 150 Frames, die diese Bildsequenz umfasst ist ein Blumenmotiv zu sehen, welches jeweils 	über 50 Frames in verschiedene Richtungen verschoben wird. Auf den ersten Frames erfolgt eine 		Verschiebung um 10 Pixel nach links. Während die mittleren Frames um sowohl 10 Pixel nach 			links, als auch 10 Pixel nach oben verschoben wurden, wurde der Bildinhalt der verbleibenden 			Frames nur um 10 Pixel nach oben verschoben.
+	Auf den 150 Bildern, die diese Bildsequenz umfasst ist ein Blumenmotiv zu sehen, welches jeweils 	über 50 Bilder in verschiedene Richtungen verschoben wird. Auf den ersten Bildern erfolgt eine 		Verschiebung um 10 Pixel nach links. Während die mittleren Bilder um sowohl 10 Pixel nach 			links, als auch 10 Pixel nach oben verschoben wurden, wurde der Bildinhalt der verbleibenden 			Bilder nur um 10 Pixel nach oben verschoben.
 	\vspace{0.9cm}\\
 \end{minipage}\vspace{0.7cm}
 
@@ -328,7 +324,7 @@ Das Ergebnis wird für horizontale und vertikale Nachbarregionen mit dem Faktor $
 \end{minipage}
 \begin{minipage}{0.5\textwidth}
 	\textbf{Testmaterial 3}\\
-	Bei Testmaterial 3 handelt es sich um eine reale Videosequenz, die in Köln Ehrenfeld 					aufgenommen wurde. Zu sehen sind ein Auto, dass sich von links nach rechts durch das Bild 			bewegt und eine Fahrradfahrerin, die das Bild genau entgegengesetzt durchfährt. Beide Objekte 		werden zeitweise durch verschiedene Objekte verdeckt. Die Kamera ist starr, weshalb für den 			restlichen Bildinhalt keine Bewegung zu erkennen ist. Insgesamt besteht die Testsequenz aus 118 	Frames.
+	Bei Testmaterial 3 handelt es sich um eine reale Videosequenz, die in Köln Ehrenfeld aufgenommen wurde. Zu sehen sind ein Auto, dass sich von links nach rechts durch das Bild bewegt und eine Fahrradfahrerin, die das Bild genau entgegengesetzt durchfährt. Beide Objekte werden zeitweise durch verschiedene Objekte verdeckt. Die Kamera ist starr, weshalb für den restlichen Bildinhalt keine Bewegung zu erkennen ist. Insgesamt besteht die Testsequenz aus 118 Bildern.
 	\vspace{0.4cm}\\
 \end{minipage}
 
@@ -341,13 +337,13 @@ Im Folgenden wird das Verfahren anhand der in Kapitel \ref{sec:testmaterialien} 
 \end{itemize}
 
 In Abbildung \ref{fig:testmaterial12} sind jeweils drei Bewegungsvektorfelder für Testmaterial 1 und Testmaterial 2 zu sehen. Es ist deutlich erkennbar, dass die Bewegungsdetektion sowohl für hochfrequente, als auch für tieffrequente Bildinhalte funktioniert hat. \\
-Die Abweichungen der berechneten von den tatsächlichen Bewegungsvektoren können bestimmt werden, da die Bewegung bekannt ist. Da sich alle Blöcke eines Frames mit der selben Geschwindigkeit in die selbe Richtung bewegen, kann die absolute Längenabweichung der einzelnen Vektoren über ein Frame aufsummiert und durch die Anzahl der Blöcke geteilt werden um ein Maß für die absolute Abweichung zu erhalten.\\
-Schaut man sich die so ermittelten Abweichungen für ein Frame an, wo in den vorherigen Frames keine Richtungsänderung  stattgefunden hat, so beträgt diese im Durchschnitt für beide Testmaterialien ungefähr ein halbes Pixel. Da es wie in Kapitel \ref{sec:Einschwingverhalten} näher beschrieben dauert, bis die Bewegungsvektoren eingeschwungen sind, kommt es in den Frames 50 und 100 in beiden Testmaterialien zu einer Abweichung von bis zu 8 Pixeln. Das sind eben die Frames, wo sich die Bewegung plötzlich ändert. \\
+Die Abweichungen der berechneten von den tatsächlichen Bewegungsvektoren können bestimmt werden, da die Bewegung bekannt ist. Da sich alle Blöcke eines Bildes mit der selben Geschwindigkeit in die selbe Richtung bewegen, kann die absolute Längenabweichung der einzelnen Vektoren über ein Bild aufsummiert und durch die Anzahl der Blöcke geteilt werden um ein Maß für die absolute Abweichung zu erhalten.\\
+Schaut man sich die so ermittelten Abweichungen für ein Bild an, wo in den vorherigen Bildern keine Richtungsänderung  stattgefunden hat, so beträgt diese im Durchschnitt für beide Testmaterialien ungefähr ein halbes Pixel. Da es wie in Kapitel \ref{sec:Einschwingverhalten} näher beschrieben dauert, bis die Bewegungsvektoren eingeschwungen sind, kommt es in den Bildern 50 und 100 in beiden Testmaterialien zu einer Abweichung von bis zu 8 Pixeln. Das sind eben die Bilder, wo sich die Bewegung plötzlich ändert. \\
 
 \begin{figure}[H] 
 		\centering
 		\includegraphics[bb=0 0 1540 1024, width=\textwidth]{testmaterial12.jpg} 
-			\caption{Bewegungsvektorfelder (v.\,l.\,n.\,r.): Frame 10, Frame 60 und Frame 110.\newline Oben Testmarial 1 und unten Testmaterial 2.}
+			\caption{Bewegungsvektorfelder (v.\,l.\,n.\,r.): Bild 10, Bild 60 und Bild 110.\newline Oben Testmarial 1 und unten Testmaterial 2.}
 			\label{fig:testmaterial12}
 	\end{figure}
 
@@ -359,14 +355,14 @@ Es ist deutlich zu erkennen, dass die Bereiche in denen keine Bewegung stattfind
 \begin{minipage}{0.5\textwidth}
 	\begin{figure}[H] 
 		\includegraphics[bb=0 0 517 516, width=0.9\textwidth]{frame43.png}
-			\caption{Bewegungsvektorfeld \newline Testmaterial 3. Frame 43.}
+			\caption{Bewegungsvektorfeld \newline Testmaterial 3. Bild 43.}
 		\label{fig:frame43}
 	\end{figure}
 \end{minipage}
 \begin{minipage}{0.5\textwidth}
 	\begin{figure}[H] 
 		\includegraphics[bb=0 0 514 515, width=0.9\textwidth]{frame47.png}
-			\caption{Bewegungsvektorfeld \newline Testmaterial 3. Frame 47.}
+			\caption{Bewegungsvektorfeld \newline Testmaterial 3. Bild 47.}
 		\label{fig:frame47}
 	\end{figure}
 \end{minipage}\vspace{0.7cm}
@@ -374,7 +370,7 @@ Es ist deutlich zu erkennen, dass die Bereiche in denen keine Bewegung stattfind
 Alle erzeugten Bewegungsvektorfelder können auf der beiliegenden Daten-CD eingesehen werden. Die Dateien heißen \textit{bvf-1.tiff}, \textit{bvf-2.tiff} und \textit{bvf-3.tiff}.
 
 \subsection{Einschwingverhalten} \label{sec:Einschwingverhalten}
-Als Ausgangspunkt werden alle Bewegungsvektorfelder zu Beginn des Algorithmus auf den Nullvektor gesetzt. Das Verfahren muss sich also zunächst Einschwingen. Dabei wird im Folgenden zwischen dem interframe und dem intraframe Einschwingen unterschieden.	
+Als Ausgangspunkt werden alle Bewegungsvektorfelder zu Beginn des Algorithmus auf den Nullvektor gesetzt. Das Verfahren muss sich also zunächst Einschwingen. Dabei wird im Folgenden zwischen dem interframe Einschwingen (über mehrere Bilder hinweg) und dem intraframe Einschwingen (innerhalb eines Bildes) unterschieden.
 
 \subsubsection{Bewegungsvektorfelder}\label{sec:bvf}
 
@@ -460,8 +456,8 @@ Neben den Einstellungen für $\nu,\lambda$ und $\lambda_T$ wird das Konvergenzver
 		%\end{comment}
 		
 		\subsubsection{Innerhalb eines Bildes}\label{sec:einschBild}
-Wie in Kapitel \ref{sec:programmAblauf} beschrieben wird die Bewegungsdetektion in jedem Frame über mehrere Iterationen hinweg ermittelt. Mit anderen Worten: $V_{n}$ wird in jeder Iteration neu gesetzt. Im Folgenden wird die Veränderung der Vektoren nach jeder Iteration betrachtet. Dabei werden die Parameter wie in Kapitel \ref{sec:bvf} gewählt.\\
-In Abbildung \ref{fig:einschwingIter5} werden die prozentualen Veränderungen der ersten sechs Bewegungsvektorfelder über 5 Iterationen hinweg aufgetragen. Es ist deutlich zu erkennen, dass bei den Bildern 1-4 nur eine kleine Veränderung der Bewegungsvektoren vorliegt. In Bild 5 geschieht die signifikante Änderung des Bewegungsvektorfeldes udn somit die eigentliche Einschwingung innerhalb des Bildes. In Bild 6 findet kaum noch eine Änderung statt. Dies entspricht Abbildung \ref{fig:einschwingFrame}, die das Einschwingverhalten übe die einzelnen Frames für 5 Iterationen zeigt. 
+Wie in Kapitel \ref{sec:programmAblauf} beschrieben wird die Bewegungsdetektion in jedem Bild über mehrere Iterationen hinweg ermittelt. Mit anderen Worten: $V_{n}$ wird in jeder Iteration neu gesetzt. Im Folgenden wird die Veränderung der Vektoren nach jeder Iteration betrachtet. Dabei werden die Parameter wie in Kapitel \ref{sec:bvf} gewählt.\\
+In Abbildung \ref{fig:einschwingIter5} werden die prozentualen Veränderungen der ersten sechs Bewegungsvektorfelder über 5 Iterationen hinweg aufgetragen. Es ist deutlich zu erkennen, dass bei den Bildern 1-4 nur eine kleine Veränderung der Bewegungsvektoren vorliegt. In Bild 5 geschieht die signifikante Änderung des Bewegungsvektorfeldes udn somit die eigentliche Einschwingung innerhalb des Bildes. In Bild 6 findet kaum noch eine Änderung statt. Dies entspricht Abbildung \ref{fig:einschwingFrame}, die das Einschwingverhalten über die einzelnen Bilder für 5 Iterationen zeigt. 
 
 		%\begin{comment}
 			\begin{figure}[H]
@@ -573,7 +569,7 @@ In Abbildung \ref{fig:einschwingIter5} werden die prozentualen Veränderungen der
 		\end{figure}
 	%\end{comment}	
 		
-Während Abbildung \ref{fig:einschwingIter5} das frameweise Einschwingen für 5 Iterationen zeigt, wird in Abbildung \ref{fig:einschwingIter10} die prozentuale Abweichung der Bewegungsvektoren innerhalb eines Frames für 10 Iterationen dargestellt.\\
+Während Abbildung \ref{fig:einschwingIter5} das bildweise Einschwingen für 5 Iterationen zeigt, wird in Abbildung \ref{fig:einschwingIter10} die prozentuale Abweichung der Bewegungsvektoren innerhalb eines Bildes für 10 Iterationen dargestellt.\\
 Die Verdopplung der Iterationsschritte scheint dazu zu führen, dass bereits im dritten Bewegungsvektorfeld die Änderung gegen 0 geht und die Einschwingung bei einer gleichförmigen Bewegung wie in Testmaterial 1 zu sehen, beendet ist. 
 			%\begin{comment}
 			\begin{figure}[H]
@@ -858,7 +854,7 @@ Die Wahl von $\lambda=0.001$ und $\lambda_T=0.001$ liefert das Optimum für die b
 		
 		Insgesamt bewegen sich die Ergebnisse der Untersuchung in einem erwartbaren Bereich, da bei einer Anpassung des Verfahrens von Röntgen- auf normale Bildsequenzen keine starken Abweichungen eintreten sollten.
 	
-	\section{Arbeitsaufteilung}\todo[inline]{Alle}
+	\section{Arbeitsaufteilung}
 	Die Implementierung wurde gemeinschaftlich und gleichverteilt bearbeitet. Die Aufteilung der Dokumentation gliedert sich wie folgt:
 	\begin{description}
 		\item[Anger:] Abschnitte \ref{sec:bewegSch}, \ref{sec:vis}, \ref{sec:testmaterialien}, \ref{sec:AuswertungTestmaterialien} und \ref{sec:einschBild}.
