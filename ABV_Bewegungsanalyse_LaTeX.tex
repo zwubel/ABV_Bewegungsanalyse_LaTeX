@@ -168,7 +168,7 @@ Das geschätzte Bewegungsvektorfeld $\hat{V}_{n}$ ergibt sich nach den Ausführung
 	\label{eq:bayes}
 \end{equation}\\
 	
-Da es sich, wie bereits erwähnt, um einen bayesschen Ansatz handelt, gilt es sich mit bedingten Wahrscheinlichkeiten auseinander zu setzen. Der erste Faktor der Formel \ref{eq:bayes} ist im Originalansatz zur Modellierung des Rauschens gedacht. Es ist davon auszugehen, dass Röntgenbilder weit aus mehr verrauscht sind, als reale Bildsequenzen auf die das vorliegende Verfahren angewandt werden soll. Deshalb liegt es nahe, dass Rauschen weitgehend zu vernachlässigen und durch einen reinen Datenterm zu ersetzen. Mehr Details dazu kann man in Kapitel \ref{sec:Datenterm} nachlesen. Die beiden anderen Faktoren können zum einen zur örtlichen und zum anderen zur zeitlichen Kohärenz vereinfacht werden. Diese Faktoren werden in den Kapiteln \ref{sec:oertlich} bzw. \ref{sec:zeitlich} näher beschrieben.
+Da es sich, wie bereits erwähnt, um einen bayesschen Ansatz handelt, gilt es sich mit bedingten Wahrscheinlichkeiten auseinander zu setzen. Der erste Faktor der Formel \ref{eq:bayes} ist im Originalansatz zur Modellierung des Rauschens gedacht. Es ist davon auszugehen, dass Röntgenbilder weit aus mehr verrauscht sind, als reale Bildsequenzen auf die das vorliegende Verfahren angewandt werden soll. Deshalb liegt es nahe, das Rauschen weitgehend zu vernachlässigen und durch einen reinen Datenterm zu ersetzen. Mehr Details dazu kann man in Kapitel \ref{sec:Datenterm} nachlesen. Die beiden anderen Faktoren können zum einen zur örtlichen und zum anderen zur zeitlichen Kohärenz vereinfacht werden. Diese Faktoren werden in den Kapiteln \ref{sec:oertlich} bzw. \ref{sec:zeitlich} näher beschrieben.
 		
 		\subsection{Kostenfunktion}\label{sec:costFunc}\todo[inline]{Alle}
 			\subsubsection{Datenterm}\label{sec:Datenterm}
@@ -229,7 +229,7 @@ Das Ergebnis wird für horizontale und vertikale Nachbarregionen mit dem Faktor $
 		Die äußere Schleife läuft über den Stack und sorgt somit dafür, dass die Berechnungen pro Block und Iteration jeweils für jedes Bild des Input-Stacks erfolgen.\\
 		Sobald ein Bild fertig bearbeitet ist, die äußere Schleife also einen Durchlauf absolviert hat, wird der Fortschrittsbalken im ImageJ-Fenster aktualisiert, damit der Benutzer eine Rückmeldung bekommt, wie weit die Berechnung fortgeschritten ist.\\
 		Zuletzt wird in der \texttt{run()}-Methode noch das Ausgabefenster, in welchem der Input-Stack inklusive der überlagerten Bewegungsvektorfelder dargestellt wird, generiert und dessen Methode zur Anzeige aufgerufen.
-		\begin{comment}
+		%\begin{comment}
 			\begin{figure}[h!]
 			\centering
 					\begin{psmatrix}[rowsep=0.3,colsep=0.4]
@@ -279,7 +279,7 @@ Das Ergebnis wird für horizontale und vertikale Nachbarregionen mit dem Faktor $
 			\caption{Programmablauf}
 			\label{fig:programmAblauf}
 		\end{figure}
-\end{comment}		
+%\end{comment}		
 			
 \subsection{Visualisierung}
 	Um die Bewegungsvektorfelder $V_{n}$ darzustellen, wird sich mit Symbolen beholfen. Diese werden 				blockweise  über die Videosequenz gelegt. Aus Darstellungsgründen wird das Video dazu um Faktor 	4 in beide Bildrichtungen hoch skaliert. Da die einzelnen Bewegungsvektoren immer zwischen zwei 		Frames berechnet werden, wird genau ein Bewegungsvektorfeld weniger erzeugt, als das 					Eingangsmaterial Frames hat. \\
@@ -395,7 +395,7 @@ Abbildung~\ref{fig:einschwingFrame} veranschaulicht das Konvergenzverhalten der 
 Spätestens nach der siebten Bildfolge konvergiert das Verfahren.
 Neben den Einstellungen für $\nu,\lambda$ und $\lambda_T$ wird das Konvergenzverhalten durch den Bildinhalt des Testmaterials beeinflusst.
 
-		\begin{comment}
+		%\begin{comment}
 			\begin{figure}[H]
 				\psset{xunit=1cm,yunit=.5mm}
 					\begin{pspicture}(-0.5,-20)(12,130)
@@ -457,13 +457,13 @@ Neben den Einstellungen für $\nu,\lambda$ und $\lambda_T$ wird das Konvergenzver
 				\caption{Einschwingverhalten der Bewegungsvektorfelder über die ersten 10 Bilder von Testmaterial 1 und 2.}
 				\label{fig:einschwingFrame}
 			\end{figure}
-		\end{comment}
+		%\end{comment}
 		
 		\subsubsection{Innerhalb eines Bildes}\todo[inline]{Laura}
 Wie in Kapitel \ref{sec:programmAblauf} beschrieben wird die Bewegungsdetektion in jedem Frame über mehrere Iterationen hinweg ermittelt. Mit anderen Worten: $V_{n}$ wird in jeder Iteration neu gesetzt. Im Folgenden wird die Veränderung der Vektoren nach jeder Iteration betrachtet. Dabei werden die Parameter wie in Kapitel \ref{sec:bvf} gewählt.\\
 In Abbildung \ref{fig:einschwingIter5} werden die prozentualen Veränderungen der ersten sechs Bewegungsvektorfelder über 5 Iterationen hinweg aufgetragen. Es ist deutlich zu erkennen, dass bei den Bildern 1-4 nur eine kleine Veränderung der Bewegungsvektoren vorliegt. In Bild 5 geschieht die signifikante Änderung des Bewegungsvektorfeldes udn somit die eigentliche Einschwingung innerhalb des Bildes. In Bild 6 findet kaum noch eine Änderung statt. Dies entspricht Abbildung \ref{fig:einschwingFrame}, die das Einschwingverhalten übe die einzelnen Frames für 5 Iterationen zeigt. 
 
-		\begin{comment}
+		%\begin{comment}
 			\begin{figure}[H]
 				\psset{xunit=1cm,yunit=.5mm}
 					\begin{pspicture}(-0.5,-20)(12,130)
@@ -571,11 +571,11 @@ In Abbildung \ref{fig:einschwingIter5} werden die prozentualen Veränderungen der
 			\caption{Einschwingverhalten der Bewegungsvektorfelder für Testmaterial 1 in Abhängigkeit der Iterationen innerhalb eines Bildes bei fünf Iterationen.}
 			\label{fig:einschwingIter5}
 		\end{figure}
-	\end{comment}	
+	%\end{comment}	
 		
 Während Abbildung \ref{fig:einschwingIter5} das frameweise Einschwingen für 5 Iterationen zeigt, wird in Abbildung \ref{fig:einschwingIter10} die prozentuale Abweichung der Bewegungsvektoren innerhalb eines Frames für 10 Iterationen dargestellt.\\
 Die Verdopplung der Iterationsschritte scheint dazu zu führen, dass bereits im dritten Bewegungsvektorfeld die Änderung gegen 0 geht und die Einschwingung bei einer gleichförmigen Bewegung wie in Testmaterial 1 zu sehen, beendet ist. 
-			\begin{comment}
+			%\begin{comment}
 			\begin{figure}[H]
 				\psset{xunit=1cm,yunit=.5mm}
 					\begin{pspicture}(-0.5,-20)(12,130)
@@ -665,7 +665,7 @@ Die Verdopplung der Iterationsschritte scheint dazu zu führen, dass bereits im d
 			\caption{Einschwingverhalten der Bewegungsvektorfelder für Testmaterial 1 in Abhängigkeit der Iterationen innerhalb eines Bildes bei zehn Iterationen.}
 			\label{fig:einschwingIter10}
 		\end{figure}
-	\end{comment}		
+	%\end{comment}		
 
 		\subsection{Parameter der Regularisierungsterme}
 		
@@ -679,7 +679,7 @@ In Tabelle \ref{fig:einschwingRegula} wird das Einschwingen der ersten 10 Bewegu
 Zur Bestimmung der Abweichung des geschätzten Bewegungsvektorfeldes wird wie in \ref{sec:bvf} verfahren. \\
 		
 		
-		\begin{comment}
+		%\begin{comment}
 			\begin{figure}[H]
 				\psset{xunit=1cm,yunit=.5mm}
 					\begin{pspicture}(-0.5,-20)(12,130)
@@ -816,12 +816,12 @@ Zur Bestimmung der Abweichung des geschätzten Bewegungsvektorfeldes wird wie in 
 						7	34.5
 						8	5.3
 						9	1.6
-						10	0}								
-			\end{pspicture}					
+						10	0}
+			\end{pspicture}
 			\caption{Einschwingverhalten der Bewegungsvektorfelder in Abhängigkeit der Regularisierungsparameter $\lambda$ und $\lambda_T$.}
 			\label{fig:einschwingRegula}
 		\end{figure}
-	\end{comment}			
+	%\end{comment}			
 	
 		\begin{table}[H]
 		\centering
