@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=latex 2011.11.22)  29 SEP 2016 08:53
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=latex 2011.11.22)  29 SEP 2016 09:07
 entering extended mode
 **ABV_Bewegungsanalyse_LaTeX.tex
 (I:\LaTeX\ABV_Bewegungsanalyse_LaTeX\ABV_Bewegungsanalyse_LaTeX.tex
@@ -1274,12 +1274,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 343--346
 
 File: testmaterial12.jpg Graphic file (type eps)
 <testmaterial12.jpg>
-Underfull \hbox (badness 10000) in paragraph at lines 354--357
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 354--357
+Underfull \hbox (badness 10000) in paragraph at lines 354--355
 
  []
 
@@ -1290,11 +1285,15 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [11]
+Underfull \hbox (badness 10000) in paragraph at lines 356--358
+
+ []
+
 File: frame43.png Graphic file (type eps)
- <frame43.png>
+<frame43.png>
 File: frame47.png Graphic file (type eps)
  <frame47.png>
-Overfull \hbox (2.61107pt too wide) in paragraph at lines 358--372
+Overfull \hbox (2.61107pt too wide) in paragraph at lines 359--373
 []$[]$ $[]$ 
  []
 
@@ -1312,7 +1311,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [13]
-Underfull \hbox (badness 10000) in paragraph at lines 668--671
+Underfull \hbox (badness 10000) in paragraph at lines 669--672
 
  []
 
@@ -1323,7 +1322,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [14]
-Underfull \hbox (badness 10000) in paragraph at lines 672--676
+Underfull \hbox (badness 10000) in paragraph at lines 673--677
 
  []
 
@@ -1334,13 +1333,13 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [15]
-Overfull \hbox (3.86812pt too wide) in paragraph at lines 851--854
+Overfull \hbox (3.86812pt too wide) in paragraph at lines 852--855
 \OT1/cmr/m/n/12 Das Pro-jekt, den An-satz von Aach und Kunz$[]$ auf nor-ma-le B
 ild-se-quen-zen zu []ubertragen
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 851--854
+Underfull \hbox (badness 10000) in paragraph at lines 852--855
 
  []
 
@@ -1358,7 +1357,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [17] (I:\LaTeX\ABV_Bewegungsanalyse_LaTeX\ABV_Bewegungsanalyse_LaTeX.bbl)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 861.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 862.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1367,15 +1366,11 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [18]
-Package atveryend Info: Executing hook `AfterLastShipout' on input line 861.
+Package atveryend Info: Executing hook `AfterLastShipout' on input line 862.
 \BKM@file=\write5
  (I:\LaTeX\ABV_Bewegungsanalyse_LaTeX\ABV_Bewegungsanalyse_LaTeX.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 861.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 861.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 862.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 862.
  ) 
 Here is how much of TeX's memory you used:
  22078 strings out of 494046
@@ -1386,4 +1381,4 @@ Here is how much of TeX's memory you used:
  715 hyphenation exceptions out of 8191
  63i,13n,92p,1136b,581s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on ABV_Bewegungsanalyse_LaTeX.dvi (18 pages, 302484 bytes).
+Output written on ABV_Bewegungsanalyse_LaTeX.dvi (18 pages, 302384 bytes).
