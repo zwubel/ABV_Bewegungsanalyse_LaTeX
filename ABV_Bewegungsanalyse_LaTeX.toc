@@ -6,16 +6,16 @@
 \contentsline {subsection}{\numberline {2.1}Bewegungssch\"atzung}{4}{subsection.2.1}
 \contentsline {subsection}{\numberline {2.2}Kostenfunktion}{5}{subsection.2.2}
 \contentsline {subsubsection}{\numberline {2.2.1}Datenterm}{5}{subsubsection.2.2.1}
-\contentsline {subsubsection}{\numberline {2.2.2}\"Ortliche Koh\"arenz}{5}{subsubsection.2.2.2}
-\contentsline {subsubsection}{\numberline {2.2.3}Zeitliche Koh\"arenz}{6}{subsubsection.2.2.3}
+\contentsline {subsubsection}{\numberline {2.2.2}\"Ortliche Koh\"arenz}{6}{subsubsection.2.2.2}
+\contentsline {subsubsection}{\numberline {2.2.3}Zeitliche Koh\"arenz}{7}{subsubsection.2.2.3}
 \contentsline {subsection}{\numberline {2.3}Programmablauf}{7}{subsection.2.3}
-\contentsline {subsection}{\numberline {2.4}Visualisierung}{7}{subsection.2.4}
-\contentsline {section}{\numberline {3}Auswertung}{9}{section.3}
-\contentsline {subsection}{\numberline {3.1}Testmaterial}{9}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}Auswertung der Testmaterialien}{10}{subsection.3.2}
-\contentsline {subsection}{\numberline {3.3}Einschwingverhalten}{12}{subsection.3.3}
+\contentsline {subsection}{\numberline {2.4}Visualisierung}{8}{subsection.2.4}
+\contentsline {section}{\numberline {3}Auswertung}{8}{section.3}
+\contentsline {subsection}{\numberline {3.1}Testmaterial}{8}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Auswertung der Testmaterialien}{11}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Einschwingverhalten}{13}{subsection.3.3}
 \contentsline {subsubsection}{\numberline {3.3.1}Bewegungsvektorfelder}{13}{subsubsection.3.3.1}
-\contentsline {subsubsection}{\numberline {3.3.2}Innerhalb eines Bildes}{13}{subsubsection.3.3.2}
-\contentsline {subsection}{\numberline {3.4}Parameter der Regularisierungsterme}{15}{subsection.3.4}
+\contentsline {subsubsection}{\numberline {3.3.2}Innerhalb eines Bildes}{14}{subsubsection.3.3.2}
+\contentsline {subsection}{\numberline {3.4}Parameter der Regularisierungsterme}{16}{subsection.3.4}
 \contentsline {section}{\numberline {4}Zusammenfassung}{17}{section.4}
-\contentsline {section}{\numberline {5}Arbeitsaufteilung}{17}{section.5}
+\contentsline {section}{\numberline {5}Arbeitsaufteilung}{18}{section.5}
