@@ -281,10 +281,10 @@ Das Ergebnis wird für horizontale und vertikale Nachbarregionen mit dem Faktor $
 \end{comment}		
 			
 \subsection{Visualisierung}
-	Um die Bewegungsvektorfelder darzustellen, wird sich mit Symbolen beholfen. Diese werden 				blockweise  über die Videosequenz gelegt. Aus Darstellungsgründen wird das Video dazu um Faktor 	4 in beide Bildrichtungen hoch skaliert. Da die einzelnen Bewegungsvektoren immer zwischen zwei 		Frames berechnet werden, wird genau ein Bewegungsvektorfeld weniger erzeugt, als das 					Eingangsmaterial Frames hat. \\
+	Um die Bewegungsvektorfelder $V_{n}$ darzustellen, wird sich mit Symbolen beholfen. Diese werden 				blockweise  über die Videosequenz gelegt. Aus Darstellungsgründen wird das Video dazu um Faktor 	4 in beide Bildrichtungen hoch skaliert. Da die einzelnen Bewegungsvektoren immer zwischen zwei 		Frames berechnet werden, wird genau ein Bewegungsvektorfeld weniger erzeugt, als das 					Eingangsmaterial Frames hat. \\
 	Bei den bereits erwähnten Symbolen handelt es sich um Kreise und Pfeile. Ein Kreis wird immer 		dann genutzt, wenn für den entsprechenden Block keine oder nur eine kleine Bewegung durch das 		Verfahren ermittelt wurde. Die Pfeile zeigen immer in Richtung der ermittelten Verschiebung. 			Beide Symbole haben ihren Startpunkt im Mittelpunkt des jeweiligen Blocks.\\
 	Die Randbereiche der einzelnen Bewegungsvektorfelder werden bei der Visualisierung ausgespart, 
-	da hier durch den Algorithmus begründete Fehlberechnungen auftreten.
+	da hier durch den Algorithmus begründete Fehlberechnungen auftreten können.
 	\section{Auswertung}
 
 \subsection{Testmaterial}\label{sec:testmaterialien}
