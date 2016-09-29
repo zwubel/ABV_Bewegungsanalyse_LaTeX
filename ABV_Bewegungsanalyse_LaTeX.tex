@@ -187,7 +187,7 @@ Da es sich, wie bereits erwähnt, um einen bayesschen Ansatz handelt, gilt es sic
 			\end{equation}
 			wobei $y_n\left(\vec{k}\right)$ der aktuelle Block und $y_{n-1}\left(\vec{k}+\vec{v}\left(\vec{k}\right)\right)$ der zu vergleichende Block des vorherigen Bildes, verschoben um $\vec{v}\left(\vec{k}\right)$ ist.\\
 			
-			Um etwaige Probleme am Rand des Bildes zu verhindern, wurde eine Randbehandlung implementiert, welche verhindert, dass Blockadressen im vorherigen $y_{n-1}$-Bild außerhalb der Bildgrenzen liegen.
+			Um etwaige Probleme am Rand des Bildes zu verhindern, wurde eine Randbehandlung implementiert, welche verhindert, dass Pixeladressen im vorherigen ($y_{n-1}$) Bild außerhalb der Bildgrenzen liegen.
 			\subsubsection{Örtliche Kohärenz}\label{sec:oertlich}
 
 Die örtliche Kohärenz trägt als gewichteter Regularisierungsterm zur Kostenfunktion bei.
@@ -205,7 +205,7 @@ Der Faktor $g_{\vec{l}}$ gewichtet die normierte Differenz abhängig von der Posi
 Die Normalverteilung ($\nu=2$) glättet das Bewegungsvektorfeld zu stark.
 Für $\nu=1.3$ ergibt sich eine praktikable Parametrisierung.\textsuperscript{\cite{aach1998bayesian}} \\
 
-Die Implementierung berechnet demnach die Summe bestehend aus den gewichteten normierten und mit dem Parameter $\nu$ potenzierten Differenzen.
+Die Implementierung berechnet demnach die Summe bestehend aus den gewichteten, normierten und mit dem Parameter $\nu$ potenzierten Differenzen.
 Hierzu wird neben dem Index der aktuell untersuchten Bildposition/-region der Listenindex des neuen möglichen Bewegungsvektors benötigt.
 Mit Hilfe des Index der untersuchten Bildposition können dann die benötigten Positionen der Nachbarregionen bestimmt werden. 
 Zu beachten ist hierbei, dass für Randbereiche weniger Nachbarregionen untersucht werden bzw. nicht vorhanden sind.
@@ -216,10 +216,12 @@ Das Ergebnis wird für horizontale und vertikale Nachbarregionen mit dem Faktor $
 			Da Bewegungen normalerweise gleichmäßig ablaufen -- wenn sie nicht gerade beginnen oder enden -- basiert die zeitliche Kohärenz darauf, dass die Bewegung (z.\,B. im aktuellen Block) der Bewegung im gleichen Block des vorherigen Bildes ähnlich ist. Für die Berechnung der Kosten folgt als Minimierungsterm aus
 			\begin{equation}
 				p\left(\hat{V}_{n-1}|V\right)=c\cdot e^{\displaystyle-\lambda_T\sum\limits_{\vec{k}}\left|\left|\hat{\vec{V}}_{n-1}\left(\vec{k}\right)-\vec{v}\left(\vec{k}\right)\right|\right|^\nu_2}
-			\label{eq:}
+			\label{eq:zeitlich}
 			\end{equation}
 			
-			dass wieder nur der Exponent der Exponentialfunktion ausgewertet werden muss, da der gesamte Ausdruck minimal wird, wenn der Exponent minimal wird.
+			dass wieder nur der Exponent der Exponentialfunktion ausgewertet werden muss, da der gesamte Ausdruck minimal wird, wenn der Exponent minimal wird.\\
+			
+			In (\ref{eq:zeitlich}) ist $\hat{\vec{V}}_{n-1}\left(\vec{k}\right)$ das geschätzte Bewegungsvektorfeld des vorherigen Bildes und $\vec{v}\left(\vec{k}\right)$ der Bewegungsvektor des aktuellen Blocks, welcher zur Position des Blocks im vorherigen Bildes führt. Auf $\lambda_T$ und $\nu$ wurde bereits im vorigen Abschnitt~\ref{sec:oertlich} eingegangen.
 			
 			\subsection{Programmablauf} \label{sec:programmAblauf}
 		Der Programmablauf des ImageJ-Plug-Ins in Form der \texttt{run()}-Methode, die aufgrund des implementierten \texttt{PlugInFilter}-Interfaces überschrieben werden muss, ist in Abbildung~\ref{fig:programmAblauf} dargestellt.\\
@@ -228,7 +230,7 @@ Das Ergebnis wird für horizontale und vertikale Nachbarregionen mit dem Faktor $
 		Die äußere Schleife läuft über den Stack und sorgt somit dafür, dass die Berechnungen pro Block und Iteration jeweils für jedes Bild des Input-Stacks erfolgen.\\
 		Sobald ein Bild fertig bearbeitet ist, die äußere Schleife also einen Durchlauf absolviert hat, wird der Fortschrittsbalken im ImageJ-Fenster aktualisiert, damit der Benutzer eine Rückmeldung bekommt, wie weit die Berechnung fortgeschritten ist.\\
 		Zuletzt wird in der \texttt{run()}-Methode noch das Ausgabefenster, in welchem der Input-Stack inklusive der überlagerten Bewegungsvektorfelder dargestellt wird, generiert und dessen Methode zur Anzeige aufgerufen.
-		\begin{comment}
+		%\begin{comment}
 			\begin{figure}[h!]
 			\centering
 					\begin{psmatrix}[rowsep=0.3,colsep=0.4]
@@ -278,7 +280,7 @@ Das Ergebnis wird für horizontale und vertikale Nachbarregionen mit dem Faktor $
 			\caption{Programmablauf}
 			\label{fig:programmAblauf}
 		\end{figure}
-\end{comment}		
+%\end{comment}		
 			
 \subsection{Visualisierung}
 	Um die Bewegungsvektorfelder $V_{n}$ darzustellen, wird sich mit Symbolen beholfen. Diese werden 				blockweise  über die Videosequenz gelegt. Aus Darstellungsgründen wird das Video dazu um Faktor 	4 in beide Bildrichtungen hoch skaliert. Da die einzelnen Bewegungsvektoren immer zwischen zwei 		Frames berechnet werden, wird genau ein Bewegungsvektorfeld weniger erzeugt, als das 					Eingangsmaterial Frames hat. \\
@@ -341,7 +343,7 @@ Im Folgenden wird das Verfahren anhand der in Kapitel \ref{sec:testmaterialien} 
 
 In Abbildung \ref{fig:testmaterial12} sind jeweils drei Bewegungsvektorfelder für Testmaterial 1 und Testmaterial 2 zu sehen. Es ist deutlich erkennbar, dass die Bewegungsdetektion sowohl für hochfrequente, als auch für tieffrequente Bildinhalte funktioniert hat. \\
 Die Abweichungen der berechneten von den tatsächlichen Bewegungsvektoren können bestimmt werden, da die Bewegung bekannt ist. Da sich alle Blöcke eines Frames mit der selben Geschwindigkeit in die selbe Richtung bewegen, kann die absolute Längenabweichung der einzelnen Vektoren über ein Frame aufsummiert und durch die Anzahl der Blöcke geteilt werden um ein Maß für die absolute Abweichung zu erhalten.\\
-Schaut man sich die so ermittelten Abweichungen für ein Frame an, wo in den vorherigen Frames keine Richtungsänderung  stattgefunden hat, so beträgt diese im Durchschnitt für beide Testmaterialien ungefähr ein halbes Pixel. Da es wie in Kapitel \ref{sec:Einschwingverhalten} näher beschrieben dauert, bis die Bewegungsvektoren eingeschwungen sind, kommt es in den Frames 50 und 100 in beiden Testmaterialien zu einer Abweichung von bis zu 8 Pixeln. Das sind eben die Frames, wo sich die Bewegung plötzlich ändert.\\
+Schaut man sich die so ermittelten Abweichungen für ein Frame an, wo in den vorherigen Frames keine Richtungsänderung  stattgefunden hat, so beträgt diese im Durchschnitt für beide Testmaterialien ungefähr ein halbes Pixel. Da es wie in Kapitel \ref{sec:Einschwingverhalten} näher beschrieben dauert, bis die Bewegungsvektoren eingeschwungen sind, kommt es in den Frames 50 und 100 in beiden Testmaterialien zu einer Abweichung von bis zu 8 Pixeln. Das sind eben die Frames, wo sich die Bewegung verändert. \\
 
 \begin{figure}[H] 
 		\centering
@@ -351,7 +353,7 @@ Schaut man sich die so ermittelten Abweichungen für ein Frame an, wo in den vorh
 	\end{figure}
 
 Da es sich bei Testmaterial 3 um eine reale Videosequenz handelt, deren Bewegungsvektoren unbekannt sind, kann die Auswertung hier nur rein visuell vorgenommen werden.\\\\
-Abbildung \ref{fig:frame43} und Abbildung \ref{fig:frame47} zeigen jeweils ein Standbild aus dem Bewegungsvektorfeld.\\
+Abbildung \ref{fig:frame43} und Abbildung \ref{fig:frame47} zeigen jeweils ein Standbild aus dem Bewegungsvektorfeld, welches sich unter dem Namen \textit{testmaterial3-bewegungsvektorfeld.tiff} auf der beiliegenden Daten-CD befindet.\\
 Es ist deutlich zu erkennen, dass die Bereiche in denen keine Bewegung stattfindet weitgehend richtig detektiert wurden. Und auch die Bewegung des Autos und der Radfahrerin werden trotz der Verdeckung durch die Säule weitgehend erkannt. Auffällig ist, dass besonders die Blöcke, die hinter dem Auto liegen und deren Bildinhalt sich nicht mehr bewegt falsch berechnet sind. Das ist besonders gut in Abbildung \ref{fig:frame47} zu sehen und lässt sich auf das Einschwingverhalten zurückführen. Dieses wird in Kapitel \ref{sec:Einschwingverhalten} erklärt und ausgewertet.\\
 
 \begin{minipage}{0.5\textwidth}
@@ -393,7 +395,7 @@ Abbildung~\ref{fig:einschwingFrame} veranschaulicht das Konvergenzverhalten der 
 Spätestens nach der siebten Bildfolge konvergiert das Verfahren.
 Neben den Einstellungen für $\nu$,$\lambda$ und $\lambda_T$ wird das Konvergenzverhalten durch den Bildinhalt des Testmaterials beeinflusst.
 
-		\begin{comment}
+		%\begin{comment}
 			\begin{figure}[H]
 				\psset{xunit=1cm,yunit=.5mm}
 					\begin{pspicture}(-0.5,-20)(12,130)
@@ -455,12 +457,12 @@ Neben den Einstellungen für $\nu$,$\lambda$ und $\lambda_T$ wird das Konvergenzv
 				\caption{Einschwingverhalten der Bewegungsvektorfelder über die ersten 10 Bilder von Testmaterial 1 und 2.}
 				\label{fig:einschwingFrame}
 			\end{figure}
-		\end{comment}
+		%\end{comment}
 		
 		\subsubsection{Innerhalb eines Bildes}\todo[inline]{Laura}
 Wie in Kapitel \ref{sec:programmAblauf} beschrieben wird die Bewegungsdetektion in jedem Frame über mehrere Iterationen hinweg ermittelt. Mit anderen Worten: $V_{n}$ wird in jeder Iteration neu gesetzt und man kann davon sprechen. Im Folgenden wird die Veränderung der Vektoren nach jeder Iteration betrachtet. Dabei werden die Parameter wie in Kapitel \ref{AuswertungTestmaterialien} gewählt.
 
-		\begin{comment}
+		%\begin{comment}
 			\begin{figure}[H]
 				\psset{xunit=1cm,yunit=.5mm}
 					\begin{pspicture}(-0.5,-20)(12,130)
@@ -568,9 +570,9 @@ Wie in Kapitel \ref{sec:programmAblauf} beschrieben wird die Bewegungsdetektion 
 			\caption{Einschwingverhalten der Bewegungsvektorfelder in Abhängigkeit der Iterationen innerhalb eines Bildes bei fünf Iterationen.}
 			\label{fig:einschwingIter5}
 		\end{figure}
-	\end{comment}		
+	%\end{comment}		
 	
-			\begin{comment}
+			%\begin{comment}
 			\begin{figure}[H]
 				\psset{xunit=1cm,yunit=.5mm}
 					\begin{pspicture}(-0.5,-20)(12,130)
@@ -660,7 +662,7 @@ Wie in Kapitel \ref{sec:programmAblauf} beschrieben wird die Bewegungsdetektion 
 			\caption{Einschwingverhalten der Bewegungsvektorfelder in Abhängigkeit der Iterationen innerhalb eines Bildes bei zehn Iterationen.}
 			\label{fig:einschwingIter10}
 		\end{figure}
-	\end{comment}		
+	%\end{comment}		
 
 		\subsection{Parameter der Regularisierungsterme}
 		
@@ -674,7 +676,7 @@ In Tabelle \ref{fig:einschwingRegula} wird das Einschwingen der ersten 10 Bewegu
 Zur Bestimmung der Abweichung des geschätzten Bewegungsvektorfeldes wird wie in \ref{sec:bvf} verfahren. \\
 		
 		
-		\begin{comment}
+		%\begin{comment}
 			\begin{figure}[H]
 				\psset{xunit=1cm,yunit=.5mm}
 					\begin{pspicture}(-0.5,-20)(12,130)
@@ -816,7 +818,7 @@ Zur Bestimmung der Abweichung des geschätzten Bewegungsvektorfeldes wird wie in 
 			\caption{Einschwingverhalten der Bewegungsvektorfelder in Abhängigkeit der Regularisierungsparameter $\lambda$ und $\lambda_T$.}
 			\label{fig:einschwingRegula}
 		\end{figure}
-	\end{comment}			
+	%\end{comment}			
 	
 		\begin{table}[H]
 		\centering
