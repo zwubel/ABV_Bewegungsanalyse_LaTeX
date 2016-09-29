@@ -142,7 +142,7 @@
 	\subsection{Projektziel}
 	Die Zielsetzung für das Projekt "`Bewegungsanalyse einer Videosequenz"' war eine Über\-tra\-gung des Ansatzes von Röntgenbildern auf normale Videosequenzen. Infolge dessen war eine Vernachlässigung der speziellen Anforderung des Bildrauschens möglich, da Röntgenbilder -- insbesondere als Teil einer Fluoroskopie -- zum Schutz des Patienten und des medizinischen Personals nur sehr geringe Röntgendosen enthalten dürfen und deshalb ein extrem schlechtes Signal-zu-Rauschverhältnis aufweisen. Diese Problematik besteht bei normalen Videosequenzen nicht, weshalb für die Untersuchung von vergleichsweise geringem und etwa gleich verteiltem Rauschen ausgegangen werden konnte.
 	
-\section{Verfahren}
+\section{Verfahren}\label{sec:Verfahren}
 	In \cite{aach1998bayesian} wird das Verfahren, was dieser Ausarbeitung zu Grunde liegt beschrieben. Es handelt sich dabei um ein Block-Matching-Verfahren auf Grundlage des Satzes von Bayes. Im Folgenden wird das Verfahren erläutert und auf die Änderungen im Algorithmus eingegangen, welche erfolgt sind, um das Verfahren für normale Bildsequenzen anzupassen.
 	
 \subsection{Bewegungsschätzung}\label{sec:bewegSch}
@@ -167,6 +167,23 @@ Das geschätzte Bewegungsvektorfeld $\hat{V}_{n}$ ergibt sich nach den Ausführung
 Da es sich, wie bereits erwähnt, um einen bayesschen Ansatz handelt, gilt es sich mit bedingten Wahrscheinlichkeiten auseinander zu setzen. Der erste Faktor der Formel \ref{eq:bayes} ist im Originalansatz zur Modellierung des Rauschens gedacht. Es ist davon auszugehen, dass Röntgenbilder weit aus mehr verrauscht sind, als reale Bildsequenzen auf die das vorliegende Verfahren angewandt werden soll. Deshalb liegt es nahe, das Rauschen weitgehend zu vernachlässigen und durch einen reinen Datenterm zu ersetzen. Mehr Details dazu kann man in Kapitel \ref{sec:Datenterm} nachlesen. Die beiden anderen Faktoren können zum einen zur örtlichen und zum anderen zur zeitlichen Kohärenz vereinfacht werden. Diese Faktoren werden in den Kapiteln \ref{sec:oertlich} bzw. \ref{sec:zeitlich} näher beschrieben.
 		
 		\subsection{Kostenfunktion}\label{sec:costFunc}
+			
+Nach Aach und Kunz\textsuperscript{\cite{aach1998bayesian}} lässt sich die unter \ref{sec:verfahren} erwähnte Wahrscheinlichkeitsdichte formulieren als:
+
+\begin{equation}
+ce^{-\displaystyle\sum\limits_{\vec{k}}(\frac{\left[d\left(\vec{k},\vec{v}\left(\vec{k}\right)\right)\right]^2}{4\cdot\sigma^2\left(\vec{k}\right)} + \lambda\sum_{\vec{l} \epsilon N(\vec{k})} g_{\vec{l}} \Vert \vec{v}(\vec{k}) - \vec{v}(\vec{l}) \Vert_2^{\nu} + \lambda_T\sum\limits_{\vec{k}}\left|\left|\hat{\vec{V}}_{n-1}\left(\vec{k}\right)-\vec{v}\left(\vec{k}\right)\right|\right|^\nu_2)}
+\end{equation}
+
+Der Ausdruck wird maximal, wenn der negative Exponent minimal wird.
+Ziel der Aufgabe ist daher die Minimierung einer Kostenfunktion, deren Komponenten im folgenden Kapitel erläutert werden sollen. \\
+
+Die Kostenfunktion lässt auf die wahrscheinlichste Bewegungsrichtung schätzen.
+Zur gezielten Untersuchung werden 14 alternative Vektorkandidaten, die sich nach \cite{aach1998bayesian} ergeben, betrachtet.
+
+Die Implementierung bestimmt auf Basis der aktuell untersuchten Bildposition die 14 alternativen Kandidaten für die Bewegungsschätzung. 
+Die ermittelten Vektorkandidaten werden hierzu in einer Liste gehalten.
+		
+		
 			\subsubsection{Datenterm}\label{sec:Datenterm}
 			Der Datenterm als Teil der zu minimierenden Kostenfunktion hat die Aufgabe, die Veränderung der Grauwerte beim Vergleich zweier Bilder zu quantifizieren. Da angenommen wird, dass diese gemessenen Veränderungen nur durch Bewegung und Rauschen verursacht wird, lässt sich das Rauschen selbst modellieren, indem vor dem Vergleich der Bilder die tatsächliche Bewegung herausgerechnet, also eins der Bilder entsprechend des zuvor ermittelten Bewegungsvektors verschoben wird.
 			
@@ -187,9 +204,15 @@ Da es sich, wie bereits erwähnt, um einen bayesschen Ansatz handelt, gilt es sic
 
 Die örtliche Kohärenz trägt als gewichteter Regularisierungsterm zur Kostenfunktion bei.
 Bei der Bestimmung der örtlichen Kohärenz wird von der Annahme ausgegangen, dass benachbarte Regionen in Bildfolgen ähnliche Bewegungsrichtungen aufweisen.
-Hierzu werden neben dem neuen möglichen Bewegungsvektor der untersuchten Bildposition die Bewegungsvektoren der jeweiligen 8ter-Nachbarschaft betrachtet.
+Hierzu werden neben dem neuen möglichen Bewegungsvektor der untersuchten Bildposition die Bewegungsvektoren der jeweiligen Achter-Nachbarschaft betrachtet.
 Über die Differenzen des Bewegungsvektor und der benachbarten Bewegungsvektoren ergibt sich eine a-priori-Wahrscheinlichkeitsdichte.
 Ziel ist daher die Minimierung des Exponenten der Wahrscheinlichkeitsdichte:
+
+\begin{equation}
+p(V) = ce^{-\lambda E(V)} = c \prod_{\vec{k}}e^{-\lambda E_L(\vec{k},V)}
+\end{equation}
+
+mit
 
 \begin{equation}
 E_L\left(\vec{k},V\right) = \sum_{\vec{l} \epsilon N(\vec{k})} g_{\vec{l}} \left|\left| \vec{v}\left(\vec{k}\right) - \vec{v}\left(\vec{l}\,\right) \right|\right|_2^{\nu}
@@ -671,7 +694,7 @@ Eine geeignete Parametrisierung kann demnach das Konvergenzverhalten des Verfahr
 
 Die Untersuchungen werden auf Basis von \textit{Testmaterial 1} durchgeführt.
 Es gilt $\nu=1.3$. Der Bewegungsvektor ist $\left(\begin{array}{c} x\\y \end{array} \right) = \left(\begin{array}{c} 10\\0 \end{array} \right)$.
-In Tabelle \ref{fig:einschwingRegula} wird das Einschwingen der ersten 10 Bewegungsvektorfelder unter Variation von $\lambda$ und $\lambda_T$ betrachtet.
+In Tabelle \ref{tab:einschwingRegulaWerte} wird das Einschwingen der ersten 10 Bewegungsvektorfelder unter Variation von $\lambda$ und $\lambda_T$ betrachtet.
 Zur Bestimmung der Abweichung des geschätzten Bewegungsvektorfeldes wird wie in \ref{sec:bvf} verfahren. \\
 		
 		
