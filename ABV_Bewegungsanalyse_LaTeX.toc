@@ -6,7 +6,7 @@
 \contentsline {subsection}{\numberline {2.1}Bewegungssch\"atzung}{4}{subsection.2.1}
 \contentsline {subsection}{\numberline {2.2}Kostenfunktion}{5}{subsection.2.2}
 \contentsline {subsubsection}{\numberline {2.2.1}Datenterm}{5}{subsubsection.2.2.1}
-\contentsline {subsubsection}{\numberline {2.2.2}\"Ortliche Koh\"arenz}{6}{subsubsection.2.2.2}
+\contentsline {subsubsection}{\numberline {2.2.2}\"Ortliche Koh\"arenz}{5}{subsubsection.2.2.2}
 \contentsline {subsubsection}{\numberline {2.2.3}Zeitliche Koh\"arenz}{6}{subsubsection.2.2.3}
 \contentsline {subsection}{\numberline {2.3}Programmablauf}{7}{subsection.2.3}
 \contentsline {subsection}{\numberline {2.4}Visualisierung}{7}{subsection.2.4}

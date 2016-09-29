@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=latex 2011.11.22)  29 SEP 2016 09:35
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=latex 2011.11.22)  29 SEP 2016 10:46
 entering extended mode
 **ABV_Bewegungsanalyse_LaTeX.tex
 (I:\LaTeX\ABV_Bewegungsanalyse_LaTeX\ABV_Bewegungsanalyse_LaTeX.tex
@@ -1145,9 +1145,6 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [4]
-Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
-ine 173.
-
 Underfull \hbox (badness 10000) in paragraph at lines 186--188
 
  []
@@ -1179,16 +1176,17 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 292--293
+
+ []
+
+
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 292--293
-
- []
-
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
@@ -1351,6 +1349,9 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [16]
+Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
+ine 861.
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
@@ -1358,7 +1359,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [17] (I:\LaTeX\ABV_Bewegungsanalyse_LaTeX\ABV_Bewegungsanalyse_LaTeX.bbl)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 865.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 872.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1367,19 +1368,19 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [18]
-Package atveryend Info: Executing hook `AfterLastShipout' on input line 865.
+Package atveryend Info: Executing hook `AfterLastShipout' on input line 872.
 \BKM@file=\write5
  (I:\LaTeX\ABV_Bewegungsanalyse_LaTeX\ABV_Bewegungsanalyse_LaTeX.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 865.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 865.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 872.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 872.
  ) 
 Here is how much of TeX's memory you used:
- 22078 strings out of 494046
- 381432 string characters out of 3138707
- 617150 words of memory out of 3000000
- 24908 multiletter control sequences out of 15000+200000
+ 22082 strings out of 494046
+ 381465 string characters out of 3138707
+ 617977 words of memory out of 3000000
+ 24912 multiletter control sequences out of 15000+200000
  14648 words of font info for 57 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
  63i,13n,92p,1136b,581s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on ABV_Bewegungsanalyse_LaTeX.dvi (18 pages, 304868 bytes).
+Output written on ABV_Bewegungsanalyse_LaTeX.dvi (18 pages, 306412 bytes).

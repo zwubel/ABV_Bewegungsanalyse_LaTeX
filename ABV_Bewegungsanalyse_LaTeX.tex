@@ -129,7 +129,7 @@
 	\newpage
 	\tableofcontents
 	\newpage
-	\section{Einleitung}
+	\section{Einleitung}\label{sec:einleitung}
 	Diese Ausarbeitung ist Teil der Abschlussprojekt-Dokumentation im Modul "`Weiterführende Themen der Bildverarbeitung"' im Master Medientechnologie an der Technischen Hochschule Köln.
 	
 	Das Projekt beschäftigte sich mit der Bewegungsanalyse einer Videosequenz mit dem Ansatz des Papers von Aach und Kunz\textsuperscript{\cite{aach1998bayesian}}. Es wurde bearbeitet von Laura Anger, Timo Breuer und Lukas Kolhagen.
@@ -149,7 +149,7 @@
 \section{Verfahren}
 	In \cite{aach1998bayesian} wird das Verfahren, was dieser Ausarbeitung zu Grunde liegt beschrieben. Es handelt sich dabei um ein Block-Matching-Verfahren auf Grundlage des Satzes von Bayes. Im Folgenden wird das Verfahren erläutert und auf die Änderungen im Algorithmus eingegangen, welche erfolgt sind, um das Verfahren für normale Bildsequenzen anzupassen.
 	
-\subsection{Bewegungsschätzung}
+\subsection{Bewegungsschätzung}\label{sec:bewegSch}
 Um zu verstehen, wie die Bewegungsschätzung im einzelnen funktioniert, muss man sich zunächst 
 klar machen, wie das geschätzte Bewegungsvektorfeld überhaupt definiert ist.\\
 
@@ -170,7 +170,7 @@ Das geschätzte Bewegungsvektorfeld $\hat{V}_{n}$ ergibt sich nach den Ausführung
 	
 Da es sich, wie bereits erwähnt, um einen bayesschen Ansatz handelt, gilt es sich mit bedingten Wahrscheinlichkeiten auseinander zu setzen. Der erste Faktor der Formel \ref{eq:bayes} ist im Originalansatz zur Modellierung des Rauschens gedacht. Es ist davon auszugehen, dass Röntgenbilder weit aus mehr verrauscht sind, als reale Bildsequenzen auf die das vorliegende Verfahren angewandt werden soll. Deshalb liegt es nahe, das Rauschen weitgehend zu vernachlässigen und durch einen reinen Datenterm zu ersetzen. Mehr Details dazu kann man in Kapitel \ref{sec:Datenterm} nachlesen. Die beiden anderen Faktoren können zum einen zur örtlichen und zum anderen zur zeitlichen Kohärenz vereinfacht werden. Diese Faktoren werden in den Kapiteln \ref{sec:oertlich} bzw. \ref{sec:zeitlich} näher beschrieben.
 		
-		\subsection{Kostenfunktion}\label{sec:costFunc}\todo[inline]{Alle}
+		\subsection{Kostenfunktion}\label{sec:costFunc}
 			\subsubsection{Datenterm}\label{sec:Datenterm}
 			Der Datenterm als Teil der zu minimierenden Kostenfunktion hat die Aufgabe, die Veränderung der Grauwerte beim Vergleich zweier Bilder zu quantifizieren. Da angenommen wird, dass diese gemessenen Veränderungen nur durch Bewegung und Rauschen verursacht wird, lässt sich das Rauschen selbst modellieren, indem vor dem Vergleich der Bilder die tatsächliche Bewegung herausgerechnet, also eins der Bilder entsprechend des zuvor ermittelten Bewegungsvektors verschoben wird.
 			
@@ -281,7 +281,7 @@ Das Ergebnis wird für horizontale und vertikale Nachbarregionen mit dem Faktor $
 		\end{figure}
 %\end{comment}		
 			
-\subsection{Visualisierung}
+\subsection{Visualisierung}\label{sec:vis}
 	Um die Bewegungsvektorfelder $V_{n}$ darzustellen, wird sich mit Symbolen beholfen. Diese werden 				blockweise  über die Videosequenz gelegt. Aus Darstellungsgründen wird das Video dazu um Faktor 	4 in beide Bildrichtungen hoch skaliert. Da die einzelnen Bewegungsvektoren immer zwischen zwei 		Frames berechnet werden, wird genau ein Bewegungsvektorfeld weniger erzeugt, als das 					Eingangsmaterial Frames hat. \\
 	Bei den bereits erwähnten Symbolen handelt es sich um Kreise und Pfeile. Ein Kreis wird immer 		dann genutzt, wenn für den entsprechenden Block keine oder nur eine kleine Bewegung durch das 		Verfahren ermittelt wurde. Die Pfeile zeigen immer in Richtung der ermittelten Verschiebung. 			Beide Symbole haben ihren Startpunkt im Mittelpunkt des jeweiligen Blocks.\\
 	Die Randbereiche der einzelnen Bewegungsvektorfelder werden bei der Visualisierung ausgespart, 
@@ -332,7 +332,7 @@ Das Ergebnis wird für horizontale und vertikale Nachbarregionen mit dem Faktor $
 	\vspace{0.4cm}\\
 \end{minipage}
 
-\subsection{Auswertung der Testmaterialien}\label{AuswertungTestmaterialien}
+\subsection{Auswertung der Testmaterialien}\label{sec:AuswertungTestmaterialien}
 Im Folgenden wird das Verfahren anhand der in Kapitel \ref{sec:testmaterialien} aufgeführten Testmaterialien ausgewertet. Dabei wurden für alle Materialien die gleichen Einstellungsparameter gewählt:
 \begin{itemize} 
 \item[$\bullet$] 5 Iterationen
@@ -459,7 +459,7 @@ Neben den Einstellungen für $\nu,\lambda$ und $\lambda_T$ wird das Konvergenzver
 			\end{figure}
 		%\end{comment}
 		
-		\subsubsection{Innerhalb eines Bildes}\todo[inline]{Laura}
+		\subsubsection{Innerhalb eines Bildes}\label{sec:einschBild}
 Wie in Kapitel \ref{sec:programmAblauf} beschrieben wird die Bewegungsdetektion in jedem Frame über mehrere Iterationen hinweg ermittelt. Mit anderen Worten: $V_{n}$ wird in jeder Iteration neu gesetzt. Im Folgenden wird die Veränderung der Vektoren nach jeder Iteration betrachtet. Dabei werden die Parameter wie in Kapitel \ref{sec:bvf} gewählt.\\
 In Abbildung \ref{fig:einschwingIter5} werden die prozentualen Veränderungen der ersten sechs Bewegungsvektorfelder über 5 Iterationen hinweg aufgetragen. Es ist deutlich zu erkennen, dass bei den Bildern 1-4 nur eine kleine Veränderung der Bewegungsvektoren vorliegt. In Bild 5 geschieht die signifikante Änderung des Bewegungsvektorfeldes udn somit die eigentliche Einschwingung innerhalb des Bildes. In Bild 6 findet kaum noch eine Änderung statt. Dies entspricht Abbildung \ref{fig:einschwingFrame}, die das Einschwingverhalten übe die einzelnen Frames für 5 Iterationen zeigt. 
 
@@ -667,7 +667,7 @@ Die Verdopplung der Iterationsschritte scheint dazu zu führen, dass bereits im d
 		\end{figure}
 	%\end{comment}		
 
-		\subsection{Parameter der Regularisierungsterme}
+		\subsection{Parameter der Regularisierungsterme}\label{sec:paraRegula}
 		
 Der folgende Abschnitt untersucht die geeignete Parametrisierung der Gewichtungen $\lambda$ und $\lambda_T$ der zwei Regularisierungsterme.
 Wie in {\cite{aach1998bayesian}} beschrieben, ist es möglich über die zwei Faktoren die Varianz der verallgemeinerten Normalverteilung zu modifizieren.
@@ -851,7 +851,7 @@ Wie Tabelle \ref{tab:einschwingRegulaWerte} zu entnehmen ist, nimmt für größere 
 Die Wahl von $\lambda=0.001$ und $\lambda_T=0.001$ liefert das Optimum für die betrachteten Einstellungen.
 
 
-	\section{Zusammenfassung}
+	\section{Zusammenfassung}\label{sec:upshot}
 		Das Projekt, den Ansatz von Aach und Kunz\textsuperscript{\cite{aach1998bayesian}} auf normale Bildsequenzen zu übertragen und so eine robuste Methode zur Bewegungsschätzung von Realvideo-Sequenzen zu erhalten, konnte erfolgreich abgeschlossen werden.\\ 
 		Es wurde die Algorithmik an die geänderten Daten angepasst und in diesem Zuge das spezielle Rauschmodell für Röntgenaufnahmen vernachlässigt.\\
 		Für die Auswertung wurden drei verschiedene Testmaterialien erstellt, von denen zwei lediglich Standbilder enthalten, welche über den Bildausschnitt über die Zeit verschoben werden, sodass die tatsächliche Bewegung im Bild bekannt ist und als Grundwahrheit angenommen werden kann. Die verbleibende Testsequenz wurde ausgewählt, da diese Bewegungen von Realobjekten in verschiedenen Bewegungen, eine statische Kameraposition und zeitweise Verdeckungen der beiden Bewegungen bot. Die Auswertung anhand des Testmaterials hat gezeigt, dass die Bewegungsschätzung hinreichend gut für die verwendeten Testmaterialien funktioniert.\\ Des Weiteren belegt die Auswertung der Einschwingverhalten über die Iterationen pro Bild, dass -- ähnlich wie im Paper von Aach und Kunz\textsuperscript{\cite{aach1998bayesian}} -- eine signifikante Verbesserung der Ergebnisse über fünf bis zehn Iterationen erreicht werden kann.\\ Es stellt sich auch heraus, dass es zu Beginn einer Bildsequenz einige Bilder dauert, bis sich der Fehler der Bewegungsschätzung auf ein akzeptables Niveau gesunken ist.\\
@@ -859,6 +859,13 @@ Die Wahl von $\lambda=0.001$ und $\lambda_T=0.001$ liefert das Optimum für die b
 		Insgesamt bewegen sich die Ergebnisse der Untersuchung in einem erwartbaren Bereich, da bei einer Anpassung des Verfahrens von Röntgen- auf normale Bildsequenzen keine starken Abweichungen eintreten sollten.
 	
 	\section{Arbeitsaufteilung}\todo[inline]{Alle}
+	Die Implementierung wurde gemeinschaftlich und gleichverteilt bearbeitet. Die Aufteilung der Dokumentation gliedert sich wie folgt:
+	\begin{description}
+		\item[Anger:] Abschnitte \ref{sec:bewegSch}, \ref{sec:vis}, \ref{sec:testmaterialien}, \ref{sec:AuswertungTestmaterialien} und \ref{sec:einschBild}.
+		\item[Breuer:] Abschnitte \ref{sec:costFunc}, \ref{sec:oertlich}, \ref{sec:bvf} und \ref{sec:paraRegula}
+		\item[Kolhagen:] Abschnitte \ref{sec:einleitung}, \ref{sec:Datenterm}, \ref{sec:zeitlich}, \ref{sec:programmAblauf} und \ref{sec:upshot}.
+	\end{description}
+	
 	\newpage
 	\bibliographystyle{plain}
 	\bibliography{ABV_Bewegungsanalyse_LaTeX}
