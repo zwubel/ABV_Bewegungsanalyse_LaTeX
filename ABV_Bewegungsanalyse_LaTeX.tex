@@ -343,7 +343,7 @@ Im Folgenden wird das Verfahren anhand der in Kapitel \ref{sec:testmaterialien} 
 
 In Abbildung \ref{fig:testmaterial12} sind jeweils drei Bewegungsvektorfelder für Testmaterial 1 und Testmaterial 2 zu sehen. Es ist deutlich erkennbar, dass die Bewegungsdetektion sowohl für hochfrequente, als auch für tieffrequente Bildinhalte funktioniert hat. \\
 Die Abweichungen der berechneten von den tatsächlichen Bewegungsvektoren können bestimmt werden, da die Bewegung bekannt ist. Da sich alle Blöcke eines Frames mit der selben Geschwindigkeit in die selbe Richtung bewegen, kann die absolute Längenabweichung der einzelnen Vektoren über ein Frame aufsummiert und durch die Anzahl der Blöcke geteilt werden um ein Maß für die absolute Abweichung zu erhalten.\\
-Schaut man sich die so ermittelten Abweichungen für ein Frame an, wo in den vorherigen Frames keine Richtungsänderung  stattgefunden hat, so beträgt diese im Durchschnitt für beide Testmaterialien ungefähr ein halbes Pixel. Da es wie in Kapitel \ref{sec:Einschwingverhalten} näher beschrieben dauert, bis die Bewegungsvektoren eingeschwungen sind, kommt es in den Frames 50 und 100 in beiden Testmaterialien zu einer Abweichung von bis zu 8 Pixeln. Das sind eben die Frames, wo sich die Bewegung verändert. \\
+Schaut man sich die so ermittelten Abweichungen für ein Frame an, wo in den vorherigen Frames keine Richtungsänderung  stattgefunden hat, so beträgt diese im Durchschnitt für beide Testmaterialien ungefähr ein halbes Pixel. Da es wie in Kapitel \ref{sec:Einschwingverhalten} näher beschrieben dauert, bis die Bewegungsvektoren eingeschwungen sind, kommt es in den Frames 50 und 100 in beiden Testmaterialien zu einer Abweichung von bis zu 8 Pixeln. Das sind eben die Frames, wo sich die Bewegung plötzlich ändert. \\
 
 \begin{figure}[H] 
 		\centering
@@ -353,7 +353,7 @@ Schaut man sich die so ermittelten Abweichungen für ein Frame an, wo in den vorh
 	\end{figure}
 
 Da es sich bei Testmaterial 3 um eine reale Videosequenz handelt, deren Bewegungsvektoren unbekannt sind, kann die Auswertung hier nur rein visuell vorgenommen werden.\\\\
-Abbildung \ref{fig:frame43} und Abbildung \ref{fig:frame47} zeigen jeweils ein Standbild aus dem Bewegungsvektorfeld, welches sich unter dem Namen \textit{testmaterial3-bewegungsvektorfeld.tiff} auf der beiliegenden Daten-CD befindet.\\
+Abbildung \ref{fig:frame43} und Abbildung \ref{fig:frame47} zeigen jeweils ein Standbild aus dem Bewegungsvektorfeld.\\
 Es ist deutlich zu erkennen, dass die Bereiche in denen keine Bewegung stattfindet weitgehend richtig detektiert wurden. Und auch die Bewegung des Autos und der Radfahrerin werden trotz der Verdeckung durch die Säule weitgehend erkannt. Auffällig ist, dass besonders die Blöcke, die hinter dem Auto liegen und deren Bildinhalt sich nicht mehr bewegt falsch berechnet sind. Das ist besonders gut in Abbildung \ref{fig:frame47} zu sehen und lässt sich auf das Einschwingverhalten zurückführen. Dieses wird in Kapitel \ref{sec:Einschwingverhalten} erklärt und ausgewertet.\\
 
 \begin{minipage}{0.5\textwidth}
