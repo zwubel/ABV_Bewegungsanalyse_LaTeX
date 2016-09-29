@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=latex 2011.11.22)  29 SEP 2016 11:00
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=latex 2011.11.22)  29 SEP 2016 11:09
 entering extended mode
 **ABV_Bewegungsanalyse_LaTeX.tex
 (I:\LaTeX\ABV_Bewegungsanalyse_LaTeX\ABV_Bewegungsanalyse_LaTeX.tex
@@ -605,29 +605,6 @@ File: pd1enc.def 2011/08/19 v6.82h Hyperref: PDFDocEncoding definition (HO)
 (I:\LaTeX\_LaTeX_portable\MiKTeXPortable\tex\latex\00miktex\hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\global' on input line 3932.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\<let>-command' on input line 3932.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                \kern 1.95831pt
-(hyperref)                removed on input line 3932.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                \kern 1.95831pt
-(hyperref)                removed on input line 3932.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                \kern 1.95831pt
-(hyperref)                removed on input line 3932.
-
 Package hyperref Info: Option `pdftoolbar' set `true' on input line 3932.
 Package hyperref Info: Option `colorlinks' set `true' on input line 3932.
 Package hyperref Info: Option `linktocpage' set `true' on input line 3932.
@@ -1030,18 +1007,14 @@ Package atveryend Info: Executing hook `AfterLastShipout' on input line 868.
  (I:\LaTeX\ABV_Bewegungsanalyse_LaTeX\ABV_Bewegungsanalyse_LaTeX.aux)
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 868.
 Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 868.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
- 13492 strings out of 494046
- 201181 string characters out of 3138707
- 410541 words of memory out of 3000000
- 16549 multiletter control sequences out of 15000+200000
+ 13491 strings out of 494046
+ 201165 string characters out of 3138707
+ 410530 words of memory out of 3000000
+ 16548 multiletter control sequences out of 15000+200000
  14648 words of font info for 57 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
  53i,13n,92p,1136b,484s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on ABV_Bewegungsanalyse_LaTeX.dvi (18 pages, 226864 bytes).
+Output written on ABV_Bewegungsanalyse_LaTeX.dvi (18 pages, 226868 bytes).
